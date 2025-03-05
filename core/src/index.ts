@@ -28,6 +28,7 @@ import { vAutobox } from "./directives/vAutobox";
 import { vTrim } from "./directives/vTrim";
 import { vVerify } from "./directives/vVerify";
 import { vDraggableSort } from "./directives/vDraggableSort";
+import { vAutoInputType } from "./directives/vAutoInputType";
 
 export {
   vBacktop,
@@ -59,6 +60,7 @@ export {
   vTrim,
   vVerify,
   vDraggableSort,
+  vAutoInputType,
 };
 
 export interface CPVueDirPlugin {
@@ -95,6 +97,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("trim", vTrim);
     app.directive("verify", vVerify);
     app.directive("draggablesort", vDraggableSort);
+    app.directive("autoinputtype", vAutoInputType);
   },
 };
 
