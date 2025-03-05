@@ -1,0 +1,1 @@
+export { vAutoInputType } from './vAutoInputType';

@@ -1,1 +1,1 @@
-export { vDrag } from './core'
+export { vDrag } from "./core";

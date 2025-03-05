@@ -118,7 +118,6 @@ export default defineConfig({
                 { text: "v-fitfont", link: "/directives/fitfont" },
                 { text: "v-autobox", link: "/directives/autobox" },
                 { text: "v-draggablesort", link: "/directives/draggablesort" },
-                { text: "v-top", link: "/directives/top" },
               ],
             },
             {
@@ -130,6 +129,7 @@ export default defineConfig({
                 { text: "v-emoji", link: "/directives/emoji" },
                 { text: "v-trim", link: "/directives/trim" },
                 { text: "v-verify", link: "/directives/verify" },
+                { text: "v-autoinputtype", link: "/directives/autoinputtype" },
               ],
             },
           ],

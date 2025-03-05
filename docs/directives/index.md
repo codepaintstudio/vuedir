@@ -24,7 +24,7 @@ const directives = ref([
   },
   {
     name: 'v-hotkey',
-    description: '监听键盘事件，支持自定义多个快捷键和回掉函数',
+    description: '监听键盘事件，支持自定义快捷键和回掉函数',
     link: '/directives/hotkey',
     category: '交互类'
   },
@@ -172,6 +172,11 @@ const directives = ref([
     description: '拖拽元素来重新排序列表，并且在拖拽完成后更新数据',
     link: '/directives/draggablesort',
     category: '交互类'
+  },{
+    name: 'v-autoinputtype',
+    description: '根据输入内容自动切换输入框类型，例如在输入邮箱时自动切换到邮箱输入框',
+    link: '/directives/autoinputtype',
+    category: '表单类'
   }
 ]);
 

@@ -21,27 +21,6 @@
   --vp-code-line-highlight-color: rgba(75, 43, 124, 0.1);
 
   --vp-button-bg: #6466e9;
-
-  /* 拖拽相关变量 */
-  --drag-placeholder-border: 2px dashed var(--vp-c-brand);
-  --drag-placeholder-bg: rgba(75, 43, 124, 0.1);
-  --drag-active-bg: var(--vp-c-brand-dimm);
-  --drag-active-border: var(--vp-c-brand);
-  --drag-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --drag-handle-bg: var(--vp-c-bg-soft);
-  --drag-handle-color: var(--vp-c-text-3);
-
-  /* 拖拽元素样式变量 */
-  --drag-element-bg: var(--vp-c-brand);
-  --drag-element-bg-hover: var(--vp-c-brand-dark);
-  --drag-element-bg-active: var(--vp-c-brand-darker);
-  --drag-element-text: white;
-  --drag-element-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --drag-element-shadow-active: 0 2px 4px rgba(0, 0, 0, 0.2);
-  
-  /* 拖拽容器样式 */
-  --drag-playground-bg: var(--vp-c-bg);
-  --drag-playground-border: var(--vp-c-divider);
 }
 
 .dark {
@@ -50,13 +29,6 @@
   --vp-c-text-2: #ebebef;
   --vp-c-text-3: #8091a5;
   --vp-c-brand: #a6aefb;
-
-  --drag-placeholder-bg: rgba(166, 174, 251, 0.2);
-  --drag-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-  /* 暗色模式下的拖拽元素样式 */
-  --drag-element-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --drag-element-shadow-active: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .VPNav {
@@ -322,36 +294,4 @@
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
-}
-
-[data-dragging="true"] {
-  opacity: 0.9;
-  cursor: grabbing !important;
-  transform: scale(1.02);
-  border-color: var(--vp-c-brand) !important;
-  background-color: var(--vp-c-brand-dimm) !important;
-  z-index: 1000 !important;
-  box-shadow: var(--drag-element-shadow) !important;
-}
-
-.v-drag-placeholder {
-  border: var(--drag-placeholder-border) !important;
-  background-color: var(--drag-placeholder-bg) !important;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05) !important;
-  transition: all 0.15s ease !important;
-}
-
-.v-drag-handle {
-  cursor: grab !important;
-  background-color: var(--drag-handle-bg) !important;
-}
-
-.v-drag-handle-active {
-  cursor: grabbing !important;
-}
-
-/* 添加脉冲动画 */
-@keyframes dragPulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
 }
