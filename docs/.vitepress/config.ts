@@ -122,7 +122,8 @@ export default defineConfig({
                 { text: 'marquee', link: '/directives/marquee' },
                 { text: 'ripple', link: '/directives/ripple' },
                 { text: 'top', link: '/directives/top' },
-                { text: 'watermarker', link: '/directives/watermarker' }
+                { text: 'watermarker', link: '/directives/watermarker' },
+                { text: 'headerscroll', link: '/directives/headerscroll' }
               ]
             },
             {
