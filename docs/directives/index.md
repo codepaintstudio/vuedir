@@ -198,6 +198,12 @@ const directives = ref([
     "name": 'headerscroll',
     "description": "控制顶部header的显示和隐藏",
     "category": "视觉类"
+  },
+  {
+    name: 'v-loading',
+    description: '显示加载动画',
+    link: '/directives/loading',
+    category: '视觉类'
   }
 ])
 
