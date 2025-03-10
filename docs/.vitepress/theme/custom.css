@@ -38,7 +38,7 @@
   --drag-element-text: white;
   --drag-element-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --drag-element-shadow-active: 0 2px 4px rgba(0, 0, 0, 0.2);
-  
+
   /* 拖拽容器样式 */
   --drag-playground-bg: var(--vp-c-bg);
   --drag-playground-border: var(--vp-c-divider);
@@ -92,8 +92,7 @@
 .actions,
 ._vuedir_directives_,
 .aside-container {
-  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
+  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
@@ -147,8 +146,7 @@
 
 .text,
 .tagline {
-  -webkit-animation: tracking-in-expand-fwd 0.7s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  -webkit-animation: tracking-in-expand-fwd 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking-in-expand-fwd 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -195,28 +193,26 @@
 
 @-webkit-keyframes text-shadow-pop-left {
   0% {
-    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555,
-      0 0 #555555, 0 0 #555555, 0 0 #555555;
+    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   100% {
-    text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555,
-      -5px 0 #555555, -6px 0 #555555, -7px 0 #555555, -8px 0 #555555;
+    text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555, -5px 0 #555555, -6px 0 #555555,
+      -7px 0 #555555, -8px 0 #555555;
     -webkit-transform: translateX(8px);
     transform: translateX(8px);
   }
 }
 @keyframes text-shadow-pop-left {
   0% {
-    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555,
-      0 0 #555555, 0 0 #555555, 0 0 #555555;
+    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   100% {
-    text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555,
-      -5px 0 #555555, -6px 0 #555555, -7px 0 #555555, -8px 0 #555555;
+    text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555, -5px 0 #555555, -6px 0 #555555,
+      -7px 0 #555555, -8px 0 #555555;
     -webkit-transform: translateX(8px);
     transform: translateX(8px);
   }
@@ -324,7 +320,7 @@
   }
 }
 
-[data-dragging="true"] {
+[data-dragging='true'] {
   opacity: 0.9;
   cursor: grabbing !important;
   transform: scale(1.02);
@@ -352,6 +348,11 @@
 
 /* 添加脉冲动画 */
 @keyframes dragPulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
 }

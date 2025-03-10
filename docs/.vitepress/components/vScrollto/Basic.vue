@@ -1,12 +1,6 @@
 <template>
   <div class="container">
-    <a-button
-      type="primary"
-      shape="round"
-      size="large"
-      long
-      v-scrollTo="{ to: targetRef }"
-      class="button"
+    <a-button type="primary" shape="round" size="large" long v-scrollTo="{ to: targetRef }" class="button"
       >点击读完文章</a-button
     >
     <a-typography>
@@ -30,10 +24,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { vScrollTo } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vScrollTo } from '@cp-vuedir/core'
 
-const targetRef = ref<HTMLElement | null>(null);
+const targetRef = ref<HTMLElement | null>(null)
 </script>
 
 <style scoped>

@@ -1,21 +1,16 @@
 <template>
   <div class="container">
-    <a-button
-      type="primary"
-      shape="round"
-      long
-      size="large"
-      v-longpress="{ event: handleLongPress, delay: 1000 }"
+    <a-button type="primary" shape="round" long size="large" v-longpress="{ event: handleLongPress, delay: 1000 }"
       >按住我1秒</a-button
     >
   </div>
 </template>
 
 <script setup lang="ts">
-import { Notification } from "@arco-design/web-vue";
+import { Notification } from '@arco-design/web-vue'
 const handleLongPress = () => {
-  Notification.success("你长按了按钮1秒");
-};
+  Notification.success('你长按了按钮1秒')
+}
 </script>
 
 <style scoped>

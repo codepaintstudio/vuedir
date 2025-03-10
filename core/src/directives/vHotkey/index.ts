@@ -1,1 +1,1 @@
-export { vHotkey } from "./core";
+export { vHotkey } from './core'

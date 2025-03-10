@@ -1,1 +1,1 @@
-export { vFocus } from "./vFocus";
+export { vFocus } from './vFocus'

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { vFocus } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vFocus } from '@cp-vuedir/core'
 
-const message = ref("");
+const message = ref('')
 </script>
 
 <template>

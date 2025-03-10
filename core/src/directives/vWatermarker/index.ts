@@ -1,1 +1,1 @@
-export { vWatermarker } from "./vWatermarker";
+export { vWatermarker } from './core'

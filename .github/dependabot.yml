@@ -1,0 +1,27 @@
+version: 2
+updates:
+  # Maintains dependencies for the documentation site
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 5
+    groups:
+      dev-dependencies:
+        patterns:
+          - '*eslint*'
+          - '*prettier*'
+          - '*rollup*'
+          - '*typescript*'
+      vue-dependencies:
+        patterns:
+          - 'vue*'
+          - '@vue*'
+          - '@vueuse*'
+
+  # Maintains dependencies github actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 5

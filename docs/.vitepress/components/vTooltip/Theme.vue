@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { vTooltip, vRipple } from "@cp-vuedir/core";
+import { vTooltip, vRipple } from '@cp-vuedir/core'
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import { vTooltip, vRipple } from "@cp-vuedir/core";
         v-tooltip="{
           text: '如果我没有刀，我就不能保护你。如果我有刀，我就不能拥抱你。',
           position: 'top',
-          theme: 'light',
+          theme: 'light'
         }"
       >
         《剪刀手爱德华》

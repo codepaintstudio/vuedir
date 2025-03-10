@@ -3,15 +3,14 @@
     <div class="modifier-example">
       <h4>链式传参</h4>
       <div v-highlight.bgColor-red.textColor-blue.auto-true>
-        我常常对自己说，别告诉别人你不开心，勤奋点做事，没什么事便早点回家睡觉去。
-        ———《阿飞正传》
+        我常常对自己说，别告诉别人你不开心，勤奋点做事，没什么事便早点回家睡觉去。 ———《阿飞正传》
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { vHighlight } from "@cp-vuedir/core";
+import { vHighlight } from '@cp-vuedir/core'
 </script>
 
 <style scoped>

@@ -1,1 +1,1 @@
-export { vEllipsis } from "./core";
+export { vEllipsis } from './core'

@@ -1,1 +1,1 @@
-export { vTop } from "./core";
+export { vTop } from './core'

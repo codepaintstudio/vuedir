@@ -2,6 +2,31 @@
 
 感谢你考虑为 VueDir 做出贡献！在提交你的贡献之前，请花点时间阅读以下指南。
 
+## 🛠️ 环境准备
+
+### pnpm 安装
+
+本项目**仅支持使用 pnpm** 作为包管理工具。请确保你已经安装了最新版本的 pnpm：
+
+```bash
+# 使用 npm 安装
+npm install -g pnpm
+
+# 使用 Homebrew 安装 (macOS)
+brew install pnpm
+
+# 使用 Scoop 安装 (Windows)
+scoop install pnpm
+
+# 使用 Chocolatey 安装 (Windows)
+choco install pnpm
+
+# 使用官方安装脚本 (Linux/macOS)
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+更多安装方式请参考 [pnpm 官方安装指南](https://pnpm.io/zh/installation)。
+
 ## 🌟 开发流程
 
 1. Fork 这个仓库
@@ -39,6 +64,27 @@ pnpm dev
 - 文档网站的开发服务器
 
 ## 📝 代码规范
+
+### Prettier 代码格式化
+
+本项目使用 Prettier 来保持一致的代码风格。配置文件位于项目根目录的 `.prettierrc`
+
+格式化你的代码：
+
+```bash
+# 格式化所有文件
+pnpm format
+
+# 检查代码格式是否符合规范
+pnpm format:check
+```
+
+**编辑器设置**
+
+我们建议在你的编辑器中安装 Prettier 插件，并启用保存时自动格式化：
+
+- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置 prettier 配置文件路径。
+- **WebStorm/IntelliJ**: 在设置中启用 Prettier 集成
 
 ### 命名规范
 

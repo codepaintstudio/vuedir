@@ -2,17 +2,13 @@
   <div class="demo-block">
     <div class="modifier-example">
       <h4>链式传参</h4>
-      <img
-        v-lazyload.threshold-0.5.rootMargin-300
-        data-src="https://picsum.photos/800/400?random=1"
-        alt="链式传参"
-      />
+      <img v-lazyload.threshold-0.5.rootMargin-300 data-src="https://picsum.photos/800/400?random=1" alt="链式传参" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { vLazyload } from "@cp-vuedir/core";
+import { vLazyload } from '@cp-vuedir/core'
 </script>
 
 <style scoped>

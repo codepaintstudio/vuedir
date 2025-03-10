@@ -1,9 +1,9 @@
-import type { Directive } from "vue";
+import type { Directive } from 'vue'
 
-export type DoubleClickHandler = () => void;
+export type DoubleClickHandler = () => void
 
 export interface DoubleClickElement extends HTMLElement {
-  __doubleClickHandler?: DoubleClickHandler;
+  __doubleClickHandler?: DoubleClickHandler
 }
 
-export type DoubleClickDirective = Directive;
+export type DoubleClickDirective = Directive

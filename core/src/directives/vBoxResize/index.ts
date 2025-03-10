@@ -1,3 +1,3 @@
 // export { vResize } from './vResize';
 
-export { vBoxResize } from './vBoxResize';
+export { vBoxResize } from './vBoxResize'

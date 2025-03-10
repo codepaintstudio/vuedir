@@ -1,17 +1,11 @@
 <template>
   <div class="pwdvisible-demo">
-    <input
-      type="password"
-      v-pwdvisible
-      placeholder="请输入密码"
-      class="password-input"
-      value="19700101000000"
-    />
+    <input type="password" v-pwdvisible placeholder="请输入密码" class="password-input" value="19700101000000" />
   </div>
 </template>
 
 <script setup>
-import { vPwdvisible } from "@cp-vuedir/core";
+import { vPwdvisible } from '@cp-vuedir/core'
 </script>
 
 <style scoped>

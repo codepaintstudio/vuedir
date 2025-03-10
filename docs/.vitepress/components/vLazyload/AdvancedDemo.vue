@@ -6,7 +6,7 @@
         :key="index"
         v-lazyload="{
           threshold: 0.5,
-          rootMargin: '100px',
+          rootMargin: '100px'
         }"
         :data-src="image"
         :alt="`Lazy Image ${index + 1}`"
@@ -17,12 +17,12 @@
 
 <script setup lang="ts">
 const images = [
-  "https://picsum.photos/800/400?random=6",
-  "https://picsum.photos/800/400?random=7",
-  "https://picsum.photos/800/400?random=8",
-  "https://picsum.photos/800/400?random=9",
-  "https://picsum.photos/800/400?random=10",
-];
+  'https://picsum.photos/800/400?random=6',
+  'https://picsum.photos/800/400?random=7',
+  'https://picsum.photos/800/400?random=8',
+  'https://picsum.photos/800/400?random=9',
+  'https://picsum.photos/800/400?random=10'
+]
 </script>
 
 <style scoped>

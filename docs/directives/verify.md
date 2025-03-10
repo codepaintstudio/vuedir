@@ -12,7 +12,7 @@
 </template>
 ```
 
-## submit情况下，校验整个表单
+## submit 情况下，校验整个表单
 
 <VerifyDemo />
 
@@ -20,7 +20,7 @@
 <<< @/.vitepress/components/vVerify/VerifyDemo.vue
 :::
 
-## blur情况下，单个校验表单每项
+## blur 情况下，单个校验表单每项
 
 <BlurDemo />
 

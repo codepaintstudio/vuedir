@@ -109,7 +109,7 @@ function setupDrag(el: HTMLElement, options?: DragOptions) {
     return
   }
 
-  const { range, startDrag, onDrag, endDrag, isList, onSort, handle, axis = 'both', bounds } = options
+  const { startDrag, onDrag, endDrag, isList, onSort, handle, axis = 'both', bounds } = options
 
   if (!isList && el.style.position !== 'absolute') {
     el.style.position = 'absolute'
@@ -331,7 +331,7 @@ function setupTouchEvents(el: HTMLElement, handleElement: HTMLElement | null, op
     return
   }
 
-  const { range, startDrag, onDrag, endDrag, isList, onSort, handle, axis = 'both', bounds } = options || {}
+  const { startDrag, onDrag, endDrag, isList, onSort, handle, axis = 'both', bounds } = options || {}
 
   el.ontouchstart = (e: TouchEvent) => {
     const touchTarget = e.target as Node

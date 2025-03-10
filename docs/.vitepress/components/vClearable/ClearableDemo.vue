@@ -27,10 +27,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { vClearable, vPwdvisible } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vClearable, vPwdvisible } from '@cp-vuedir/core'
 
-const text = ref("");
+const text = ref('')
 </script>
 
 <style scoped>

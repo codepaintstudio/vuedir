@@ -34,12 +34,12 @@ pnpm add @cp-vuedir/core
 在你的 Vue 应用中注册 VueDir：
 
 ```ts
-import { createApp } from "vue";
-import VueDir from "@cp-vuedir/core";
+import { createApp } from 'vue'
+import VueDir from '@cp-vuedir/core'
 
-const app = createApp(App);
-app.use(VueDir);
-app.mount("#app");
+const app = createApp(App)
+app.use(VueDir)
+app.mount('#app')
 ```
 
 ## 📖 文档

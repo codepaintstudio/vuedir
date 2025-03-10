@@ -1,6 +1,5 @@
 :root {
-  --vp-font-family-base: "San Francisco", "Segoe UI", "Roboto", "Helvetica Neue",
-    "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC",
-    sans-serif;
-  --vp-font-family-mono: "Fira Code", "Consolas", "Monaco", "Andale Mono";
+  --vp-font-family-base: 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Source Han Sans SC', sans-serif;
+  --vp-font-family-mono: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono';
 }

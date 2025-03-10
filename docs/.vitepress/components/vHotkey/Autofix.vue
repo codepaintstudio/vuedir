@@ -3,17 +3,15 @@
     <a-textarea placeholder="在这里输入，Enter 不会触发"></a-textarea>
     <a-input type="text" placeholder="输入框中也不会触发快捷键" />
 
-    <p v-hotkey="{ key: 'enter', callback: handleEnter }">
-      按 <kbd>Enter</kbd>（不在输入框时）
-    </p>
+    <p v-hotkey="{ key: 'enter', callback: handleEnter }">按 <kbd>Enter</kbd>（不在输入框时）</p>
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import { vHotkey } from "@cp-vuedir/core";
-import { Message } from "@arco-design/web-vue";
+import { vHotkey } from '@cp-vuedir/core'
+import { Message } from '@arco-design/web-vue'
 
-const handleEnter = () => Message.info("Enter 被按下！");
+const handleEnter = () => Message.info('Enter 被按下！')
 </script>
 
 <style scoped>

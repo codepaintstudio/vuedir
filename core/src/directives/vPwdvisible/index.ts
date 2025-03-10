@@ -1,1 +1,1 @@
-export { vPwdvisible } from "./vPwdvisible";
+export { vPwdvisible } from './vPwdvisible'

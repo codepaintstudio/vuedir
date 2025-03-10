@@ -1,1 +1,1 @@
-export { vThrottle } from "./vThrottle";
+export { vThrottle } from './vThrottle'

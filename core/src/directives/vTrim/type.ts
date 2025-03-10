@@ -1,5 +1,5 @@
 declare interface TrimHTMLElement extends HTMLInputElement {
-  _cleanup?: () => void;
+  _cleanup?: () => void
 }
 
-export type { TrimHTMLElement };
+export type { TrimHTMLElement }

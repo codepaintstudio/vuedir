@@ -1,1 +1,1 @@
-export {vFitfont} from './vFitfont'
+export { vFitfont } from './vFitfont'

@@ -1,1 +1,1 @@
-export { vDoubleClick } from "./vDoubleClick";
+export { vDoubleClick } from './vDoubleClick'

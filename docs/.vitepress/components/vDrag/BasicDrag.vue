@@ -118,9 +118,7 @@ export default {
   padding: 20px;
   margin-bottom: 30px;
   border: 1px solid var(--vp-c-divider);
-  transition:
-    background-color 0.3s,
-    border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 h3 {
@@ -178,9 +176,7 @@ h3 {
   align-items: center;
   text-align: center;
   user-select: none;
-  transition:
-    background-color 0.3s,
-    box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
   cursor: move;
   /* 使用实际边距替代transform */
   margin: 0;

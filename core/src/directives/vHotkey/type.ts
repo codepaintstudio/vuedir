@@ -1,4 +1,4 @@
 export interface KeyBinding {
-  key: string;
-  callback: () => void;
+  key: string
+  callback: () => void
 }

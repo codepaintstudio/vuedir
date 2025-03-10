@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import { vSpare } from "@cp-vuedir/core";
-import logo from "../../../public/logo.jpg";
+import { vSpare } from '@cp-vuedir/core'
+import logo from '../../../public/logo.jpg'
 </script>
 
 <style scoped>

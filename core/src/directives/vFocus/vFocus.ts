@@ -1,13 +1,13 @@
-import type { Directive } from "vue";
+import type { Directive } from 'vue'
 
 export const vFocus: Directive = {
   mounted(el) {
-    el.focus();
+    el.focus()
   },
   updated(el) {
-    el.focus();
+    el.focus()
   },
   unmounted(el) {
-    el.blur();
-  },
-};
+    el.blur()
+  }
+}

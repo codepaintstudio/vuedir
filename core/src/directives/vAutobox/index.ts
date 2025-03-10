@@ -1,1 +1,1 @@
-export {vAutobox} from './vAutobox'
+export { vAutobox } from './vAutobox'

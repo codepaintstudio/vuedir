@@ -1,26 +1,19 @@
 <template>
   <div class="container">
-    <a-button
-      v-debounce="handleClick"
-      type="primary"
-      shape="round"
-      long
-      size="large"
-      >点击按钮</a-button
-    >
+    <a-button v-debounce="handleClick" type="primary" shape="round" long size="large">点击按钮</a-button>
     <div class="result">点击次数：{{ clickCount }}</div>
   </div>
 </template>
 
 <script setup>
-import { vDebounce } from "@cp-vuedir/core";
-import { ref } from "vue";
+import { vDebounce } from '@cp-vuedir/core'
+import { ref } from 'vue'
 
-const clickCount = ref(0);
+const clickCount = ref(0)
 
 const handleClick = () => {
-  clickCount.value++;
-};
+  clickCount.value++
+}
 </script>
 
 <style scoped>

@@ -1,1 +1,1 @@
-export { vScrollTo } from "./core";
+export { vScrollTo } from './core'

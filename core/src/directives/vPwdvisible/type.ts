@@ -1,10 +1,10 @@
-import type { Directive } from "vue";
+import type { Directive } from 'vue'
 
 export interface VPwdvisibleHTMLElement extends HTMLInputElement {
   __vPwdvisible?: {
-    toggleVisibility: () => void;
-    eyeIcon: HTMLElement;
-  };
+    toggleVisibility: () => void
+    eyeIcon: HTMLElement
+  }
 }
 
-export type VPwdvisibleDirective = Directive;
+export type VPwdvisibleDirective = Directive

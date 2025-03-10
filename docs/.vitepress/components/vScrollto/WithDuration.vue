@@ -27,10 +27,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { vScrollTo } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vScrollTo } from '@cp-vuedir/core'
 
-const durationRef = ref<HTMLElement | null>(null);
+const durationRef = ref<HTMLElement | null>(null)
 </script>
 
 <style scoped>

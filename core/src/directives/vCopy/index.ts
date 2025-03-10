@@ -1,1 +1,1 @@
-export { vCopy } from "./vCopy";
+export { vCopy } from './vCopy'

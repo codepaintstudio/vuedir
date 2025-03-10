@@ -1,11 +1,8 @@
-import { ObjectDirective } from "vue";
+import { ObjectDirective } from 'vue'
 
 export interface RippleOptions {
-  duration?: number;
-  color?: string;
+  duration?: number
+  color?: string
 }
 
-export type RippleDirective = ObjectDirective<
-  HTMLElement,
-  RippleOptions | undefined
->;
+export type RippleDirective = ObjectDirective<HTMLElement, RippleOptions | undefined>

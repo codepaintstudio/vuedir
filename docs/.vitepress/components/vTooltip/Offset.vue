@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { vTooltip, vRipple } from "@cp-vuedir/core";
+import { vTooltip, vRipple } from '@cp-vuedir/core'
 </script>
 
 <template>
@@ -9,12 +9,12 @@ import { vTooltip, vRipple } from "@cp-vuedir/core";
       shape="round"
       size="large"
       v-ripple="{
-        color: '#10b981',
+        color: '#10b981'
       }"
       v-tooltip="{
         text: '不如我们从头来过。',
         theme: 'light',
-        offset: 30,
+        offset: 30
       }"
     >
       《春光乍泄》

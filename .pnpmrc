@@ -1,0 +1,3 @@
+strict-peer-dependencies=true
+shamefully-hoist=false
+frozen-lockfile=true

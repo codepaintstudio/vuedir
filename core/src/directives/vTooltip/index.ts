@@ -1,3 +1,3 @@
-import vTooltip from "./core";
+import vTooltip from './core'
 
-export { vTooltip };
+export { vTooltip }

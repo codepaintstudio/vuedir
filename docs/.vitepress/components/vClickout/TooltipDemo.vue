@@ -8,20 +8,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { vClickout } from "@cp-vuedir/core";
-import { Message } from "@arco-design/web-vue";
+import { ref } from 'vue'
+import { vClickout } from '@cp-vuedir/core'
+import { Message } from '@arco-design/web-vue'
 
-const demoRef = ref<HTMLElement | null>(null);
+const demoRef = ref<HTMLElement | null>(null)
 
 const handleClickout = (event: MouseEvent) => {
   if (demoRef.value && demoRef.value.contains(event.target as Node)) {
     Message.info({
-      content: "点击了安全区域外部",
-      duration: 2000,
-    });
+      content: '点击了安全区域外部',
+      duration: 2000
+    })
   }
-};
+}
 </script>
 
 <style scoped>

@@ -16,7 +16,7 @@ hero:
       link: /directives/
     - theme: alt
       text: Github
-      link: "https://github.com/codepaintstudio/vuedir"
+      link: 'https://github.com/codepaintstudio/vuedir'
 features:
   - title: 足够丰富
     icon: 🎲

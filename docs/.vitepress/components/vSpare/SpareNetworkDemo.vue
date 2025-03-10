@@ -3,9 +3,7 @@
     <div class="demo-item">
       <img
         src="https://example.com/non-existent-image.jpg"
-        v-spare="
-          'https://secure.gravatar.com/avatar/e89584fc717a92922689cb33ab29dd93'
-        "
+        v-spare="'https://secure.gravatar.com/avatar/e89584fc717a92922689cb33ab29dd93'"
         alt="网络图片加载失败示例"
         class="demo-image"
       />
@@ -14,7 +12,7 @@
 </template>
 
 <script setup>
-import { vSpare } from "@cp-vuedir/core";
+import { vSpare } from '@cp-vuedir/core'
 </script>
 
 <style scoped>

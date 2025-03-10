@@ -1,9 +1,9 @@
-import type { VClearableDirective, VClearableHTMLElement } from "./type";
-import { CLEAR_ICON } from "../../icons/clearIcon";
+import type { VClearableDirective, VClearableHTMLElement } from './type'
+import { CLEAR_ICON } from '../../icons/clearIcon'
 
 const createClearIcon = () => {
-  const icon = document.createElement("div");
-  icon.innerHTML = CLEAR_ICON;
+  const icon = document.createElement('div')
+  icon.innerHTML = CLEAR_ICON
   icon.style.cssText = `
     position: absolute;
     display: none;
@@ -12,80 +12,78 @@ const createClearIcon = () => {
     transition: color 0.2s;
     opacity: 0.8;
     padding: 2px;
-  `;
-  icon.addEventListener("mouseover", () => (icon.style.color = "#666"));
-  icon.addEventListener("mouseout", () => (icon.style.color = "#999"));
-  return icon;
-};
+  `
+  icon.addEventListener('mouseover', () => (icon.style.color = '#666'))
+  icon.addEventListener('mouseout', () => (icon.style.color = '#999'))
+  return icon
+}
 
 const createContainer = (el: HTMLElement, input: HTMLInputElement) => {
-  const container = document.createElement("div");
+  const container = document.createElement('div')
   container.style.cssText = `
     position: relative;
     display: inline-block;
     width: 100%;
     height: fit-content;
-  `;
-  el.replaceWith(container);
-  container.appendChild(input);
-  return container;
-};
+  `
+  el.replaceWith(container)
+  container.appendChild(input)
+  return container
+}
 
 const updateIconPosition = (input: HTMLInputElement, icon: HTMLElement) => {
-  const rect = input.getBoundingClientRect();
-  const iconSize = Math.min(rect.height * 0.8, 20);
-  icon.style.width = `${iconSize}px`;
-  icon.style.height = `${iconSize}px`;
-  icon.style.top = `${(rect.height - iconSize) / 2}px`;
-  icon.style.right = `${rect.height / 6}px`;
-};
+  const rect = input.getBoundingClientRect()
+  const iconSize = Math.min(rect.height * 0.8, 20)
+  icon.style.width = `${iconSize}px`
+  icon.style.height = `${iconSize}px`
+  icon.style.top = `${(rect.height - iconSize) / 2}px`
+  icon.style.right = `${rect.height / 6}px`
+}
 
 export const vClearable: VClearableDirective = {
   mounted(el: VClearableHTMLElement) {
     if (!(el instanceof HTMLInputElement)) {
-      console.warn("v-clearable 指令只能用于 input 元素");
-      return;
+      console.warn('v-clearable 指令只能用于 input 元素')
+      return
     }
 
-    const input = el;
-    const container = createContainer(el, input);
-    const icon = createClearIcon();
-    container.appendChild(icon);
+    const input = el
+    const container = createContainer(el, input)
+    const icon = createClearIcon()
+    container.appendChild(icon)
 
     const resizeObserver = new ResizeObserver(() => {
-      updateIconPosition(input, icon);
-    });
-    resizeObserver.observe(input);
+      updateIconPosition(input, icon)
+    })
+    resizeObserver.observe(input)
 
     const clearContent = () => {
-      input.value = "";
-      input.dispatchEvent(new Event("input"));
-      icon.style.display = "none";
-    };
+      input.value = ''
+      input.dispatchEvent(new Event('input'))
+      icon.style.display = 'none'
+    }
 
     const toggleIcon = () => {
-      icon.style.display = input.value ? "block" : "none";
-    };
+      icon.style.display = input.value ? 'block' : 'none'
+    }
 
-    input.addEventListener("input", toggleIcon);
-    icon.addEventListener("click", clearContent);
-
-    (el as VClearableHTMLElement).__vClearable = {
+    input.addEventListener('input', toggleIcon)
+    icon.addEventListener('click', clearContent)
+    ;(el as VClearableHTMLElement).__vClearable = {
       clearContent,
       toggleIcon,
       container,
       icon,
-      input,
-    };
+      input
+    }
   },
 
   unmounted(el: VClearableHTMLElement) {
     if (el.__vClearable) {
-      const { container, icon, input, clearContent, toggleIcon } =
-        el.__vClearable;
-      icon.removeEventListener("click", clearContent);
-      input.removeEventListener("input", toggleIcon);
-      container.replaceWith(input);
+      const { container, icon, input, clearContent, toggleIcon } = el.__vClearable
+      icon.removeEventListener('click', clearContent)
+      input.removeEventListener('input', toggleIcon)
+      container.replaceWith(input)
     }
-  },
-};
+  }
+}

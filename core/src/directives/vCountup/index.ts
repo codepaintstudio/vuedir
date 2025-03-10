@@ -1,1 +1,1 @@
-export { vCountup } from "./vCountup";
+export { vCountup } from './vCountup'

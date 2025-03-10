@@ -1,0 +1,8 @@
+node_modules/
+.husky/
+.vscode/
+scripts/
+play/
+docs/
+*.log
+.DS_Store

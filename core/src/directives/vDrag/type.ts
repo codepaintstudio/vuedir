@@ -22,17 +22,16 @@ export interface SortEventParams {
 export type SortCallback = (params: SortEventParams) => void
 
 export interface DragOptions {
-  range?: HTMLElement | null
   startDrag?: DragCallback
   onDrag?: OnDragType
   endDrag?: DragCallback
 
-  isList?: boolean // 是否启用列表拖拽功能
-  onSort?: SortCallback // 列表排序完成回调
+  isList?: boolean
+  onSort?: SortCallback
 
-  handle?: string // 拖拽把手选择器
+  handle?: string
 
-  axis?: 'x' | 'y' | 'both' // 限制拖拽方向
-  bounds?: HTMLElement | 'parent' | null // 限制拖拽边界
-  disabled?: boolean // 是否禁用拖拽
+  axis?: 'x' | 'y' | 'both'
+  bounds?: HTMLElement | 'parent' | null
+  disabled?: boolean
 }

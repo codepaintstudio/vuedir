@@ -2,13 +2,11 @@
   <div class="drag_box" ref="containerRef">
     <a-button
       v-drag="{
-        range: containerRef,
         startDrag: startDragFn,
         onDrag: {
-          event: onDargFn,
-          throttle: 100,
+          event: onDargFn
         },
-        endDrag: endDragFn,
+        endDrag: endDragFn
       }"
       type="primary"
       shape="round"
@@ -24,30 +22,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { vDrag } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vDrag } from '@cp-vuedir/core'
 
-const containerRef = ref<HTMLElement | null>(null);
+const containerRef = ref<HTMLElement | null>(null)
 const demoInfo = ref<{
-  startNum: number;
-  endNum: number;
-  dragNum: number;
+  startNum: number
+  endNum: number
+  dragNum: number
 }>({
   startNum: 0,
   endNum: 0,
-  dragNum: 0,
-});
+  dragNum: 0
+})
 
 function startDragFn() {
-  demoInfo.value.startNum += 1;
+  demoInfo.value.startNum += 1
 }
 
 function onDargFn() {
-  demoInfo.value.dragNum += 1;
+  demoInfo.value.dragNum += 1
 }
 
 function endDragFn() {
-  demoInfo.value.endNum += 1;
+  demoInfo.value.endNum += 1
 }
 </script>
 

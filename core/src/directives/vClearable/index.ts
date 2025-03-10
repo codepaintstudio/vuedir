@@ -1,1 +1,1 @@
-export { vClearable } from "./vClearable";
+export { vClearable } from './vClearable'

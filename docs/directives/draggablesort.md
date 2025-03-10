@@ -10,7 +10,7 @@
 
 ```vue
 <template>
-  <div v-draggablesort="{ items: list, onUpdate, storageKey: 'my-draggable-list' }" >
+  <div v-draggablesort="{ items: list, onUpdate, storageKey: 'my-draggable-list' }">
     <div v-for="item in list" :key="item.id" data-draggable>
       {{ item.text }}
     </div>

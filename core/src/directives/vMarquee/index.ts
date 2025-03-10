@@ -1,0 +1,1 @@
+export { vMarquee } from './core'

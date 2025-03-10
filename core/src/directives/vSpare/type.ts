@@ -1,1 +1,1 @@
-export type SpareValue = string | null | undefined;
+export type SpareValue = string | null | undefined

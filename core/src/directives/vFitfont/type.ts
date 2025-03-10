@@ -1,3 +1,3 @@
 export interface VFitfontHTMLElement extends HTMLElement {
-    _resizeText?:(event: Event) => void;
+  _resizeText?: (event: Event) => void
 }

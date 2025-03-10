@@ -1,1 +1,1 @@
-export { vVerify } from './vVerify';
+export { vVerify } from './vVerify'

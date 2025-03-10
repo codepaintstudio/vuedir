@@ -1,0 +1,29 @@
+# 构建输出
+dist
+build
+lib
+
+# 依赖
+node_modules
+
+# 日志
+logs
+*.log
+
+# 缓存目录
+.cache
+.temp
+.parcel-cache
+.nuxt
+
+# 特定文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+coverage
+.DS_Store
+*.min.js
+
+# 文档构建
+docs/.vitepress/dist
+docs/.vitepress/cache

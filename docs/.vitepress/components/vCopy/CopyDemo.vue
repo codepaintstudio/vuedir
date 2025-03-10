@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { vCopy } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vCopy } from '@cp-vuedir/core'
 
-const text = ref("世界上有太多孤独的人，害怕先踏出第一步。———《绿皮书》");
+const text = ref('世界上有太多孤独的人，害怕先踏出第一步。———《绿皮书》')
 </script>
 
 <template>

@@ -1,1 +1,1 @@
-export { vEmoji } from "./core";
+export { vEmoji } from './core'

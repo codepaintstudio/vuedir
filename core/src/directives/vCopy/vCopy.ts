@@ -1,12 +1,12 @@
-import { COPY_ICON } from "../../icons/copyIcon";
-import { SUCCESS_ICON } from "../../icons/successIcon";
-import type { VCopyHTMLElement } from "./type";
-import type { Directive } from "vue";
+import { COPY_ICON } from '../../icons/copyIcon'
+import { SUCCESS_ICON } from '../../icons/successIcon'
+import type { VCopyHTMLElement } from './type'
+import type { Directive } from 'vue'
 
 export const vCopy: Directive = {
   mounted(el: VCopyHTMLElement) {
-    const iconElement = document.createElement("div");
-    iconElement.innerHTML = COPY_ICON;
+    const iconElement = document.createElement('div')
+    iconElement.innerHTML = COPY_ICON
     iconElement.style.cssText = `
       position: absolute;
       top: 4px;
@@ -17,83 +17,83 @@ export const vCopy: Directive = {
       opacity: 0;
       transition: opacity 0.3s;
       color: #666;
-    `;
-    el.__vCopyIcon = iconElement;
+    `
+    el.__vCopyIcon = iconElement
 
     // 设置父元素样式
-    if (el.style.position === "") {
-      el.style.position = "relative";
+    if (el.style.position === '') {
+      el.style.position = 'relative'
     }
-    el.appendChild(iconElement);
+    el.appendChild(iconElement)
 
     const copyText = async () => {
       try {
-        const textToCopy = el.textContent?.trim() ?? "";
-        await navigator.clipboard.writeText(textToCopy);
-        showFeedback(el, true);
+        const textToCopy = el.textContent?.trim() ?? ''
+        await navigator.clipboard.writeText(textToCopy)
+        showFeedback(el, true)
       } catch (err) {
-        console.error("复制失败:", err);
-        showFeedback(el, false);
+        console.error('复制失败:', err)
+        showFeedback(el, false)
       }
-    };
+    }
 
-    el.style.cursor = "pointer";
-    el.__vCopy = copyText;
-    el.addEventListener("click", copyText);
+    el.style.cursor = 'pointer'
+    el.__vCopy = copyText
+    el.addEventListener('click', copyText)
 
     // 添加鼠标悬浮事件
-    el.addEventListener("mouseenter", () => {
+    el.addEventListener('mouseenter', () => {
       if (el.__vCopyIcon) {
-        el.__vCopyIcon.style.opacity = "1";
+        el.__vCopyIcon.style.opacity = '1'
       }
-    });
+    })
 
-    el.addEventListener("mouseleave", () => {
+    el.addEventListener('mouseleave', () => {
       if (el.__vCopyIcon) {
-        el.__vCopyIcon.style.opacity = "0";
+        el.__vCopyIcon.style.opacity = '0'
       }
-    });
+    })
   },
 
   updated(el: VCopyHTMLElement) {
     if (el.__vCopy) {
-      el.removeEventListener("click", el.__vCopy);
+      el.removeEventListener('click', el.__vCopy)
     }
     const copyText = async () => {
       try {
-        const textToCopy = el.textContent?.trim() ?? "";
-        await navigator.clipboard.writeText(textToCopy);
-        showFeedback(el, true);
+        const textToCopy = el.textContent?.trim() ?? ''
+        await navigator.clipboard.writeText(textToCopy)
+        showFeedback(el, true)
       } catch (err) {
-        console.error("复制失败:", err);
-        showFeedback(el, false);
+        console.error('复制失败:', err)
+        showFeedback(el, false)
       }
-    };
-    el.__vCopy = copyText;
-    el.addEventListener("click", copyText);
+    }
+    el.__vCopy = copyText
+    el.addEventListener('click', copyText)
   },
 
   unmounted(el: VCopyHTMLElement) {
     if (el.__vCopy) {
-      el.removeEventListener("click", el.__vCopy);
+      el.removeEventListener('click', el.__vCopy)
     }
     // 移除图标元素
     if (el.__vCopyIcon) {
-      el.removeChild(el.__vCopyIcon);
+      el.removeChild(el.__vCopyIcon)
     }
-  },
-};
+  }
+}
 
 function showFeedback(el: VCopyHTMLElement, success: boolean) {
   if (el.__vCopyIcon) {
-    el.__vCopyIcon.innerHTML = success ? SUCCESS_ICON : COPY_ICON;
-    el.__vCopyIcon.style.color = success ? "#52c41a" : "#666";
+    el.__vCopyIcon.innerHTML = success ? SUCCESS_ICON : COPY_ICON
+    el.__vCopyIcon.style.color = success ? '#52c41a' : '#666'
 
     setTimeout(() => {
       if (el.__vCopyIcon) {
-        el.__vCopyIcon.innerHTML = COPY_ICON;
-        el.__vCopyIcon.style.color = "#666";
+        el.__vCopyIcon.innerHTML = COPY_ICON
+        el.__vCopyIcon.style.color = '#666'
       }
-    }, 2000);
+    }, 2000)
   }
 }

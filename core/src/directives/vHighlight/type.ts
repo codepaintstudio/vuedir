@@ -1,5 +1,5 @@
 export interface HighlightOptions {
-  bgColor: string;
-  textColor?: string;
-  auto?: boolean;
+  bgColor: string
+  textColor?: string
+  auto?: boolean
 }

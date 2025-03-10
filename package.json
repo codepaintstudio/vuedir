@@ -8,6 +8,12 @@
     "docs:dev": "pnpm --filter docs dev",
     "play:dev": "pnpm --filter play dev",
     "build:core": "pnpm --filter core build",
-    "dev": "pnpm run build:core && pnpm -r --parallel run dev"
+    "dev": "pnpm run build:core && pnpm -r --parallel run dev",
+    "preinstall": "npx only-allow pnpm",
+    "format": "prettier --write \"**/*.{js,ts,vue,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,vue,json,css,scss,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }

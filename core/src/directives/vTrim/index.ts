@@ -1,1 +1,1 @@
-export { vTrim } from "./core";
+export { vTrim } from './core'

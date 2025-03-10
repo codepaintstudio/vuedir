@@ -1,26 +1,19 @@
 <template>
   <div class="container">
-    <a-button
-      v-throttle="handleClick"
-      shape="round"
-      long
-      size="large"
-      type="primary"
-      >点击按钮</a-button
-    >
+    <a-button v-throttle="handleClick" shape="round" long size="large" type="primary">点击按钮</a-button>
     <div class="result">点击次数：{{ clickCount }}</div>
   </div>
 </template>
 
 <script setup>
-import { vThrottle } from "@cp-vuedir/core";
-import { ref } from "vue";
+import { vThrottle } from '@cp-vuedir/core'
+import { ref } from 'vue'
 
-const clickCount = ref(0);
+const clickCount = ref(0)
 
 const handleClick = () => {
-  clickCount.value++;
-};
+  clickCount.value++
+}
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 export interface EllipsisOptions {
-  lines?: number;
+  lines?: number
 }
 
 export const defaultOptions: EllipsisOptions = {
-  lines: 1,
-};
+  lines: 1
+}

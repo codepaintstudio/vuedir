@@ -1,0 +1,1 @@
+export { vFullScreen } from './core'

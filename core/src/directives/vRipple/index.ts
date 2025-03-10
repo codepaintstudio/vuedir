@@ -1,1 +1,1 @@
-export { vRipple } from "./core";
+export { vRipple } from './core'

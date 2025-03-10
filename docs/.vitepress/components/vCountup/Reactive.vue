@@ -1,19 +1,17 @@
 <template>
   <div class="demo-block">
     <span v-countup="count"></span>
-    <a-button type="primary" shape="round" size="large" @click="updateCount">
-      更新数值
-    </a-button>
+    <a-button type="primary" shape="round" size="large" @click="updateCount"> 更新数值 </a-button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const count = ref(3001);
+const count = ref(3001)
 const updateCount = () => {
-  count.value = Math.floor(Math.random() * 5000);
-};
+  count.value = Math.floor(Math.random() * 5000)
+}
 </script>
 
 <style scoped>

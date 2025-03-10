@@ -1,1 +1,1 @@
-export { vSpare } from "./vSpare";
+export { vSpare } from './vSpare'

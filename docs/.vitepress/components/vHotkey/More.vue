@@ -4,7 +4,7 @@
       <li
         v-hotkey="{
           key: 'shift+space',
-          callback: handleMore,
+          callback: handleMore
         }"
       >
         按下：<kbd>shift</kbd> + <kbd>space</kbd>
@@ -12,7 +12,7 @@
       <li
         v-hotkey="{
           key: 'ctrl+alt+delete',
-          callback: handleCtrlAltDelete,
+          callback: handleCtrlAltDelete
         }"
       >
         按下：<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>delete</kbd>
@@ -22,12 +22,11 @@
 </template>
 
 <script lang="ts" setup>
-import { vHotkey } from "@cp-vuedir/core";
-import { Notification } from "@arco-design/web-vue";
+import { vHotkey } from '@cp-vuedir/core'
+import { Notification } from '@arco-design/web-vue'
 
-const handleMore = () => Notification.success("你按下了shift+space");
-const handleCtrlAltDelete = () =>
-  Notification.success("你按下了ctrl+alt+delete");
+const handleMore = () => Notification.success('你按下了shift+space')
+const handleCtrlAltDelete = () => Notification.success('你按下了ctrl+alt+delete')
 </script>
 
 <style scoped>

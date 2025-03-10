@@ -28,8 +28,8 @@ export const DefaultImage = `
     </path>
   </g>
 </svg>
-`;
+`
 
 export const getDefaultImageUrl = () => {
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(DefaultImage)}`;
-};
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(DefaultImage)}`
+}

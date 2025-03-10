@@ -2,7 +2,7 @@
 
 ## 介绍
 
-`v-fitfont` 指令用于根据容器的宽度与高度动态调整文本的字体大小，确保内容始终适应容器
+`v-fitfont` 指令用于根据容器的宽度与高度动态调整文本的字体大小，确保内容始终适应容器,以实现更好的阅读体验。
 
 ## 基础用法
 
@@ -35,9 +35,11 @@
 <ApiTable :data="props" />
 
 ## 注意事项
+
 ::: warning 注意
 若是对字体大小不满意可以通过调整缩放比例来达到效果，缩放比例默认为 1，若缩放比例设置为 0.5，则字体大小会变为原来的一半。
 :::
+
 <script setup>
 import FitfontDefaultDemo from '../.vitepress/components/vFitfont/FitfontDefaultDemo.vue'
 import FitfontUltraDemo from '../.vitepress/components/vFitfont/FitfontUltraDemo.vue'

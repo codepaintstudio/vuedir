@@ -1,23 +1,20 @@
-import type { ObjectDirective } from "vue";
+import type { ObjectDirective } from 'vue'
 
 export interface CountupBinding {
-  value?: number | { value: number };
-  duration?: number;
-  decimals?: number;
-  startVal?: number;
+  value?: number | { value: number }
+  duration?: number
+  decimals?: number
+  startVal?: number
 }
 
 export interface CountupInstance {
-  start: () => void;
-  update: (newEndVal: number) => void;
-  reset: () => void;
+  start: () => void
+  update: (newEndVal: number) => void
+  reset: () => void
 }
 
 export interface CountupHTMLElement extends HTMLElement {
-  _countupInstance?: CountupInstance;
+  _countupInstance?: CountupInstance
 }
 
-export type CountupDirective = ObjectDirective<
-  CountupHTMLElement,
-  CountupBinding
->;
+export type CountupDirective = ObjectDirective<CountupHTMLElement, CountupBinding>

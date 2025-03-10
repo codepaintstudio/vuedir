@@ -4,6 +4,37 @@
 
 ## 📝 代码规范
 
+### Prettier 代码格式化
+
+本项目使用 Prettier 来保持一致的代码风格。配置文件位于项目根目录的 `.prettierrc`：
+
+这些配置确保了：
+
+- 不使用分号 (`semi: false`)
+- 使用空格而不是制表符 (`useTabs: false`)
+- 缩进使用 2 个空格 (`tabWidth: 2`)
+- 使用单引号 (`singleQuote: true`)
+- 行长度限制为 120 个字符 (`printWidth: 120`)
+- 不使用尾随逗号 (`trailingComma: "none"`)
+
+格式化你的代码：
+
+```bash
+# 格式化所有文件
+pnpm format
+
+# 检查代码格式是否符合规范
+pnpm format:check
+```
+
+**编辑器设置**
+
+我们建议在你的编辑器中安装 Prettier 插件，并启用保存时自动格式化：
+
+- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置 prettier 配置文件路径。
+- **WebStorm/IntelliJ**: 在设置中启用 Prettier 集成，配置 Prettier 包路径为项目中的 `node_modules/.bin/prettier`
+- **其他编辑器**: 请参考 [Prettier 编辑器集成文档](https://prettier.io/docs/en/editors.html)
+
 ### 命名规范
 
 - 文件名：使用 kebab-case（例如：`v-focus.ts`）
@@ -101,18 +132,20 @@ git push origin feat/your-feature
 5. 相关的错误信息
 6. 运行环境信息
 
-## 🎉 致谢
+## 致谢
 
 <table>
   <tbody>
-    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/KindSeven" title="KindSeven"><img src="https://avatars.githubusercontent.com/u/121385437?v=4" width="100px;" alt="KindSeven" style="border-radius: 9999px;" /></a></td>
+    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/512465" title="512465"><img src="https://avatars.githubusercontent.com/u/127094690?v=4" width="100px;" alt="512465" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/neverbiasu" title="neverbiasu"><img src="https://avatars.githubusercontent.com/u/90372299?v=4" width="100px;" alt="neverbiasu" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/hot777zzz" title="hot777zzz"><img src="https://avatars.githubusercontent.com/u/120694702?v=4" width="100px;" alt="hot777zzz" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/KindSeven" title="KindSeven"><img src="https://avatars.githubusercontent.com/u/121385437?v=4" width="100px;" alt="KindSeven" style="border-radius: 9999px;" /></a></td>
     </tr>
 
   </tbody>
 </table>
 
 ::: info 注意
-数据更新来自 [Hub-io](https://hub-io-mcells-projects.vercel.app/)，可能存在延迟。
+
+数据来源于[Hub-IO](https://hub-io-mcells-projects.vercel.app/)，可能存在延迟，请谅解。
+
 :::
 
 再次感谢你的贡献！你的参与对于改进 VueDir 项目非常重要。

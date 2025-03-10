@@ -29,18 +29,41 @@ Install with pnpm (recommended):
 pnpm add @cp-vuedir/core
 ```
 
+> Note: Make sure you have [pnpm installed](https://pnpm.io/installation) before running this command.
+
 ## 🚀 Usage
 
 Register VueDir in your Vue application:
 
 ```ts
-import { createApp } from "vue";
-import VueDir from "@cp-vuedir/core";
+import { createApp } from 'vue'
+import VueDir from '@cp-vuedir/core'
 
-const app = createApp(App);
-app.use(VueDir);
-app.mount("#app");
+const app = createApp(App)
+app.use(VueDir)
+app.mount('#app')
 ```
+
+Or import individual directives:
+
+```ts
+import { createApp } from 'vue'
+import { vFocus, vDrag } from '@cp-vuedir/core'
+
+const app = createApp(App)
+app.directive('focus', vFocus)
+app.directive('drag', vDrag)
+app.mount('#app')
+```
+
+## 📋 Available Directives
+
+| Category | Directives |
+|----------|------------|
+| **Interaction** | `v-drag`, `v-backtop`, `v-clickout`, `v-doubleclick`, `v-hotkey`, `v-longpress`, `v-threeclick`, `v-tooltip`, `v-throttle`, `v-debounce`, `v-scrollto` |
+| **Visual** | `v-ripple`, `v-highlight`, `v-ellipsis`, `v-countup`, `v-watermarker`, `v-fitfont`, `v-autobox`, `v-boxresize`, `v-top`, `v-marquee`, `v-desaturate` |
+| **Form** | `v-focus`, `v-pwdvisible`, `v-emoji`, `v-trim`, `v-clearable`, `v-autoinputtype`, `v-verify` |
+| **Performance** | `v-lazyload`, `v-preload`, `v-spare` |
 
 ## 📖 Documentation
 
@@ -49,6 +72,37 @@ Visit our [official documentation](https://vuedir.feashow.cn/) for more informat
 ## 🤝 Contributing
 
 We welcome all forms of contributions! Please check our [Contributing Guide](./CONTRIBUTING.md) to learn how to get involved.
+
+### Development Setup
+
+```bash
+# Make sure you have pnpm installed (https://pnpm.io/installation)
+npm install -g pnpm
+
+# Clone the repo
+git clone https://github.com/CodePaintStudio/vuedir
+cd vuedir
+
+# Install dependencies
+pnpm install
+
+# Start development environment
+pnpm dev
+```
+
+### Code Formatting
+
+This project uses Prettier for code formatting. You can format your code by running:
+
+```bash
+# Format all files
+pnpm format
+
+# Check if files are correctly formatted
+pnpm format:check
+```
+
+The Prettier configuration is defined in `.prettierrc` at the project root.
 
 ## 📄 License
 

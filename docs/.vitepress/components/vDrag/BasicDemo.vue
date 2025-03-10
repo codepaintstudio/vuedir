@@ -1,18 +1,11 @@
 <script setup lang="ts">
-import { vDrag } from "@cp-vuedir/core";
+import { vDrag } from '@cp-vuedir/core'
 </script>
 
 <template>
   <div class="drag_box">
     <a-button v-drag type="primary" shape="round">Drag me</a-button>
-    <a-button
-      v-drag
-      type="primary"
-      shape="round"
-      style="transform: translate(120%, 120%)"
-    >
-      Drag me
-    </a-button>
+    <a-button v-drag type="primary" shape="round" style="transform: translate(120%, 120%)"> Drag me </a-button>
   </div>
 </template>
 

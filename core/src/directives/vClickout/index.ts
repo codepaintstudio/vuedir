@@ -1,1 +1,1 @@
-export { vClickout } from "./vClickout";
+export { vClickout } from './vClickout'

@@ -1,11 +1,8 @@
 <template>
   <div class="clickout-demo">
-    <div
-      v-clickout="handleClickOutside"
-      :class="['popup', { active: isVisible }]"
-    >
+    <div v-clickout="handleClickOutside" :class="['popup', { active: isVisible }]">
       <button @click="isVisible = !isVisible">
-        {{ isVisible ? "点击外部关闭" : "点击显示弹窗" }}
+        {{ isVisible ? '点击外部关闭' : '点击显示弹窗' }}
       </button>
       <div v-show="isVisible" class="popup-content">
         这是弹窗内容
@@ -17,16 +14,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { vClickout } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vClickout } from '@cp-vuedir/core'
 
-const isVisible = ref(false);
+const isVisible = ref(false)
 
 const handleClickOutside = () => {
   if (isVisible.value) {
-    isVisible.value = false;
+    isVisible.value = false
   }
-};
+}
 </script>
 
 <style scoped>

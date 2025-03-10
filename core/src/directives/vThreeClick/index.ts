@@ -1,1 +1,1 @@
-export { vThreeClick } from "./vThreeClick";
+export { vThreeClick } from './vThreeClick'

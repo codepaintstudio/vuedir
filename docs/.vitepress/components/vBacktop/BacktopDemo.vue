@@ -2,21 +2,18 @@
   <div
     v-backtop="{
       visibilityHeight: 400,
-      duration: 500,
+      duration: 500
     }"
     class="backtop-btn"
   >
     <svg viewBox="0 0 1024 1024" width="16" height="16">
-      <path
-        fill="currentColor"
-        d="M512 366.293l-384 384v-91.627l384-384 384 384v91.627z"
-      />
+      <path fill="currentColor" d="M512 366.293l-384 384v-91.627l384-384 384 384v91.627z" />
     </svg>
   </div>
 </template>
 
 <script setup>
-import { vBacktop } from "@cp-vuedir/core";
+import { vBacktop } from '@cp-vuedir/core'
 </script>
 
 <style scoped>

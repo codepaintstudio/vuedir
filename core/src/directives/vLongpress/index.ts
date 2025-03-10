@@ -1,1 +1,1 @@
-export { vLongpress } from "./vLongpress";
+export { vLongpress } from './vLongpress'

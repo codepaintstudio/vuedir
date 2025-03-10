@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { vEmoji } from "@cp-vuedir/core";
-const inputValue = ref("");
+import { ref } from 'vue'
+import { vEmoji } from '@cp-vuedir/core'
+const inputValue = ref('')
 </script>
 
 <template>
