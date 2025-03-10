@@ -194,6 +194,11 @@ const directives = ref([
     "description": "关闭当前浏览器标签页",
     "category": "交互类"
   },
+  {
+    "name": 'headerscroll',
+    "description": "控制顶部header的显示和隐藏",
+    "category": "视觉类"
+  }
 ])
 
 const groupedDirectives = computed(() => {

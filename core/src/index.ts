@@ -37,7 +37,7 @@ import { vInfiniteScroll } from './directives/vInfiniteScroll'
 import { vMarquee } from './directives/vMarquee'
 import { vDesaturate } from './directives/vDesaturate'
 import { vClosetab } from './directives/vClosetab'
-
+import { vHeaderScroll } from './directives/vHeaderScroll'
 export {
   vBacktop,
   vClickout,
@@ -76,7 +76,8 @@ export {
   vInfiniteScroll,
   vMarquee,
   vDesaturate,
-  vClosetab
+  vClosetab,
+  vHeaderScroll
 }
 
 export interface CPVueDirPlugin {
@@ -123,6 +124,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('marquee', vMarquee)
     app.directive('desaturate', vDesaturate)
     app.directive('closetab', vClosetab)
+    app.directive('headerscroll', vHeaderScroll)
   }
 }
 
