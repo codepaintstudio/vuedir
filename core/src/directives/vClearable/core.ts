@@ -2,6 +2,7 @@ import type { VClearableDirective, VClearableHTMLElement } from './type'
 import { CLEAR } from '@cp-vuedir/icons'
 
 const createClearIcon = () => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return null;
   const icon = document.createElement('div')
   icon.innerHTML = CLEAR
   icon.style.cssText = `
@@ -19,6 +20,7 @@ const createClearIcon = () => {
 }
 
 const createContainer = (el: HTMLElement, input: HTMLInputElement) => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return null;
   const container = document.createElement('div')
   container.style.cssText = `
     position: relative;
@@ -42,6 +44,7 @@ const updateIconPosition = (input: HTMLInputElement, icon: HTMLElement) => {
 
 export const vClearable: VClearableDirective = {
   mounted(el: VClearableHTMLElement) {
+    if (typeof document === 'undefined') return;
     if (!(el instanceof HTMLInputElement)) {
       console.warn('v-clearable 指令只能用于 input 元素')
       return

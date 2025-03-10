@@ -1,5 +1,5 @@
 packages:
+  - 'icons'
   - 'core'
   - 'docs'
   - 'play'
-  - 'icons'

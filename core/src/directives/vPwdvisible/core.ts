@@ -21,6 +21,7 @@ const createEyeIcon = (visible: boolean = false): HTMLElement => {
 
 export const vPwdvisible: Directive = {
   mounted(el: VPwdvisibleHTMLElement) {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     if (!(el instanceof HTMLInputElement) || el.type !== 'password') {
       console.warn('v-pwdvisible 指令只能用于 type="password" 的 input 元素')
       return

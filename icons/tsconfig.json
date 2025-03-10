@@ -13,8 +13,8 @@
     "paths": {
       "*": ["node_modules/*"]
     },
-    "rootDir": "src"
+    "rootDir": "."
   },
-  "include": ["src/**/*"],
+  "include": ["icons/*", "index.ts"],
   "exclude": ["node_modules", "dist"]
 }

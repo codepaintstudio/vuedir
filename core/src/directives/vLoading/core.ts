@@ -1,17 +1,6 @@
 import type { Directive, DirectiveBinding } from 'vue'
 
 const STYLE_ID = 'directives-loading-keyframes'
-if (!document.getElementById(STYLE_ID)) {
-  const styleSheet = document.createElement('style')
-  styleSheet.id = STYLE_ID
-  styleSheet.type = 'text/css'
-  styleSheet.innerText = `
-    @keyframes loading-spin {
-      to { transform: rotate(360deg); }
-    }
-  `
-  document.head.appendChild(styleSheet)
-}
 
 const overlayMap = new WeakMap<HTMLElement, HTMLDivElement>()
 const containerMap = new WeakMap<HTMLElement, HTMLElement>()
@@ -44,6 +33,21 @@ const spinnerDefaultStyle: Partial<CSSStyleDeclaration> = {
 
 const vLoading: Directive = {
   mounted(el: HTMLElement, binding: DirectiveBinding) {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+    // 初始化样式
+    if (!document.getElementById(STYLE_ID)) {
+      const styleSheet = document.createElement('style')
+      styleSheet.id = STYLE_ID
+      styleSheet.type = 'text/css'
+      styleSheet.innerText = `
+        @keyframes loading-spin {
+          to { transform: rotate(360deg); }
+        }
+      `
+      document.head.appendChild(styleSheet)
+    }
+
     const container = document.createElement('div')
     const computedDisplay = getComputedStyle(el).display
     container.style.display = computedDisplay === 'block' ? 'block' : 'inline-block'

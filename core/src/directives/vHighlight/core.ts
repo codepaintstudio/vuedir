@@ -2,12 +2,14 @@ import type { Directive } from 'vue'
 import { HighlightOptions } from './type'
 
 const isValidColor = (color: string): boolean => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return true;
   const tempElement = document.createElement('div')
   tempElement.style.backgroundColor = color
   return tempElement.style.backgroundColor !== ''
 }
 
 const calculateContrastColor = (bgColor: string): string => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return '#000000';
   const tempElement = document.createElement('div')
   tempElement.style.backgroundColor = bgColor
   document.body.appendChild(tempElement)

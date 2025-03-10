@@ -8,7 +8,9 @@
 
 在图片上应用基本水印：
 
-<BasicDemo />
+<ClientOnly>
+  <BasicDemo />
+</ClientOnly>
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vWatermarker/BasicDemo.vue
@@ -18,7 +20,9 @@
 
 水印支持三种方向：水平、垂直和对角线：
 
-<DirectionDemo />
+<ClientOnly>
+  <DirectionDemo />
+</ClientOnly>
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vWatermarker/DirectionDemo.vue
@@ -28,7 +32,9 @@
 
 通过调整下面的控制面板，您可以实时体验不同水印参数的效果：
 
-<CustomStyleDemo />
+<ClientOnly>
+  <CustomStyleDemo />
+</ClientOnly>
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vWatermarker/CustomStyleDemo.vue
@@ -36,6 +42,7 @@
 
 ::: tip 交互式演示
 上面的演示允许您调整以下参数：
+
 - **水印文本**：自定义显示的文字内容
 - **水印方向**：水平、垂直或对角线方向
 - **字体大小**：调整文字的大小
@@ -43,13 +50,15 @@
 - **文字颜色**：使用颜色选择器更改颜色
 - **透明度**：调整水印的透明度
 - **间距**：调整水印之间的距离
-:::
+  :::
 
 ## 远程图片水印
 
 对远程图片应用水印（需要图片服务器支持跨域）：
 
-<RemoteImageDemo />
+<ClientOnly>
+  <RemoteImageDemo />
+</ClientOnly>
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vWatermarker/RemoteImageDemo.vue
@@ -59,7 +68,9 @@
 
 对非图片元素应用水印：
 
-<ContainerDemo />
+<ClientOnly>
+  <ContainerDemo />
+</ClientOnly>
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vWatermarker/ContainerDemo.vue
@@ -79,15 +90,15 @@
 <img v-watermarker="{ text: '水印文本' }" src="/path/to/image.jpg" alt="图片描述" />
 
 <!-- 自定义水印样式 -->
-<img 
+<img
   v-watermarker="{
     text: '公司名称',
     direction: 'diagonal',
     fontSize: 20,
     opacity: 0.2
-  }" 
-  src="/path/to/image.jpg" 
-  alt="图片描述" 
+  }"
+  src="/path/to/image.jpg"
+  alt="图片描述"
 />
 ```
 
@@ -100,31 +111,30 @@
 </div>
 ```
 
+::: warning SSR 兼容性注意事项
+由于水印指令使用了浏览器 API（如 document、Canvas 等），在服务端渲染环境中需要使用 `<ClientOnly>` 组件包装使用该指令的组件：
+
+```html
+<ClientOnly>
+  <div v-watermarker="{ text: '水印文本' }">
+    <!-- 内容 -->
+  </div>
+</ClientOnly>
+```
+
+或者使用条件导入方式：
+
+```js
+if (!import.meta.env.SSR) {
+  // 导入和使用水印指令
+}
+```
+
+:::
+
 ## API
 
 <ApiTable :data="data" />
-
-## 注意事项
-
-::: warning 使用限制
-
-- 对于图片元素，水印会将 `<img>` 标签替换为 `<canvas>` 元素
-- 确保容器元素具有明确的宽高，否则水印可能无法正确显示
-- 水印会自动适应容器大小
-- 对于非图片元素，水印层的 pointer-events 设置为 none，不会影响容器内容的交互
-:::
-
-::: warning 跨域图片
-对于远程图片，如果图片服务器没有设置正确的 CORS 头（Cross-Origin Resource Sharing），可能会导致无法正确应用水印。在这种情况下，Canvas 会被污染（tainted），无法读取或修改图片数据。
-:::
-
-::: tip 安全与性能
-
-- 图片水印通过 Canvas 直接合并图片和水印，防止用户通过控制台查看原始图片
-- 使用 Canvas 绘制水印，性能优良
-- 水印图案会被缓存，不会重复绘制
-- 容器大小变化时会自动重新计算水印位置
-:::
 
 <script setup>
 import BasicDemo from '../.vitepress/components/vWatermarker/BasicDemo.vue'
@@ -193,3 +203,26 @@ const data = [
     }
 ]
 </script>
+
+## 注意事项
+
+::: warning 使用限制
+
+- 对于图片元素，水印会将 `<img>` 标签替换为 `<canvas>` 元素
+- 确保容器元素具有明确的宽高，否则水印可能无法正确显示
+- 水印会自动适应容器大小
+- 对于非图片元素，水印层的 pointer-events 设置为 none，不会影响容器内容的交互
+  :::
+
+::: warning 跨域图片
+对于远程图片，如果图片服务器没有设置正确的 CORS 头（Cross-Origin Resource Sharing），可能会导致无法正确应用水印。在这种情况下，Canvas 会被污染（tainted），无法读取或修改图片数据。
+:::
+
+::: tip 安全与性能
+
+- 图片水印通过 Canvas 直接合并图片和水印，防止用户通过控制台查看原始图片
+- 使用 Canvas 绘制水印，性能优良
+- 水印图案会被缓存，不会重复绘制
+- 容器大小变化时会自动重新计算水印位置
+
+  :::

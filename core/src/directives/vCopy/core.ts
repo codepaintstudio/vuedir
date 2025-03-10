@@ -4,6 +4,7 @@ import type { Directive } from 'vue'
 
 export const vCopy: Directive = {
   mounted(el: VCopyHTMLElement) {
+    if (typeof document === 'undefined') return;
     const iconElement = document.createElement('div')
     iconElement.innerHTML = COPY
     iconElement.style.cssText = `
