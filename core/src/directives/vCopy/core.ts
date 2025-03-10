@@ -1,12 +1,11 @@
-import { COPY_ICON } from '../../icons/copyIcon'
-import { SUCCESS_ICON } from '../../icons/successIcon'
+import { COPY, SUCCESS } from '@cp-vuedir/icons'
 import type { VCopyHTMLElement } from './type'
 import type { Directive } from 'vue'
 
 export const vCopy: Directive = {
   mounted(el: VCopyHTMLElement) {
     const iconElement = document.createElement('div')
-    iconElement.innerHTML = COPY_ICON
+    iconElement.innerHTML = COPY
     iconElement.style.cssText = `
       position: absolute;
       top: 4px;
@@ -86,12 +85,12 @@ export const vCopy: Directive = {
 
 function showFeedback(el: VCopyHTMLElement, success: boolean) {
   if (el.__vCopyIcon) {
-    el.__vCopyIcon.innerHTML = success ? SUCCESS_ICON : COPY_ICON
+    el.__vCopyIcon.innerHTML = success ? SUCCESS : COPY
     el.__vCopyIcon.style.color = success ? '#52c41a' : '#666'
 
     setTimeout(() => {
       if (el.__vCopyIcon) {
-        el.__vCopyIcon.innerHTML = COPY_ICON
+        el.__vCopyIcon.innerHTML = COPY
         el.__vCopyIcon.style.color = '#666'
       }
     }, 2000)

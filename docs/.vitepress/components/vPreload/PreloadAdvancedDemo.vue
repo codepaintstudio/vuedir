@@ -25,14 +25,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { vPreload } from '@cp-vuedir/core'
 
 const logs = ref<string[]>([])
 
-// 监听预加载事件
-window.addEventListener('preload', (e: CustomEvent) => {
-  logs.value.push(`预加载: ${e.detail.url}`)
+const preloadHandler = (e: Event) => {
+  const customEvent = e as CustomEvent<{ url: string }>
+  logs.value.push(`预加载: ${customEvent.detail.url}`)
+}
+
+onMounted(() => {
+  window.addEventListener('preload', preloadHandler as EventListener)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('preload', preloadHandler as EventListener)
 })
 </script>
 

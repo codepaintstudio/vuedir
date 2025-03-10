@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@cp-vuedir/core": "workspace:*",
+    "@cp-vuedir/icons": "workspace:*",
     "vue": "^3.3.0"
   },
   "devDependencies": {

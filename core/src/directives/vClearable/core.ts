@@ -1,9 +1,9 @@
 import type { VClearableDirective, VClearableHTMLElement } from './type'
-import { CLEAR_ICON } from '../../icons/clearIcon'
+import { CLEAR } from '@cp-vuedir/icons'
 
 const createClearIcon = () => {
   const icon = document.createElement('div')
-  icon.innerHTML = CLEAR_ICON
+  icon.innerHTML = CLEAR
   icon.style.cssText = `
     position: absolute;
     display: none;

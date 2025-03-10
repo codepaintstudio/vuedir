@@ -8,7 +8,7 @@ const defaultOptions: Required<BacktopOptions> = {
 
 // 平滑滚动到顶部
 function scrollToTop(duration: number) {
-  const start = window.pageYOffset
+  const start = window?.pageYOffset
   const startTime = performance.now()
 
   function scroll() {
@@ -18,7 +18,7 @@ function scrollToTop(duration: number) {
     // easeInOutQuad 缓动函数 出处：https://easings.net/zh-cn
     const easedTime = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
 
-    window.scrollTo(0, start * (1 - easedTime))
+    window?.scrollTo(0, start * (1 - easedTime))
 
     if (time < 1) {
       requestAnimationFrame(scroll)
@@ -40,7 +40,7 @@ export const vBacktop: BacktopDirective = {
 
     // 处理滚动事件
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset
+      const scrollTop = window?.pageYOffset
       el.style.display = scrollTop >= options.visibilityHeight ? '' : 'none'
     }
 
@@ -57,7 +57,7 @@ export const vBacktop: BacktopDirective = {
     }
 
     // 添加事件监听
-    window.addEventListener('scroll', handleScroll)
+    window?.addEventListener('scroll', handleScroll)
     el.addEventListener('click', handleClick)
 
     // 初始化检查
@@ -77,7 +77,7 @@ export const vBacktop: BacktopDirective = {
   unmounted(el: BacktopHTMLElement) {
     if (el.__vBacktop) {
       const { handleScroll, handleClick } = el.__vBacktop
-      window.removeEventListener('scroll', handleScroll)
+      window?.removeEventListener('scroll', handleScroll)
       el.removeEventListener('click', handleClick)
       delete el.__vBacktop
     }

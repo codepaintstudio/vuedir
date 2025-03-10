@@ -38,6 +38,7 @@ import { vMarquee } from './directives/vMarquee'
 import { vDesaturate } from './directives/vDesaturate'
 import { vClosetab } from './directives/vClosetab'
 import { vHeaderScroll } from './directives/vHeaderScroll'
+import { vLoading } from "./directives/vLoading";
 import { vParticle } from './directives/vParticle'
 export {
   vBacktop,
@@ -70,6 +71,7 @@ export {
   vVerify,
   vDraggableSort,
   vTop,
+  vLoading,
   vAutoInputType,
   vFullScreen,
   vPreload,
@@ -127,6 +129,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('desaturate', vDesaturate)
     app.directive('closetab', vClosetab)
     app.directive('headerscroll', vHeaderScroll)
+    app.directive("loading", vLoading);
     app.directive('particle', vParticle)
   }
 }
