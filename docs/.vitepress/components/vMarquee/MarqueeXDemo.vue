@@ -3,14 +3,17 @@
     <div
       v-marquee="{
         direction: 'x',
-        speed: 300,
+        speed: 100,
         onStart: () => {},
         onUpdate: () => {},
         onComplete: () => {}
       }"
       class="marquee-content"
     >
-      <span class="marquee-text">🚀 你的滚动内容 🎉</span>
+      <span class="marquee-text"
+        >TNT-Weekly是一个由 [腾讯新闻前端团队](https://github.com/tnfe)
+        创建于2019年的开源技术周刊。面向前端开发者和爱好者，分享优雅而有用的前端技术。推出后受到了持续关注，目前GitHub关注量已经突破3k。</span
+      >
     </div>
   </div>
 </template>
@@ -52,7 +55,9 @@ import { vMarquee } from '@cp-vuedir/core'
   }
 
   to {
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.7);
+    text-shadow:
+      2px 2px 8px rgba(255, 255, 255, 0.7),
+      0 0 12px rgba(255, 255, 255, 0.7);
   }
 }
 </style>

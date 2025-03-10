@@ -1,16 +1,6 @@
-<script setup lang="ts">
-import { vLoading } from '@cp-vuedir/core'
-import { ref } from 'vue'
+<script setup lang="ts"></script>
 
-const loading = ref(false)
-import { vParticle } from '@cp-vuedir/core'
-</script>
-
-<template>
-  <button @click="loading = !loading"></button>
-  <div v-loading="loading">我就是那 z-index 之王！</div>
-  <button v-particle="{ color: ['#ff0000', '#00ff00', '#0000ff'], count: 100 }" class="particle-button">点击我</button>
-</template>
+<template>模板：演练广场</template>
 
 <style scoped>
 .particle-button {

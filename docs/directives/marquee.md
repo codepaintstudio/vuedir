@@ -26,7 +26,9 @@
 </template>
 ```
 
-## 基本用法（y 轴滚动）
+## 设置 y 轴滚动
+
+将`direction`设置为`y`时即可实现纵向滚动。
 
 <MarqueeYDemo />
 
@@ -34,12 +36,26 @@
 <<< @/.vitepress/components/vMarquee/MarqueeYDemo.vue
 :::
 
-## 基本用法（x 轴滚动）
+## 设置 x 轴滚动
+
+将`direction`设置为`x`时即可实现横向滚动。
 
 <MarqueeXDemo />
 
 ::: details 查看代码
 <<< @/.vitepress/components/vMarquee/MarqueeXDemo.vue
+:::
+
+## 设置回掉函数
+
+通过这是`onStart`,`onUpdate`和`onComplete`回掉函数内容，实现在开始滚动、滚动中、滚动结束时的回掉。
+
+<WithEvent />
+
+::: details 查看代码
+
+<<< @/.vitepress/components/vMarquee/WithEvents.vue
+
 :::
 
 ## API
@@ -49,6 +65,7 @@
 <script setup>
 import MarqueeXDemo from '../.vitepress/components/vMarquee/MarqueeXDemo.vue';
 import MarqueeYDemo from '../.vitepress/components/vMarquee/MarqueeYDemo.vue';
+import WithEvent from '../.vitepress/components/vMarquee/WithEvents.vue';
 import ApiTable from '../.vitepress/components/ApiTable.vue'
 
 const apiData = [

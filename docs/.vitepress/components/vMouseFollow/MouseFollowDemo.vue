@@ -1,25 +1,18 @@
 <template>
-  <div class="demo-container">
-    <div v-mousefollow="{ hideCursor: true, zIndex: 10 }" class="follower">基础跟随效果</div>
-  </div>
+  <a-card style="height: 40vh">
+    <div class="follow" v-mousefollow="{ hideCursor: true, zIndex: 9999 }">跟随</div>
+  </a-card>
 </template>
 
-<style scoped>
-.demo-container {
-  height: 300px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  background-color: var(--vp-c-bg-soft);
-}
+<script setup lang="ts">
+import { vMouseFollow } from '@cp-vuedir/core'
+</script>
 
-.follower {
-  padding: 8px 16px;
+<style scoped>
+.follow {
+  border-radius: 9999px;
   background: var(--vp-c-brand);
-  color: white;
-  border-radius: 20px;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  color: var(--vp-vp-text-1);
 }
 </style>

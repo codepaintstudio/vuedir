@@ -13,7 +13,13 @@ export const vMarquee: Directive = {
 
       // 设置必要样式
       el.style.position = 'absolute'
-      el.style.whiteSpace = 'nowrap'
+      if (direction === 'x') {
+        el.style.whiteSpace = 'nowrap'
+      } else {
+        // y轴滚动允许换行
+        el.style.whiteSpace = 'normal'
+        el.style.width = '100%' // 保证文本区域宽度充足，以便换行显示
+      }
 
       const updateAnimation = () => {
         // 清除旧动画
@@ -29,22 +35,18 @@ export const vMarquee: Directive = {
         }
 
         // 计算动画参数
-        const startTranslate = direction === 'x' ? parentSize : parentSize
-        const endTranslate = direction === 'x' ? -elSize : -elSize
+        const startTranslate = parentSize
+        const endTranslate = -elSize
         const totalDistance = parentSize + elSize
         const duration = totalDistance / speed
 
-        // 设置初始位置（强制重置到起点）
+        // 设置初始位置
         el.style.transform = direction === 'x' ? `translateX(${startTranslate}px)` : `translateY(${startTranslate}px)`
 
-        // 创建动画
+        // 创建动画关键帧
         const keyframes = [
-          {
-            transform: direction === 'x' ? `translateX(${startTranslate}px)` : `translateY(${startTranslate}px)`
-          },
-          {
-            transform: direction === 'x' ? `translateX(${endTranslate}px)` : `translateY(${endTranslate}px)`
-          }
+          { transform: direction === 'x' ? `translateX(${startTranslate}px)` : `translateY(${startTranslate}px)` },
+          { transform: direction === 'x' ? `translateX(${endTranslate}px)` : `translateY(${endTranslate}px)` }
         ]
 
         const animationOptions: KeyframeAnimationOptions = {
@@ -56,7 +58,7 @@ export const vMarquee: Directive = {
         const animation = el.animate(keyframes, animationOptions)
         el._marqueeAnimation = animation
 
-        // 事件处理
+        // 动画完成事件
         animation.onfinish = () => {
           onComplete?.()
           // 动画完成后重新启动
@@ -68,12 +70,12 @@ export const vMarquee: Directive = {
           el.style.transform = direction === 'x' ? `translateX(${parentSize}px)` : `translateY(${parentSize}px)`
         }
 
-        // 进度更新
+        // 进度更新回调
         if (onUpdate) {
           let lastTime = 0
           const updateProgress = () => {
             const currentTime = animation.currentTime ?? 0
-            const progress = Math.min((currentTime as number) / (animationOptions.duration! as number), 1)
+            const progress = Math.min((currentTime as number) / (animationOptions.duration as number), 1)
             if (currentTime !== lastTime) {
               onUpdate(progress)
               lastTime = currentTime as number

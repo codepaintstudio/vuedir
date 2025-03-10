@@ -1,18 +1,38 @@
 <template>
-  <div class="marquee-container">
+  <a-card style="height: 40vh; overflow: hidden">
     <div
       v-marquee="{
         direction: 'y',
-        speed: 300,
+        speed: 10,
         onStart: () => {},
         onUpdate: () => {},
         onComplete: () => {}
       }"
       class="marquee-content"
     >
-      <span class="marquee-text">🚀 你的滚动内容 🎉</span>
+      <p class="marquee-text">
+        通知通常用來傳達一些比較簡單直接的事情，比如機關團體用來通知開會
+        或者繳費，使用範圍比較狹窄。很多應用文專著都沒有「通知」這個類別，或
+        是把通知與通告視為可以互相替換的文種；因此會議通知有時候等同於會議通
+        告，繳費通知則經常以單據或者表列的形式發出，比如很多公營服務機構的繳
+        費單就是如此。從香港一般民間的使用情況來看，通知的結構和格式都不太固 定。
+        至於公告，則是面向社會大眾的，一般由政府機關發出，目的在宣佈重大
+        事項或者重要政策。通知和公告這兩類文種在這裡不作詳細介紹。
+        通告和佈告的形式和作用很接近，分別主要在於發佈的方式和範圍不同。
+        一般來說，通告是機關團體向一定範圍的民眾或者員工公佈應當注意或者應當
+        遵守的事項時所用的文書，多數是直接發出或者寄出的。佈告則會張貼在佈告
+        板或者其他當眼的地方，供有關人士閱覽。這種發佈消息的形式，使佈告的覆
+        蓋範圍受到局限，因此佈告所涉及的對象，通常是特定範圍裡的有關民眾或者 員工。
+        此外，佈告通常是機關團體對受其制約的民眾或者員工所發的，目的在公
+        佈政策、措施或者重要事項，因此具有一定的約束作用。
+        最不具備約束作用的是啟事。不少啟事是由個人發出的，比如尋人啟事、
+        遺失啟事、轉讓啟事等，所牽涉的多數是個人的事情；就算是以公司或者機構
+        名義發出的，也往往是與機構本身有關的事情，比如搬遷啟事、招聘啟事等。
+        啟事的受文對象比較模糊，通常是沒有既定範疇的一般民眾，對啟事內容有興
+        趣或者自認為有關聯的，可以有所回應，否則可以置之不理。
+      </p>
     </div>
-  </div>
+  </a-card>
 </template>
 
 <script setup lang="ts">
@@ -20,38 +40,13 @@ import { vMarquee } from '@cp-vuedir/core'
 </script>
 
 <style scoped>
-.marquee-container {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-}
-
 .marquee-content {
-  display: inline-block;
-  white-space: nowrap;
+  padding: 20px;
 }
 
 .marquee-text {
   font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  to {
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.7);
-  }
+  color: black;
+  width: 100%;
 }
 </style>

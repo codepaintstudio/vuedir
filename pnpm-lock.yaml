@@ -13,10 +13,11 @@ importers:
         version: 3.5.3
 
   core:
-    devDependencies:
+    dependencies:
       '@cp-vuedir/icons':
         specifier: workspace:*
         version: link:../icons
+    devDependencies:
       '@rollup/plugin-alias':
         specifier: ^5.1.1
         version: 5.1.1(rollup@4.35.0)

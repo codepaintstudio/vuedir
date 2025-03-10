@@ -1,35 +1,31 @@
 <template>
-  <div class="banner">
-    <button @click="loading = !loading">切换loading</button>
-    <div class="main" v-loading="loading"></div>
-  </div>
+  <a-card hoverable>
+    <template #cover>
+      <div
+        :style="{
+          height: '500px',
+          overflow: 'hidden'
+        }"
+      >
+        <img
+          :style="{ width: '100%', height: '100%', transform: 'translateY(-20px)' }"
+          alt="dessert"
+          :src="imgSrc"
+          v-loading="isLoading"
+        />
+      </div>
+    </template>
+    <a-card-meta title="点击加载图片">
+      <template #description>
+        <a-button @click="fetchData" type="primary" size="large" long>点击加载图片</a-button>
+      </template>
+    </a-card-meta>
+  </a-card>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { vLoading } from '@cp-vuedir/core';
 const loading = ref(false)
 </script>
 
-<style lang="css" scoped>
-.banner{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-button{
-    height: 30px;
-    background-color: #69d0dd;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  .main{
-    width: 200px;
-    height: 200px;
-    background: #eeb6b6;
-    border-radius: 5px;
-  }
-</style>
+<style lang="scss" scoped></style>

@@ -9,7 +9,6 @@
 创建一个响应式数据（ref 或 reactive）绑定`v-loading`，当值为`true`时，显示 loading，当值为`false`时，隐藏 loading。
 
 <LoadingDemo/>
-
 ::: details 查看代码
 <<< @/.vitepress/components/vLoading/LoadingDemo.vue
 :::
@@ -21,13 +20,16 @@
 <ApiTable :data="props"/>
 
 <script setup>
+<script setup>
 import LoadingDemo from '../.vitepress/components/vLoading/LoadingDemo.vue'
-import ApiTable from '../.vitepress/components/ApiTable.vue';
-
- const props = [{
+import ApiTable from "../.vitepress/components/ApiTable.vue"
+ const data = [
+  {
     name: 'value',
     type: 'boolean',
     required: true,
-    description: '是否显示 loading |  `false` | `true`',
-  }]
+    description: '一个布尔值，表示是否显示 loading , 等于 true 时显示 loading 效果，否则不显示 loading 效果',
+    default: "false"
+  }
+ ]
 </script>

@@ -1,34 +1,17 @@
 <script setup lang="ts">
-import { vClosetab } from '@cp-vuedir/core'
+import { vClosetab, vTooltip } from '@cp-vuedir/core'
 </script>
 
 <template>
-  <button v-closetab class="close-tab-button">Close Tab</button>
+  <a-button
+    type="primary"
+    status="warning"
+    long
+    v-closetab
+    v-tooltip="{
+      text: '点击将会关闭标签页',
+      theme: 'light'
+    }"
+    >Close Tab</a-button
+  >
 </template>
-
-<style scoped>
-.close-tab-button {
-  width: 100%;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #ff6b6b, #ff4757);
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.close-tab-button:hover {
-  background: linear-gradient(135deg, #ff4757, #ff6b6b);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-}
-
-.close-tab-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-</style>
