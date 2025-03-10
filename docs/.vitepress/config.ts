@@ -93,6 +93,7 @@ export default defineConfig({
                 { text: 'backtop', link: '/directives/backtop' },
                 { text: 'clickout', link: '/directives/clickout' },
                 { text: 'copy', link: '/directives/copy' },
+                { text: 'closetab', link: '/directives/closetab' },
                 { text: 'doubleclick', link: '/directives/doubleclick' },
                 { text: 'debounce', link: '/directives/debounce' },
                 { text: 'drag', link: '/directives/drag' },
@@ -105,8 +106,7 @@ export default defineConfig({
                 { text: 'scrollto', link: '/directives/scrollto' },
                 { text: 'threeclick', link: '/directives/threeclick' },
                 { text: 'throttle', link: '/directives/throttle' },
-                { text: 'tooltip', link: '/directives/tooltip' },
-                { text: 'closetab', link: '/directives/closetab' }
+                { text: 'tooltip', link: '/directives/tooltip' }
               ]
             },
             {
@@ -115,11 +115,13 @@ export default defineConfig({
                 { text: 'autobox', link: '/directives/autobox' },
                 { text: 'boxresize', link: '/directives/boxresize' },
                 { text: 'countup', link: '/directives/countup' },
+                { text: 'confetti', link: '/directives/confetti' },
                 { text: 'desaturate', link: '/directives/desaturate' },
                 { text: 'ellipsis', link: '/directives/ellipsis' },
                 { text: 'fitfont', link: '/directives/fitfont' },
                 { text: 'highlight', link: '/directives/highlight' },
                 { text: 'marquee', link: '/directives/marquee' },
+                { text: 'particle', link: '/directives/particle' },
                 { text: 'ripple', link: '/directives/ripple' },
                 { text: 'top', link: '/directives/top' },
                 { text: 'watermarker', link: '/directives/watermarker' },

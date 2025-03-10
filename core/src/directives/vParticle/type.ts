@@ -1,4 +1,4 @@
 export interface ParticleOptions {
-    color?: string | string[];
-    count?: number;
+  color?: string | string[]
+  count?: number
 }
