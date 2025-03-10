@@ -204,6 +204,11 @@ const directives = ref([
     description: '显示加载动画',
     link: '/directives/loading',
     category: '视觉类'
+  },
+  {
+    "name": "particle",
+    "description": "点击粒子爆炸效果",
+    "category": "视觉类"
   }
 ])
 
