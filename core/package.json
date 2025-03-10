@@ -39,6 +39,9 @@
   "peerDependencies": {
     "vue": "^3.3.0"
   },
+  "dependencies": {
+    "@cp-vuedir/icons": "workspace:*"
+  },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-commonjs": "^28.0.3",
@@ -49,7 +52,6 @@
     "rollup-plugin-dts": "^6.1.1",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
-    "vue": "^3.3.0",
-    "@cp-vuedir/icons": "workspace:*"
+    "vue": "^3.3.0"
   }
 }
