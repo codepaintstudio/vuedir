@@ -1,12 +1,11 @@
 import type { Directive } from 'vue'
 import { VPwdvisibleHTMLElement } from './type'
 
-import { OPEN_EYE_ICON } from '../../icons/openEyeIcon'
-import { CLOSED_EYE_ICON } from '../../icons/closedEyeIcon'
+import { OPEN_EYE, CLOSED_EYE } from '@cp-vuedir/icons'
 
 const createEyeIcon = (visible: boolean = false): HTMLElement => {
   const icon = document.createElement('div')
-  icon.innerHTML = visible ? OPEN_EYE_ICON : CLOSED_EYE_ICON
+  icon.innerHTML = visible ? OPEN_EYE : CLOSED_EYE
   icon.style.cssText = `
     position: absolute;
     cursor: pointer;
@@ -56,7 +55,7 @@ export const vPwdvisible: Directive = {
     const toggleVisibility = () => {
       const isVisible = el.type === 'text'
       el.type = isVisible ? 'password' : 'text'
-      eyeIcon.innerHTML = isVisible ? CLOSED_EYE_ICON : OPEN_EYE_ICON
+      eyeIcon.innerHTML = isVisible ? CLOSED_EYE : OPEN_EYE
     }
 
     eyeIcon.addEventListener('click', toggleVisibility)

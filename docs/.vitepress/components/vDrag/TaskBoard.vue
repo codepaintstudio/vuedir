@@ -7,7 +7,7 @@
         <div class="column-header">待办任务</div>
         <ul class="task-list">
           <li
-            v-for="task in todoTasks"
+            v-for="(task, index) in todoTasks"
             :key="task.id"
             class="task-card"
             v-drag="{
@@ -38,7 +38,7 @@
         <div class="column-header">进行中</div>
         <ul class="task-list">
           <li
-            v-for="task in inProgressTasks"
+            v-for="(task, index) in inProgressTasks"
             :key="task.id"
             class="task-card"
             v-drag="{
@@ -69,7 +69,7 @@
         <div class="column-header">已完成</div>
         <ul class="task-list">
           <li
-            v-for="task in doneTasks"
+            v-for="(task, index) in doneTasks"
             :key="task.id"
             class="task-card"
             v-drag="{
@@ -109,57 +109,65 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'TaskBoard',
-  data() {
-    return {
-      priorityLabels: {
-        high: '高',
-        medium: '中',
-        low: '低'
-      },
-      todoTasks: [
-        { id: 101, title: '设计登录页面', description: '为新应用设计登录界面和注册表单', priority: 'high' },
-        { id: 102, title: '实现数据验证', description: '对所有用户输入添加表单验证功能', priority: 'medium' },
-        { id: 103, title: '编写单元测试', description: '为认证模块编写单元测试', priority: 'low' }
-      ],
-      inProgressTasks: [
-        { id: 201, title: '重构API模块', description: '使用新的请求库重构API请求模块', priority: 'medium' },
-        { id: 202, title: '优化图片加载', description: '添加图片懒加载和渐进式加载功能', priority: 'high' }
-      ],
-      doneTasks: [
-        { id: 301, title: '修复导航栏bug', description: '解决移动端导航栏折叠问题', priority: 'high' },
-        { id: 302, title: '更新依赖包', description: '更新所有npm包到最新版本', priority: 'low' },
-        { id: 303, title: '添加深色模式', description: '实现应用的深色模式切换功能', priority: 'medium' }
-      ]
-    }
-  },
-  methods: {
-    handleSort({ oldIndex, newIndex }, columnType) {
-      // 获取目标列表
-      const targetList = this[`${columnType}Tasks`]
+<script setup lang="ts">
+import { ref, defineOptions } from 'vue'
 
-      // 确保索引有效
-      if (
-        oldIndex !== newIndex &&
-        oldIndex >= 0 &&
-        newIndex >= 0 &&
-        oldIndex < targetList.length &&
-        newIndex <= targetList.length
-      ) {
-        // 移除旧项并获取它
-        const [movedItem] = targetList.splice(oldIndex, 1)
+interface Task {
+  id: number
+  title: string
+  description: string
+  priority: 'high' | 'medium' | 'low'
+}
 
-        // 插入到新位置
-        targetList.splice(newIndex, 0, movedItem)
+const priorityLabels = {
+  high: '高',
+  medium: '中',
+  low: '低'
+}
 
-        // 强制更新视图以确保正确渲染
-        this.$forceUpdate()
-      }
-    }
+const todoTasks = ref<Task[]>([
+  { id: 101, title: '设计登录页面', description: '为新应用设计登录界面和注册表单', priority: 'high' },
+  { id: 102, title: '实现数据验证', description: '对所有用户输入添加表单验证功能', priority: 'medium' },
+  { id: 103, title: '编写单元测试', description: '为认证模块编写单元测试', priority: 'low' }
+])
+
+const inProgressTasks = ref<Task[]>([
+  { id: 201, title: '重构API模块', description: '使用新的请求库重构API请求模块', priority: 'medium' },
+  { id: 202, title: '优化图片加载', description: '添加图片懒加载和渐进式加载功能', priority: 'high' }
+])
+
+const doneTasks = ref<Task[]>([
+  { id: 301, title: '修复导航栏bug', description: '解决移动端导航栏折叠问题', priority: 'high' },
+  { id: 302, title: '更新依赖包', description: '更新所有npm包到最新版本', priority: 'low' },
+  { id: 303, title: '添加深色模式', description: '实现应用的深色模式切换功能', priority: 'medium' }
+])
+
+function handleSort(columnType: 'todo' | 'inProgress' | 'done', event: { oldIndex: number; newIndex: number }) {
+  let targetList: Task[] = []
+  if (columnType === 'todo') {
+    targetList = todoTasks.value
+  } else if (columnType === 'inProgress') {
+    targetList = inProgressTasks.value
+  } else if (columnType === 'done') {
+    targetList = doneTasks.value
+  }
+
+  const { oldIndex, newIndex } = event
+  if (
+    oldIndex !== newIndex &&
+    oldIndex >= 0 &&
+    newIndex >= 0 &&
+    oldIndex < targetList.length &&
+    newIndex <= targetList.length
+  ) {
+    const [movedItem] = targetList.splice(oldIndex, 1)
+    targetList.splice(newIndex, 0, movedItem)
   }
 }
+
+defineOptions({
+  name: 'TaskBoard'
+})
 </script>
 
 <style scoped>
@@ -168,7 +176,9 @@ export default {
   background-color: var(--vp-c-bg-soft);
   border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 h3 {
@@ -206,14 +216,13 @@ h3 {
   border-bottom: 1px solid var(--vp-c-divider);
 }
 
-/* 增强列表样式，使拖拽更直观 */
 .task-list {
   list-style-type: none;
   padding: 10px;
   margin: 0;
   flex-grow: 1;
   min-height: 200px;
-  position: relative; /* 确保可以相对定位 */
+  position: relative;
 }
 
 .task-card {
@@ -223,11 +232,12 @@ h3 {
   box-shadow: 0 1px 3px var(--vp-c-divider);
   display: flex;
   overflow: hidden;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
   border: 1px solid var(--vp-c-divider);
 }
 
-/* 拖拽中的样式 */
 .task-card[data-dragging='true'] {
   z-index: 100;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -236,7 +246,6 @@ h3 {
   border-color: var(--vp-c-brand);
 }
 
-/* 占位符样式增强 */
 :deep(.v-drag-placeholder) {
   opacity: 0.7;
   border: 2px dashed var(--vp-c-brand) !important;
@@ -342,7 +351,6 @@ h3 {
   color: var(--vp-c-text-2);
 }
 
-/* 装饰拖拽占位符 */
 .v-drag-placeholder {
   opacity: 0.5;
   background-color: #e0f2fe !important;
