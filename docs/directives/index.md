@@ -198,6 +198,11 @@ const directives = ref([
     "name": 'headerscroll',
     "description": "控制顶部header的显示和隐藏",
     "category": "视觉类"
+  },
+  {
+    "name": "particle",
+    "description": "点击粒子爆炸效果",
+    "category": "视觉类"
   }
 ])
 
