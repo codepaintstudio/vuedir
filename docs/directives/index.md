@@ -1,4 +1,4 @@
-# 指令集预览
+<h1>指令集预览 - {{directives.length}}个</h1>
 
 <script setup>
 import { ref, computed } from 'vue';
@@ -209,11 +209,19 @@ const directives = ref([
     "name": "particle",
     "description": "点击粒子爆炸效果",
     "category": "视觉类"
-  }
+  },
+  {
+    "name": "confetti",
+    "description": "点击元素触发全屏五彩纸屑动画效果",
+    "category": "视觉类"
+  },
 ])
 
 const groupedDirectives = computed(() => {
   const groups = {};
+  directives.value.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  })
   directives.value.forEach(directive => {
     if (!groups[directive.category]) {
       groups[directive.category] = [];
@@ -226,9 +234,9 @@ const groupedDirectives = computed(() => {
 
 <template v-for="(directives, category) in groupedDirectives" :key="category">
   <div class="category-section">
-    <h2 class="category-title">
-      {{ category }}
-    </h2>
+    <h3 class="category-title">
+      {{ category }} - {{ groupedDirectives[category].length }}个
+    </h3>
     <div class="directive-grid">
       <a
         v-for="directive in directives"

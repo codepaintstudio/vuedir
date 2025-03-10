@@ -38,8 +38,9 @@ import { vMarquee } from './directives/vMarquee'
 import { vDesaturate } from './directives/vDesaturate'
 import { vClosetab } from './directives/vClosetab'
 import { vHeaderScroll } from './directives/vHeaderScroll'
-import { vLoading } from "./directives/vLoading";
+import { vLoading } from './directives/vLoading'
 import { vParticle } from './directives/vParticle'
+import { vConfetti } from './directives/vConfetti'
 export {
   vBacktop,
   vClickout,
@@ -81,7 +82,8 @@ export {
   vDesaturate,
   vClosetab,
   vHeaderScroll,
-  vParticle
+  vParticle,
+  vConfetti
 }
 
 export interface CPVueDirPlugin {
@@ -129,8 +131,9 @@ const VueDir: CPVueDirPlugin = {
     app.directive('desaturate', vDesaturate)
     app.directive('closetab', vClosetab)
     app.directive('headerscroll', vHeaderScroll)
-    app.directive("loading", vLoading);
+    app.directive('loading', vLoading)
     app.directive('particle', vParticle)
+    app.directive('confetti', vConfetti)
   }
 }
 

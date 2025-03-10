@@ -15,6 +15,8 @@
 
 ## API
 
+<ApiTable :data="data"/>
+
 ### 属性
 
 <ApiTable :data="props"/>
@@ -22,7 +24,7 @@
 <script setup>
 import LoadingDemo from '../.vitepress/components/vLoading/LoadingDemo.vue'
 import ApiTable from "../.vitepress/components/ApiTable.vue"
- const data = [
+const data = [
   {
     name: 'value',
     type: 'boolean',

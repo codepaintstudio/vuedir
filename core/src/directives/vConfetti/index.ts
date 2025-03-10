@@ -1,0 +1,1 @@
+export { vConfetti } from './core'
