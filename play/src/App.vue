@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { vTop } from "@cp-vuedir/core";
+import { vLoading } from "@cp-vuedir/core";
+import { ref } from "vue";
+
+const loading = ref(false)
 </script>
 
 <template>
-  <div v-top>我就是那 z-index 之王！</div>
+  <button @click=" loading = !loading"></button>
+  <div v-loading = "loading">我就是那 z-index 之王！</div>
 </template>
 
 <style scoped></style>

@@ -29,6 +29,7 @@ import { vTrim } from "./directives/vTrim";
 import { vVerify } from "./directives/vVerify";
 import { vDraggableSort } from "./directives/vDraggableSort";
 import { vTop } from "./directives/vTop";
+import { vLoading } from "./directives/vLoading";
 
 export {
   vBacktop,
@@ -61,6 +62,7 @@ export {
   vVerify,
   vDraggableSort,
   vTop,
+  vLoading,
 };
 
 export interface CPVueDirPlugin {
@@ -98,6 +100,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("verify", vVerify);
     app.directive("draggablesort", vDraggableSort);
     app.directive("top", vTop);
+    app.directive("loading", vLoading);
   },
 };
 

@@ -172,6 +172,11 @@ const directives = ref([
     description: '拖拽元素来重新排序列表，并且在拖拽完成后更新数据',
     link: '/directives/draggablesort',
     category: '交互类'
+  },{
+    name: 'v-loading',
+    description: '显示加载动画',
+    link: '/directives/loading',
+    category: '交互类'
   }
 ]);
 
