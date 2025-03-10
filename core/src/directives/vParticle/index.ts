@@ -1,0 +1,1 @@
+export { vParticle } from './core'
