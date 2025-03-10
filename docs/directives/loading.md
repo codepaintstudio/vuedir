@@ -20,7 +20,6 @@
 <ApiTable :data="props"/>
 
 <script setup>
-<script setup>
 import LoadingDemo from '../.vitepress/components/vLoading/LoadingDemo.vue'
 import ApiTable from "../.vitepress/components/ApiTable.vue"
  const data = [
