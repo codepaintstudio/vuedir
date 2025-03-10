@@ -1,4 +1,4 @@
-import type { DirectiveBinding } from "vue";
+import type { Directive, DirectiveBinding } from "vue";
 import type { LoadingType } from "./type";
 
 const style = `
@@ -37,7 +37,7 @@ const style = `
   }
 }
 `;
-const vLoading = {
+const vLoading : Directive = {
   // 在元素挂载时调用
   mounted(el: LoadingType, binding: DirectiveBinding) {
     const styleSheet = document.createElement("style");

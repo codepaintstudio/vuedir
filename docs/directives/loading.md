@@ -16,7 +16,20 @@
 
 :::
 
+
+## API
+
+### 属性
+
+<ApiTable :data="data"/>
+
+
 <script>
 import LoadingDemo from '../.vitepress/components/vLoading/LoadingDemo.vue'
-
+ const data = {
+    name: 'value',
+    type: 'boolean',
+    required: true,
+    description: '是否显示 loading |  `false` | `true`',
+  }
 </script>

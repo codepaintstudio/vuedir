@@ -203,7 +203,7 @@ const directives = ref([
     name: 'v-loading',
     description: '显示加载动画',
     link: '/directives/loading',
-    category: '交互类'
+    category: '视觉类'
   }
 ])
 
