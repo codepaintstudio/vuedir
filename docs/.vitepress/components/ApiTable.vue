@@ -14,92 +14,113 @@ defineProps<Props>()
 
 // 检查值是否为颜色值
 const isColorValue = (value: string | undefined): boolean => {
-  if (!value) return false;
-  
+  if (!value) return false
+
   // 支持多种颜色格式
   // 十六进制: #RGB, #RRGGBB
-  const hexPattern = /^#([0-9A-F]{3}){1,2}$/i;
-  
+  const hexPattern = /^#([0-9A-F]{3}){1,2}$/i
+
   // RGB/RGBA 格式: rgb(255, 255, 255), rgba(255, 255, 255, 0.5)
-  const rgbPattern = /^rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*[\d.]+\s*)?\)$/i;
-  
+  const rgbPattern = /^rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*[\d.]+\s*)?\)$/i
+
   // HSL/HSLA 格式: hsl(120, 100%, 50%), hsla(120, 100%, 50%, 0.5)
-  const hslPattern = /^hsla?\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*(?:,\s*[\d.]+\s*)?\)$/i;
-  
+  const hslPattern = /^hsla?\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*(?:,\s*[\d.]+\s*)?\)$/i
+
   // 常见颜色名称
   const colorNames = [
-    'black', 'white', 'red', 'green', 'blue', 'yellow', 'purple', 
-    'orange', 'pink', 'brown', 'gray', 'grey', 'cyan', 'magenta',
-    'transparent', 'currentcolor', 'inherit'
-  ];
-  
-  return (
-    hexPattern.test(value) || 
-    rgbPattern.test(value) || 
-    hslPattern.test(value) ||
-    colorNames.includes(value)
-  );
+    'black',
+    'white',
+    'red',
+    'green',
+    'blue',
+    'yellow',
+    'purple',
+    'orange',
+    'pink',
+    'brown',
+    'gray',
+    'grey',
+    'cyan',
+    'magenta',
+    'transparent',
+    'currentcolor',
+    'inherit'
+  ]
+
+  return hexPattern.test(value) || rgbPattern.test(value) || hslPattern.test(value) || colorNames.includes(value)
 }
 
 // 获取颜色预览的背景色
 const getColorPreview = (value: string | undefined): string => {
-  if (!value) return 'transparent';
-  
+  if (!value) return 'transparent'
+
   // 如果是有效的CSS颜色值，直接返回
   try {
-    return value;
+    return value
   } catch (e) {
-    return 'transparent';
+    return 'transparent'
   }
 }
 
 // 检查值是否为字体族
 const isFontFamily = (name: string, value: string | undefined): boolean => {
-  if (!value || value === '-') return false;
-  
+  if (!value || value === '-') return false
+
   // 检查属性名是否与字体相关
-  const fontRelatedProps = ['fontFamily', 'font-family', 'font'];
-  if (!fontRelatedProps.includes(name)) return false;
-  
+  const fontRelatedProps = ['fontFamily', 'font-family', 'font']
+  if (!fontRelatedProps.includes(name)) return false
+
   // 检查值是否包含常见字体族关键词
   const fontKeywords = [
-    'arial', 'helvetica', 'verdana', 'tahoma', 'trebuchet', 
-    'times', 'georgia', 'garamond', 'courier', 'serif', 'sans-serif', 
-    'monospace', 'cursive', 'fantasy', 'system-ui'
-  ];
-  
-  const valueLower = value.toLowerCase();
-  return fontKeywords.some(keyword => valueLower.includes(keyword));
+    'arial',
+    'helvetica',
+    'verdana',
+    'tahoma',
+    'trebuchet',
+    'times',
+    'georgia',
+    'garamond',
+    'courier',
+    'serif',
+    'sans-serif',
+    'monospace',
+    'cursive',
+    'fantasy',
+    'system-ui'
+  ]
+
+  const valueLower = value.toLowerCase()
+  return fontKeywords.some((keyword) => valueLower.includes(keyword))
 }
 
 // 检查值是否为数字或带单位的数值
 const isNumberValue = (value: string | undefined): boolean => {
-  if (!value) return false;
-  
+  if (!value) return false
+
   // 纯数字
-  if (!isNaN(Number(value))) return true;
-  
+  if (!isNaN(Number(value))) return true
+
   // 带单位的数值 (px, em, rem, %, vh, vw 等)
-  const numWithUnitPattern = /^-?\d+(\.\d+)?(px|em|rem|%|vh|vw|pt|pc|in|cm|mm|ex|ch|vmin|vmax)$/i;
-  return numWithUnitPattern.test(value);
+  const numWithUnitPattern = /^-?\d+(\.\d+)?(px|em|rem|%|vh|vw|pt|pc|in|cm|mm|ex|ch|vmin|vmax)$/i
+  return numWithUnitPattern.test(value)
 }
 
 // 检查值是否为布尔值
 const isBooleanValue = (value: string | undefined): boolean => {
-  if (!value) return false;
-  return ['true', 'false'].includes(value.toLowerCase());
+  if (!value) return false
+  return ['true', 'false'].includes(value.toLowerCase())
 }
 
 // 获取布尔值的显示样式
 const getBooleanClass = (value: string | undefined): string => {
-  if (!value) return '';
-  return value.toLowerCase() === 'true' ? 'boolean-true' : 'boolean-false';
+  if (!value) return ''
+  return value.toLowerCase() === 'true' ? 'boolean-true' : 'boolean-false'
 }
 
 // 格式化默认值显示
 const formatDefaultValue = (value: string | undefined): string => {
-  if (!value || value === '-') return '-';
-  return value;
+  if (!value || value === '-') return '-'
+  return value
 }
 </script>
 
@@ -135,35 +156,37 @@ const formatDefaultValue = (value: string | undefined): string => {
           <td class="default-column">
             <!-- 颜色值 -->
             <div v-if="isColorValue(item.default)" class="default-value color-value">
-              <span 
-                class="color-preview" 
-                :style="{ backgroundColor: getColorPreview(item.default) }" 
+              <span
+                class="color-preview"
+                :style="{ backgroundColor: getColorPreview(item.default) }"
                 :title="`颜色值: ${item.default}`"
               ></span>
               <span class="value-text">{{ item.default }}</span>
             </div>
-            
+
             <!-- 字体族 -->
             <div v-else-if="isFontFamily(item.name, item.default)" class="default-value font-value">
-              <span class="font-preview" :style="{ fontFamily: item.default }" :title="`字体: ${item.default}`">Aa</span>
+              <span class="font-preview" :style="{ fontFamily: item.default }" :title="`字体: ${item.default}`"
+                >Aa</span
+              >
               <span class="value-text">{{ item.default }}</span>
             </div>
-            
+
             <!-- 数字值 -->
             <div v-else-if="isNumberValue(item.default)" class="default-value number-value">
               <span class="value-text" :title="`数值: ${item.default}`">{{ item.default }}</span>
             </div>
-            
+
             <!-- 布尔值 -->
             <div v-else-if="isBooleanValue(item.default)" class="default-value boolean-value">
-              <span 
-                class="boolean-indicator" 
+              <span
+                class="boolean-indicator"
                 :class="getBooleanClass(item.default)"
                 :title="`布尔值: ${item.default}`"
               ></span>
               <span class="value-text">{{ item.default }}</span>
             </div>
-            
+
             <!-- 其他值 -->
             <div v-else class="default-value">
               <span>{{ formatDefaultValue(item.default) }}</span>
@@ -287,7 +310,9 @@ tr:hover .property-name::after {
   border-radius: 50%;
   font-size: 14px;
   cursor: help;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .icon:hover {
@@ -324,7 +349,9 @@ tr:hover .property-name::after {
   border-radius: 4px;
   border: 1px solid var(--vp-c-divider);
   cursor: help;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .color-preview:hover {
@@ -339,7 +366,9 @@ tr:hover .property-name::after {
   background-color: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
   cursor: help;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .font-preview:hover {
@@ -404,7 +433,7 @@ tr:hover .property-name::after {
     height: 20px;
     font-size: 12px;
   }
-  
+
   .description-content {
     -webkit-line-clamp: 3;
   }

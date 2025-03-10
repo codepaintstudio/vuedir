@@ -37,6 +37,10 @@
 <<< @/.vitepress/components/vConfetti/CountAndColors.vue
 :::
 
+## API
+
+<ApiTable :data="props" />
+
 ## 注意事项
 
 - 会自动添加pointer-events: none防止点击干扰
@@ -46,4 +50,22 @@
 <script setup>
   import Demo from "../.vitepress/components/vConfetti/Demo.vue"
   import CountAndColors from "../.vitepress/components/vConfetti/CountAndColors.vue"
+  import ApiTable from "../.vitepress/components/ApiTable.vue"
+
+  const props = [
+    {
+      name: 'count',
+      type: 'number',
+      default: '200',
+      description: '屏幕中最大展示的纸屑数量，超出的部分会被自动裁剪，当然不是越多越好，会影响性能',
+      required: false
+    },
+    {
+      name: 'colors',
+      type: 'string[]',
+      default: '彩虹七色',
+      description: '颜色数组，可以是十六进制颜色值，也可以是rgb或rgba颜色值，',
+      required: false
+    }
+  ]
 </script>
