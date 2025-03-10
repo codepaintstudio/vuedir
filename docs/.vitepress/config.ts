@@ -123,7 +123,8 @@ export default defineConfig({
                 { text: 'ripple', link: '/directives/ripple' },
                 { text: 'top', link: '/directives/top' },
                 { text: 'watermarker', link: '/directives/watermarker' },
-                { text: 'headerscroll', link: '/directives/headerscroll' }
+                { text: 'headerscroll', link: '/directives/headerscroll' },
+                { text: 'particle', link: '/directives/particle' },
               ]
             },
             {
