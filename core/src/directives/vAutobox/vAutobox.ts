@@ -35,7 +35,7 @@ export const vAutobox: Directive = {
     const calculateDimensions = () => {
       targetElements.forEach((target, index) => {
         const rect = target.getBoundingClientRect()
-        const style = window.getComputedStyle(target)
+        const style = window?.getComputedStyle(target)
 
         // 宽度计算（包含左右margin，rect.width已含padding）
         const totalWidth = rect.width + parseFloat(style.marginLeft) + parseFloat(style.marginRight)
@@ -59,7 +59,7 @@ export const vAutobox: Directive = {
       currentTotalHeight += prevMarginBottom
 
       // 修正父容器装饰空间计算
-      const parentStyle = window.getComputedStyle(el)
+      const parentStyle = window?.getComputedStyle(el)
       const isBorderBox = parentStyle.boxSizing === 'border-box'
 
       // 当父容器为border-box时，不需要额外添加padding和border

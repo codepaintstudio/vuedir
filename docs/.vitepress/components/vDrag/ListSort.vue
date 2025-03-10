@@ -36,58 +36,69 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ListSort',
-  data() {
-    return {
-      originalItems: [
-        { id: 1, text: '项目 1' },
-        { id: 2, text: '项目 2' },
-        { id: 3, text: '项目 3' },
-        { id: 4, text: '项目 4' },
-        { id: 5, text: '项目 5' }
-      ],
-      items: [],
-      lastSortInfo: '无',
-      showDebug: false
-    }
-  },
-  created() {
-    this.resetItems()
-  },
-  methods: {
-    handleSort({ oldIndex, newIndex }) {
-      console.log(`排序: 从 ${oldIndex} 到 ${newIndex}`)
-      this.lastSortInfo = `从位置 ${oldIndex + 1} 到位置 ${newIndex + 1}`
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
 
-      // 确保索引有效
-      if (oldIndex >= 0 && newIndex >= 0 && oldIndex < this.items.length && newIndex <= this.items.length) {
-        // 移除旧项并获取它
-        const item = this.items.splice(oldIndex, 1)[0]
+interface Item {
+  id: number
+  text: string
+}
 
-        // 插入到新位置
-        this.items.splice(newIndex, 0, item)
+// 原始数据
+const originalItems: Item[] = [
+  { id: 1, text: '项目 1' },
+  { id: 2, text: '项目 2' },
+  { id: 3, text: '项目 3' },
+  { id: 4, text: '项目 4' },
+  { id: 5, text: '项目 5' }
+]
 
-        // 确认变化
-        console.log(
-          '排序后的数据:',
-          this.items.map((item) => item.text)
-        )
-      } else {
-        console.warn('排序索引超出范围:', oldIndex, newIndex, this.items.length)
-      }
-    },
-    resetItems() {
-      // 深拷贝原始数据
-      this.items = JSON.parse(JSON.stringify(this.originalItems))
-      this.lastSortInfo = '无'
-    },
-    toggleDebug() {
-      this.showDebug = !this.showDebug
-    }
+// 响应式数据
+const items = ref<Item[]>([])
+const lastSortInfo = ref<string>('无')
+const showDebug = ref<boolean>(false)
+
+// 排序处理函数
+function handleSort({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) {
+  console.log(`排序: 从 ${oldIndex} 到 ${newIndex}`)
+  lastSortInfo.value = `从位置 ${oldIndex + 1} 到位置 ${newIndex + 1}`
+
+  // 检查索引合法性
+  if (oldIndex >= 0 && newIndex >= 0 && oldIndex < items.value.length && newIndex <= items.value.length) {
+    // 移除旧项
+    const item = items.value.splice(oldIndex, 1)[0]
+    // 插入到新位置
+    items.value.splice(newIndex, 0, item)
+    console.log(
+      '排序后的数据:',
+      items.value.map((item) => item.text)
+    )
+  } else {
+    console.warn('排序索引超出范围:', oldIndex, newIndex, items.value.length)
   }
 }
+
+// 重置数据顺序
+function resetItems() {
+  // 使用 JSON 深拷贝原始数据
+  items.value = JSON.parse(JSON.stringify(originalItems))
+  lastSortInfo.value = '无'
+}
+
+// 切换调试面板显示
+function toggleDebug() {
+  showDebug.value = !showDebug.value
+}
+
+// 模拟 created 钩子，在组件挂载后重置数据
+onMounted(() => {
+  resetItems()
+})
+
+// 为调试和 DevTools 定义组件名称
+defineOptions({
+  name: 'ListSort'
+})
 </script>
 
 <style scoped>
@@ -98,7 +109,9 @@ export default {
   background-color: var(--vp-c-bg-soft);
   border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 h3 {
@@ -133,7 +146,10 @@ h3 {
   cursor: move;
   user-select: none;
   border: 1px solid var(--vp-c-divider);
-  transition: transform 0.15s, box-shadow 0.15s, background-color 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background-color 0.15s;
 }
 
 .list-item:hover {

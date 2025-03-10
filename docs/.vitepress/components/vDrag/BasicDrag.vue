@@ -48,67 +48,63 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BasicDrag',
-  data() {
-    return {
-      axisOption: 'both',
-      boundsOption: 'parent'
-    }
-  },
-  methods: {
-    resetPosition() {
-      const dragElement = this.$refs.dragElement
-      const playground = this.$refs.playgroundRef
+<script setup lang="ts">
+import { ref, onMounted, nextTick, watch } from 'vue'
 
-      if (dragElement && playground) {
-        // 确保元素处于absolute定位
-        dragElement.style.position = 'absolute'
+// 定义拖拽选项类型
+const axisOption = ref<'both' | 'x' | 'y'>('both')
+const boundsOption = ref<'none' | 'parent'>('parent')
 
-        // 计算居中位置
-        const playgroundRect = playground.getBoundingClientRect()
-        const elementRect = dragElement.getBoundingClientRect()
+// 获取DOM引用
+const playgroundRef = ref<HTMLElement | null>(null)
+const dragElement = ref<HTMLElement | null>(null)
 
-        const left = (playgroundRect.width - elementRect.width) / 2
-        const top = (playgroundRect.height - elementRect.height) / 2
+function resetPosition() {
+  if (dragElement.value && playgroundRef.value) {
+    // 确保元素处于 absolute 定位
+    dragElement.value.style.position = 'absolute'
 
-        // 直接设置实际位置，而不是使用transform
-        dragElement.style.left = `${left}px`
-        dragElement.style.top = `${top}px`
+    // 计算居中位置
+    const playgroundRect = playgroundRef.value.getBoundingClientRect()
+    const elementRect = dragElement.value.getBoundingClientRect()
 
-        // 清除可能影响定位的其他样式
-        dragElement.style.transform = ''
-        dragElement.style.margin = '0'
-      }
-    },
-    onStartDrag() {
-      // 确保开始拖拽时元素处于正确的定位方式
-      const dragElement = this.$refs.dragElement
-      if (dragElement) {
-        dragElement.style.position = 'absolute'
-      }
-    }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      setTimeout(() => {
-        // 使用setTimeout确保DOM完全渲染后再设置位置
-        this.resetPosition()
-      }, 100)
-    })
-  },
-  watch: {
-    // 当选项改变时重置位置，确保边界限制生效
-    boundsOption() {
-      this.$nextTick(() => {
-        setTimeout(() => {
-          this.resetPosition()
-        }, 50)
-      })
-    }
+    const left = (playgroundRect.width - elementRect.width) / 2
+    const top = (playgroundRect.height - elementRect.height) / 2
+
+    // 直接设置实际位置，而不是使用 transform
+    dragElement.value.style.left = `${left}px`
+    dragElement.value.style.top = `${top}px`
+
+    // 清除可能影响定位的其他样式
+    dragElement.value.style.transform = ''
+    dragElement.value.style.margin = '0'
   }
 }
+
+function onStartDrag() {
+  // 拖拽开始时确保定位方式正确
+  if (dragElement.value) {
+    dragElement.value.style.position = 'absolute'
+  }
+}
+
+// 在组件挂载后延迟设置位置，确保 DOM 渲染完毕
+onMounted(() => {
+  nextTick(() => {
+    setTimeout(() => {
+      resetPosition()
+    }, 100)
+  })
+})
+
+// 监听 boundsOption 改变时重置位置，确保边界限制生效
+watch(boundsOption, () => {
+  nextTick(() => {
+    setTimeout(() => {
+      resetPosition()
+    }, 50)
+  })
+})
 </script>
 
 <style scoped>
@@ -118,7 +114,9 @@ export default {
   padding: 20px;
   margin-bottom: 30px;
   border: 1px solid var(--vp-c-divider);
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 h3 {
@@ -163,7 +161,7 @@ h3 {
 }
 
 .drag-element {
-  /* 确保使用绝对定位，而非transform定位 */
+  /* 确保使用绝对定位，而非 transform 定位 */
   position: absolute;
   width: 150px;
   height: 150px;
@@ -176,9 +174,11 @@ h3 {
   align-items: center;
   text-align: center;
   user-select: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   cursor: move;
-  /* 使用实际边距替代transform */
+  /* 使用实际边距替代 transform */
   margin: 0;
 }
 
