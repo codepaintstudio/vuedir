@@ -124,7 +124,7 @@ export default defineConfig({
                 { text: 'top', link: '/directives/top' },
                 { text: 'watermarker', link: '/directives/watermarker' },
                 { text: 'headerscroll', link: '/directives/headerscroll' },
-                { text: 'particle', link: '/directives/particle' },
+                { text: 'loading', link: '/directives/loading' }
               ]
             },
             {
