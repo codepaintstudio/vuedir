@@ -41,6 +41,7 @@ import { vHeaderScroll } from './directives/vHeaderScroll'
 import { vLoading } from './directives/vLoading'
 import { vParticle } from './directives/vParticle'
 import { vConfetti } from './directives/vConfetti'
+import { vTimeTrack } from './directives/vTimeTrack'
 export {
   vBacktop,
   vClickout,
@@ -83,7 +84,8 @@ export {
   vClosetab,
   vHeaderScroll,
   vParticle,
-  vConfetti
+  vConfetti,
+  vTimeTrack
 }
 
 export interface CPVueDirPlugin {
@@ -134,6 +136,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('loading', vLoading)
     app.directive('particle', vParticle)
     app.directive('confetti', vConfetti)
+    app.directive('timetrack', vTimeTrack)
   }
 }
 

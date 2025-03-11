@@ -1,14 +1,15 @@
 <template>
   <div class="demo-container">
     <div class="scroll-wrapper">
-
-      <header v-headerscroll="{
-        transition: 'fade',
-        duration: 300,
-        offset: 50,
-        scope: 'local'
-      }" class="demo-header">
-
+      <header
+        v-headerscroll="{
+          transition: 'fade',
+          duration: 300,
+          offset: 50,
+          scope: 'local'
+        }"
+        class="demo-header"
+      >
         <div class="header-content">
           <h1>进阶用法示例</h1>
           <nav>
@@ -21,13 +22,14 @@
         <!-- 局部滚动区域 -->
         <div class="local-scroll-section">
           <div class="scroll-container">
-
-            <header v-headerscroll="{
-              transition: 'scale',
-              duration: 300,
-              scope: 'local'
-            }" class="local-header">
-
+            <header
+              v-headerscroll="{
+                transition: 'scale',
+                duration: 300,
+                scope: 'local'
+              }"
+              class="local-header"
+            >
               <div class="header-content">
                 <h3>局部效果头部</h3>
               </div>
@@ -43,13 +45,14 @@
         <!-- 模糊效果区域 -->
         <div class="blur-section">
           <div class="scroll-container">
-
-            <header v-headerscroll="{
-              transition: 'blur',
-              duration: 400,
-              scope: 'local'
-            }" class="local-header">
-
+            <header
+              v-headerscroll="{
+                transition: 'blur',
+                duration: 400,
+                scope: 'local'
+              }"
+              class="local-header"
+            >
               <div class="header-content">
                 <h3>模糊效果头部</h3>
               </div>
@@ -67,9 +70,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .demo-container {
@@ -148,7 +149,10 @@
   padding: 0 15px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0 0 15px;
   color: #333;
 }
@@ -220,7 +224,10 @@ nav a.active {
     border-color: #444;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     color: #fff;
   }
 
@@ -234,4 +241,4 @@ nav a.active {
     background: #333;
   }
 }
-</style> 
+</style>

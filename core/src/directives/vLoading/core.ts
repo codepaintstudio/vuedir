@@ -33,7 +33,7 @@ const spinnerDefaultStyle: Partial<CSSStyleDeclaration> = {
 
 const vLoading: Directive = {
   mounted(el: HTMLElement, binding: DirectiveBinding) {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
 
     // 初始化样式
     if (!document.getElementById(STYLE_ID)) {
