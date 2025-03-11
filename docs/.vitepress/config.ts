@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
 
+// 按首字母排序函数
+const sortByFirstLetter = (items) => {
+  return [...items].sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase()))
+}
+
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
@@ -89,7 +94,7 @@ export default defineConfig({
             { text: '指令集预览', link: '/directives/' },
             {
               text: '交互类',
-              items: [
+              items: sortByFirstLetter([
                 { text: 'backtop', link: '/directives/backtop' },
                 { text: 'clickout', link: '/directives/clickout' },
                 { text: 'copy', link: '/directives/copy' },
@@ -108,11 +113,11 @@ export default defineConfig({
                 { text: 'throttle', link: '/directives/throttle' },
                 { text: 'tooltip', link: '/directives/tooltip' },
                 { text: 'timetrack', link: '/directives/timetrack' }
-              ]
+              ])
             },
             {
               text: '视觉类',
-              items: [
+              items: sortByFirstLetter([
                 { text: 'autobox', link: '/directives/autobox' },
                 { text: 'boxresize', link: '/directives/boxresize' },
                 { text: 'countup', link: '/directives/countup' },
@@ -130,13 +135,13 @@ export default defineConfig({
                 { text: 'loading', link: '/directives/loading' },
                 { text: 'gradient', link: '/directives/gradient' },
                 { text: 'invertcolors', link: '/directives/invertcolors' },
-                { text: 'typing', link: '/directives/typing' },
                 { text: 'progress', link: '/directives/progress' },
-              ]
+                { text: 'typing', link: '/directives/typing' }
+              ])
             },
             {
               text: '表单类',
-              items: [
+              items: sortByFirstLetter([
                 { text: 'autoinputtype', link: '/directives/autoinputtype' },
                 { text: 'clearabel', link: '/directives/clearable' },
                 { text: 'emoji', link: '/directives/emoji' },
@@ -144,15 +149,15 @@ export default defineConfig({
                 { text: 'pwdvisible', link: '/directives/pwdvisible' },
                 { text: 'trim', link: '/directives/trim' },
                 { text: 'verify', link: '/directives/verify' }
-              ]
+              ])
             },
             {
               text: '性能优化类',
-              items: [
+              items: sortByFirstLetter([
                 { text: 'lazyload', link: '/directives/lazyload' },
                 { text: 'preload', link: '/directives/preload' },
                 { text: 'spare', link: '/directives/spare' }
-              ]
+              ])
             }
           ]
         }
