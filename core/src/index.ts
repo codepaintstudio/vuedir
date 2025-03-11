@@ -45,6 +45,7 @@ import { vConfetti } from './directives/vConfetti'
 import { vTimeTrack } from './directives/vTimeTrack'
 import { vGradient } from './directives/vGradient'
 import { vTyping } from './directives/vTyping'
+import { vProgress } from './directives/vProgress'
 export {
   vBacktop,
   vClickout,
@@ -91,7 +92,8 @@ export {
   vTimeTrack,
   vGradient,
   vInvertColors,
-  vTyping
+  vTyping,
+  vProgress
 }
 
 export interface CPVueDirPlugin {
@@ -146,6 +148,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('timetrack', vTimeTrack)
     app.directive('gradient', vGradient)
     app.directive('typing', vTyping)
+    app.directive('progress', vProgress)
   }
 }
 
