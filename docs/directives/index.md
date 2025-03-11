@@ -218,6 +218,11 @@ const directives = ref([
     "description": "点击元素触发全屏五彩纸屑动画效果",
     "category": "视觉类"
   },
+  {
+    "name": "gradient",
+    "description": "为元素添加渐变背景流动效果",
+    "category": "视觉类"
+  }
 ])
 
 const groupedDirectives = computed(() => {

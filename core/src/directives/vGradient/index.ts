@@ -1,0 +1,1 @@
+export { vGradient } from './core'
