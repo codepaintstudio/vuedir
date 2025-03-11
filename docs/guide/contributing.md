@@ -134,13 +134,7 @@ git push origin feat/your-feature
 
 ## 致谢
 
-<table>
-  <tbody>
-    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/512465" title="512465"><img src="https://avatars.githubusercontent.com/u/127094690?v=4" width="100px;" alt="512465" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/neverbiasu" title="neverbiasu"><img src="https://avatars.githubusercontent.com/u/90372299?v=4" width="100px;" alt="neverbiasu" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/hot777zzz" title="hot777zzz"><img src="https://avatars.githubusercontent.com/u/120694702?v=4" width="100px;" alt="hot777zzz" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/KindSeven" title="KindSeven"><img src="https://avatars.githubusercontent.com/u/121385437?v=4" width="100px;" alt="KindSeven" style="border-radius: 9999px;" /></a></td>
-    </tr>
-
-  </tbody>
-</table>
+<Contributors />
 
 ::: info 注意
 
@@ -149,3 +143,7 @@ git push origin feat/your-feature
 :::
 
 再次感谢你的贡献！你的参与对于改进 VueDir 项目非常重要。
+
+<script setup>
+import Contributors from '../.vitepress/components/common/Contributors.vue'
+</script>
