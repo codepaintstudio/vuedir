@@ -40,6 +40,7 @@ import { vClosetab } from './directives/vClosetab'
 import { vHeaderScroll } from './directives/vHeaderScroll'
 import { vLoading } from "./directives/vLoading";
 import { vParticle } from './directives/vParticle'
+import { vInvertColors } from './directives/vInvertColors'
 export {
   vBacktop,
   vClickout,
@@ -81,7 +82,8 @@ export {
   vDesaturate,
   vClosetab,
   vHeaderScroll,
-  vParticle
+  vParticle,
+  vInvertColors
 }
 
 export interface CPVueDirPlugin {
@@ -131,6 +133,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('headerscroll', vHeaderScroll)
     app.directive("loading", vLoading);
     app.directive('particle', vParticle)
+    app.directive('invertcolors', vInvertColors)
   }
 }
 

@@ -209,6 +209,11 @@ const directives = ref([
     "name": "particle",
     "description": "点击粒子爆炸效果",
     "category": "视觉类"
+  },
+  {
+    "name":"invertcolors",
+    "description":"实现文字颜色和背景色的反转效果",
+    "category":"视觉类"
   }
 ])
 
