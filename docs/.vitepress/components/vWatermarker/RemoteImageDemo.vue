@@ -1,7 +1,7 @@
 <template>
   <div class="demo-container">
     <div class="watermark-box">
-      <img 
+      <img
         v-watermarker="{
           text: '远程图片水印',
           fontSize: 24,
@@ -10,9 +10,9 @@
           textColor: '#0033cc',
           gap: 90
         }"
-        src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-        alt="远程图片" 
-        class="demo-image" 
+        src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        alt="远程图片"
+        class="demo-image"
       />
     </div>
     <div class="description">
@@ -75,4 +75,4 @@ import { vWatermarker } from '@cp-vuedir/core'
   border-radius: 4px;
   border-left: 3px solid var(--vp-c-warning-1);
 }
-</style> 
+</style>

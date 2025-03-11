@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <div 
+    <div
       v-watermarker="{
         text: '容器水印',
         fontSize: 20,
@@ -93,4 +93,4 @@ import { vWatermarker } from '@cp-vuedir/core'
   margin-top: 10px;
   text-align: center;
 }
-</style> 
+</style>

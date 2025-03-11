@@ -1,11 +1,12 @@
 <template>
   <div class="demo-container">
     <div class="scroll-wrapper">
-
-      <header v-headerscroll="{
-        scope: 'local'
-      }" class="demo-header">
-      
+      <header
+        v-headerscroll="{
+          scope: 'local'
+        }"
+        class="demo-header"
+      >
         <div class="header-content">
           <h1>基础用法示例</h1>
           <nav>
@@ -24,9 +25,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .demo-container {
@@ -54,7 +53,7 @@
   height: 60px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky; 
+  position: sticky;
   /* 使用sticky定位 */
   top: 0;
   z-index: 2;
@@ -145,4 +144,4 @@ nav a.active {
     border-color: #444;
   }
 }
-</style> 
+</style>

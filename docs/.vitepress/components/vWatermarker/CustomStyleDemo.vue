@@ -1,7 +1,7 @@
 <template>
   <div class="demo-container">
     <div class="watermark-box">
-      <img 
+      <img
         v-watermarker="{
           text: 'VueDir',
           fontSize: 28,
@@ -10,9 +10,9 @@
           opacity: 0.4,
           gap: 100
         }"
-        src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-        alt="城市风景" 
-        class="demo-image" 
+        src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        alt="城市风景"
+        class="demo-image"
       />
     </div>
     <div class="description">
@@ -106,4 +106,4 @@ import { vWatermarker } from '@cp-vuedir/core'
   vertical-align: middle;
   margin-left: 5px;
 }
-</style> 
+</style>
