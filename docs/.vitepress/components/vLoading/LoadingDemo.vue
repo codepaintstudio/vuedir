@@ -36,5 +36,6 @@ const fetchData = async () => {
   imgSrc.value = '' // 先清空，确保 `onload` 事件会触发
   await new Promise((resolve) => setTimeout(resolve, 2000))
   imgSrc.value = 'https://images.pexels.com/photos/2049422/pexels-photo-2049422.jpeg'
+  isLoading.value = false
 }
 </script>
