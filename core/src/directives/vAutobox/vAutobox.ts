@@ -5,9 +5,7 @@ import { VAutoboxHTMLElement } from './type'
 export const vAutobox: Directive = {
   mounted(el: VAutoboxHTMLElement, binding: DirectiveBinding) {
     if (!(el instanceof HTMLElement)) {
-      console.warn(
-        'vAutobox指令只能用于HTMLElement元素(The vAutobox directive is applicable only to HTMLElement nodes)'
-      )
+      console.warn('v-autobox directive is applicable only to HTMLElement nodes')
       return
     }
 
@@ -20,7 +18,7 @@ export const vAutobox: Directive = {
     }) as HTMLElement[]
 
     if (targetElements.length === 0) {
-      console.warn('未找到目标元素(No target element was found)')
+      console.warn('No target element was found')
       return
     }
 
