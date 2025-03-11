@@ -43,7 +43,7 @@ const scrollOptions = {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #334155;
+  color: var(--vp-c-text-1);
   font-size: 14px;
   line-height: 1.5;
   cursor: pointer;
@@ -55,7 +55,6 @@ const scrollOptions = {
   background: #f1f5f9;
 }
 
-/* 美化滚动条 */
 .scroll-container::-webkit-scrollbar {
   width: 8px;
 }

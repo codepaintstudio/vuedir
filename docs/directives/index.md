@@ -188,9 +188,9 @@ const directives = ref([
     "category": "视觉类"
   },
   {
-    name: "desaturate",
-    description: "一键开启网页灰色素调，至远方",
-    category: "视觉类"
+    "name": "desaturate",
+    "description": "一键开启网页灰色素调，至远方",
+    "category": "视觉类"
   },
   {
     "name": "closetab",
@@ -203,10 +203,9 @@ const directives = ref([
     "category": "视觉类"
   },
   {
-    name: 'loading',
-    description: '显示加载动画',
-    link: '/directives/loading',
-    category: '视觉类'
+    "name": 'loading',
+    "description": '显示加载动画',
+    "category": '视觉类'
   },
   {
     "name": "particle",
@@ -317,11 +316,10 @@ const groupedDirectives = computed(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 5px 5px var(--vp-c-text-1);
 }
 
 .directive-card:hover {
-  transform: translateY(-4px) scale(1.1);
+  transform: translateY(-4px) scale(1.05);
   border-color: var(--vp-c-brand);
 }
 

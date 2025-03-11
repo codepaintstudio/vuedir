@@ -1,11 +1,5 @@
 # v-autobox 指令
 
-::: warning
-
-此指令开发并不完善，请谨慎使用。
-
-:::
-
 ## 介绍
 
 `v-autobox` 指令用于自动调整容器尺寸以完美适应子元素内容。它会动态计算子元素的 **最大宽度** 和 **总高度**，并自动考虑边距（margin）、边框（border）、填充（padding）等布局因素，适用于动态内容容器、自适应卡片等场景。
@@ -21,10 +15,8 @@
 
 ## 扩展用法
 
-#### 因为选择 p 标签所以 img 溢出了
-
-<AutoboxUltraDemo/>
 可以设置多个参数，来达到自定义效果:
+<AutoboxUltraDemo/>
 
 ::: details 查看代码
 
@@ -39,8 +31,6 @@
 ## 注意事项
 
 ::: warning
-
-#### 此指令开发并不完善，请谨慎使用，若要使用请观看以下几点
 
 1. **目标元素**
 
@@ -72,8 +62,10 @@
 
 7. **边距陷阱**
    - 父元素有 padding/border 时计算可能异常
-   - 相邻元素 margin 折叠需手动验证  
-   :::
+   - 相邻元素 margin 折叠需手动验证
+
+:::
+
    <script setup>
    import AutoboxDefaultDemo from '../.vitepress/components/vAutobox/AutoboxDefaultDemo.vue'
    import AutoboxUltraDemo from '../.vitepress/components/vAutobox/AutoboxUltraDemo.vue'

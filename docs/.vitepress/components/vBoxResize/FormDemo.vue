@@ -37,56 +37,45 @@ const columnWidths = ref([100, 150, 200]) // 初始列宽
 
 const onResize = (rect: DOMRectReadOnly) => {
   const totalWidth = rect.width
-  columnWidths.value = [totalWidth * 0.3, totalWidth * 0.4, totalWidth * 0.3] // 动态调整列宽
+  columnWidths.value = [totalWidth * 0.3, totalWidth * 0.4, totalWidth * 0.3]
 }
 </script>
 
 <style scoped>
-/* 表格容器样式 */
 .table-container {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid var(--vp-c-text-1);
   background-color: var(--vp-c-bg-soft);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--vp-c-text-1);
 }
 
-/* 动态表格样式 */
 .dynamic-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
 }
 
-/* 表头样式 */
 .dynamic-table th {
-  background-color: #42b983;
-  color: white;
+  background-color: var(--vp-c-bg-1);
   font-weight: bold;
   padding: 12px;
   text-align: left;
-  border-bottom: 2px solid #369c6d;
+  border-bottom: 2px solid var(--vp-c-text-1);
 }
 
-/* 单元格样式 */
 .dynamic-table td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
-  color: #333;
 }
 
-/* 悬停效果 */
 .dynamic-table tr:hover {
   background-color: #f5f5f5;
 }
 
-/* 响应式调整 */
 @media (max-width: 600px) {
   .dynamic-table th,
   .dynamic-table td {
     padding: 8px;
-    /* 小屏时单元格内边距减小 */
   }
 }
 </style>
