@@ -1,9 +1,12 @@
-<h1>指令集预览 - {{directives.length}}个</h1>
-
 <script setup>
 import { ref, computed } from 'vue';
 
 const directives = ref([
+  {
+    name: 'timetrack',
+    description: '用于媒体元素的指令，当达到指定时间时触发回调函数，支持数组形式的多个时间点',
+    category: '交互类'
+  },
   {
     "name": "backtop",
     "description": "返回顶部指令，当页面滚动到一定高度时显示返回顶部按钮",
@@ -231,6 +234,8 @@ const groupedDirectives = computed(() => {
   return groups;
 });
 </script>
+
+<h1>指令集预览 - {{directives.length}}个</h1>
 
 <template v-for="(directives, category) in groupedDirectives" :key="category">
   <div class="category-section">
