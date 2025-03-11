@@ -311,11 +311,10 @@ const groupedDirectives = computed(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 5px 5px var(--vp-c-text-1);
 }
 
 .directive-card:hover {
-  transform: translateY(-4px) scale(1.1);
+  transform: translateY(-4px) scale(1.05);
   border-color: var(--vp-c-brand);
 }
 

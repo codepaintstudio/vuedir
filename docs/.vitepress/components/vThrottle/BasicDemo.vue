@@ -39,7 +39,7 @@ const handleClick = () => {
 
 .result {
   margin-top: 8px;
-  color: #666;
+  color: var(--vp-c-text-1);
   font-size: 0.9em;
 }
 
