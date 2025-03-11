@@ -227,11 +227,17 @@ const directives = ref([
     "name": "gradient",
     "description": "为元素添加渐变背景流动效果",
     "category": "视觉类"
+  },
   {
     "name": "typing",
     "description": "模拟打字机效果的指令，支持速度控制和状态回调，让文本展示更生动有趣。",
     "category": "视觉类"
-  }
+  },
+  {
+    "name": "progress",
+    "description": "实时进度条（绑定数值自动渲染环形/条形进度）",
+    "category": "视觉类"
+  },
 ])
 
 const groupedDirectives = computed(() => {
