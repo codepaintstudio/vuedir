@@ -103,7 +103,7 @@ function handleFinish() {
   display: inline-block;
   width: 2px;
   height: 1.2em;
-  background-color: #ffffff;
+  background-color: #bdbdbd;
   margin-left: 2px;
   vertical-align: middle;
   animation: blink 1s step-end infinite;

@@ -60,7 +60,7 @@ const apiData = [
   {
     name: 'onTyping',
     type: 'function',
-    default: '() => {}',
+    default: '(text, percent) => {}',
     description: '打字过程中的回调函数，参数为当前文本和进度百分比'
   },
   {
