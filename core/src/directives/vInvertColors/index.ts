@@ -1,0 +1,1 @@
+export { vInvertColors } from './core'

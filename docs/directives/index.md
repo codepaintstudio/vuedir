@@ -211,6 +211,11 @@ const directives = ref([
     "category": "视觉类"
   },
   {
+    "name":"invertcolors",
+    "description":"实现文字颜色和背景色的反转效果",
+    "category":"视觉类"
+  },
+  {
     "name": "confetti",
     "description": "点击元素触发全屏五彩纸屑动画效果",
     "category": "视觉类"
