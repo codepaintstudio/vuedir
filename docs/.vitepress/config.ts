@@ -128,7 +128,8 @@ export default defineConfig({
                 { text: 'watermarker', link: '/directives/watermarker' },
                 { text: 'headerscroll', link: '/directives/headerscroll' },
                 { text: 'loading', link: '/directives/loading' },
-                { text: 'invertcolors', link: '/directives/invertcolors' }
+                { text: 'invertcolors', link: '/directives/invertcolors' },
+                { text: 'typing', link: '/directives/typing' }
               ]
             },
             {

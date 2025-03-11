@@ -223,6 +223,13 @@ const directives = ref([
     "description": "点击元素触发全屏五彩纸屑动画效果",
     "category": "视觉类"
   },
+  
+  {
+    "name": "typing",
+    "description": "模拟打字机效果的指令，支持速度控制和状态回调，让文本展示更生动有趣。",
+    link: '/directives/typing',
+    "category": "视觉类"
+  }
 ])
 
 const groupedDirectives = computed(() => {
