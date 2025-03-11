@@ -188,9 +188,9 @@ const directives = ref([
     "category": "视觉类"
   },
   {
-    name: "desaturate",
-    description: "一键开启网页灰色素调，至远方",
-    category: "视觉类"
+    "name": "desaturate",
+    "description": "一键开启网页灰色素调，至远方",
+    "category": "视觉类"
   },
   {
     "name": "closetab",
@@ -203,10 +203,9 @@ const directives = ref([
     "category": "视觉类"
   },
   {
-    name: 'loading',
-    description: '显示加载动画',
-    link: '/directives/loading',
-    category: '视觉类'
+    "name": 'loading',
+    "description": '显示加载动画',
+    "category": '视觉类'
   },
   {
     "name": "particle",
@@ -227,6 +226,7 @@ const directives = ref([
     "name": "gradient",
     "description": "为元素添加渐变背景流动效果",
     "category": "视觉类"
+  },
   {
     "name": "typing",
     "description": "模拟打字机效果的指令，支持速度控制和状态回调，让文本展示更生动有趣。",

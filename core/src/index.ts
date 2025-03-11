@@ -91,7 +91,6 @@ export {
   vTimeTrack,
   vGradient,
   vInvertColors,
-  vTimeTrack,
   vTyping
 }
 
