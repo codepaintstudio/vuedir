@@ -40,9 +40,11 @@ import { vClosetab } from './directives/vClosetab'
 import { vHeaderScroll } from './directives/vHeaderScroll'
 import { vLoading } from './directives/vLoading'
 import { vParticle } from './directives/vParticle'
+import { vInvertColors } from './directives/vInvertColors'
 import { vConfetti } from './directives/vConfetti'
 import { vTimeTrack } from './directives/vTimeTrack'
 import { vGradient } from './directives/vGradient'
+import { vTyping } from './directives/vTyping'
 export {
   vBacktop,
   vClickout,
@@ -88,6 +90,9 @@ export {
   vConfetti,
   vTimeTrack,
   vGradient,
+  vInvertColors,
+  vTimeTrack,
+  vTyping
 }
 
 export interface CPVueDirPlugin {
@@ -137,9 +142,11 @@ const VueDir: CPVueDirPlugin = {
     app.directive('headerscroll', vHeaderScroll)
     app.directive('loading', vLoading)
     app.directive('particle', vParticle)
+    app.directive('invertcolors', vInvertColors)
     app.directive('confetti', vConfetti)
     app.directive('timetrack', vTimeTrack)
     app.directive('gradient', vGradient)
+    app.directive('typing', vTyping)
   }
 }
 

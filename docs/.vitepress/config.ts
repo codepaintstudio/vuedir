@@ -129,6 +129,8 @@ export default defineConfig({
                 { text: 'headerscroll', link: '/directives/headerscroll' },
                 { text: 'loading', link: '/directives/loading' },
                 { text: 'gradient', link: '/directives/gradient' },
+                { text: 'invertcolors', link: '/directives/invertcolors' },
+                { text: 'typing', link: '/directives/typing' }
               ]
             },
             {

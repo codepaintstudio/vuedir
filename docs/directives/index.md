@@ -214,6 +214,11 @@ const directives = ref([
     "category": "视觉类"
   },
   {
+    "name":"invertcolors",
+    "description":"实现文字颜色和背景色的反转效果",
+    "category":"视觉类"
+  },
+  {
     "name": "confetti",
     "description": "点击元素触发全屏五彩纸屑动画效果",
     "category": "视觉类"
@@ -221,6 +226,10 @@ const directives = ref([
   {
     "name": "gradient",
     "description": "为元素添加渐变背景流动效果",
+    "category": "视觉类"
+  {
+    "name": "typing",
+    "description": "模拟打字机效果的指令，支持速度控制和状态回调，让文本展示更生动有趣。",
     "category": "视觉类"
   }
 ])
