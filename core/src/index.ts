@@ -43,6 +43,7 @@ import { vParticle } from './directives/vParticle'
 import { vInvertColors } from './directives/vInvertColors'
 import { vConfetti } from './directives/vConfetti'
 import { vTimeTrack } from './directives/vTimeTrack'
+import { vGradient } from './directives/vGradient'
 import { vTyping } from './directives/vTyping'
 export {
   vBacktop,
@@ -87,6 +88,8 @@ export {
   vHeaderScroll,
   vParticle,
   vConfetti,
+  vTimeTrack,
+  vGradient,
   vInvertColors,
   vTimeTrack,
   vTyping
@@ -142,6 +145,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('invertcolors', vInvertColors)
     app.directive('confetti', vConfetti)
     app.directive('timetrack', vTimeTrack)
+    app.directive('gradient', vGradient)
     app.directive('typing', vTyping)
   }
 }
