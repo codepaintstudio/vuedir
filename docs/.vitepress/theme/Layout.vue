@@ -12,9 +12,10 @@ function clientOnly(fn) {
 }
 
 // 只在客户端环境中执行
-const enableTransitions = () => clientOnly(() => {
-  return 'startViewTransition' in document && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
-}) || false
+const enableTransitions = () =>
+  clientOnly(() => {
+    return 'startViewTransition' in document && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+  }) || false
 
 provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   // 在SSR环境中，只切换暗色模式值
@@ -22,14 +23,14 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     isDark.value = !isDark.value
     return
   }
-  
+
   // 设置Arco主题
   if (!isDark.value) {
     document.body.setAttribute('arco-theme', 'dark')
   } else {
     document.body.removeAttribute('arco-theme')
   }
-  
+
   // 如果不支持过渡效果，直接切换
   if (!enableTransitions()) {
     isDark.value = !isDark.value

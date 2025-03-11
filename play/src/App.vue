@@ -1,9 +1,18 @@
-<script setup>
-import { vConfetti } from '@cp-vuedir/core'
+<script setup lang="ts">
+import { vTimeTrack } from '@cp-vuedir/core'
+
+const handleTimeReached = (time: string | number) => {
+  alert(`到达 ${time} 触发回调`)
+}
+
+const timeTrackOptions = [
+  { time: 5000, callback: () => handleTimeReached(5000) }, // 5秒触发
+  { time: '100%', callback: () => handleTimeReached('100%') } // 视频过半触发
+]
 </script>
 
 <template>
-  <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center">
-    <button v-confetti="{ count: 200 }">点击五彩纸屑效果</button>
-  </div>
+  <video v-time-track="timeTrackOptions" controls>
+    <source src="https://videos.pexels.com/video-files/856171/856171-hd_1920_1080_30fps.mp4" type="video/mp4" />
+  </video>
 </template>

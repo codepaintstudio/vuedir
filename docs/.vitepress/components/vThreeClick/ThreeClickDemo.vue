@@ -35,7 +35,7 @@ const colors = [
 const message = ref(messgaes[0])
 const randomColor = ref(colors[0])
 
-const getRandomItem = <T>(array: T[]): T => {
+const getRandomItem = <T,>(array: T[]): T => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]
 }

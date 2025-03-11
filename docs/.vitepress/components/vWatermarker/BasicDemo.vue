@@ -1,16 +1,16 @@
 <template>
   <div class="demo-container">
     <div class="watermark-box">
-      <img 
-        v-watermarker="{ 
-          text: '基础水印', 
+      <img
+        v-watermarker="{
+          text: '基础水印',
           fontSize: 30,
           opacity: 0.4,
           gap: 200
-        }" 
-        src="https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-        alt="风景图片" 
-        class="demo-image" 
+        }"
+        src="https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        alt="风景图片"
+        class="demo-image"
       />
     </div>
     <div class="description">
@@ -51,4 +51,4 @@ import { vWatermarker } from '@cp-vuedir/core'
   margin-top: 10px;
   text-align: center;
 }
-</style> 
+</style>

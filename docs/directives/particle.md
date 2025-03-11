@@ -10,9 +10,7 @@
 
 ```vue
 <template>
-  <button v-particle="{ color: '#ff0000', count: 100 }" class="particle-button">
-    点击我
-  </button>
+  <button v-particle="{ color: '#ff0000', count: 100 }" class="particle-button">点击我</button>
 </template>
 ```
 

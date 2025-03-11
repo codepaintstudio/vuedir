@@ -60,7 +60,9 @@ const onResize = (rect: DOMRectReadOnly) => {
   background-color: #42b983;
   margin: 0 5px;
   border-radius: 5px 5px 0 0;
-  transition: height 0.3s ease, background-color 0.3s ease;
+  transition:
+    height 0.3s ease,
+    background-color 0.3s ease;
   position: relative;
 }
 

@@ -41,7 +41,9 @@ const onResize = (rect: DOMRectReadOnly) => {
 /* 自适应图片样式 */
 .responsive-image {
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* 图片悬停效果 */
