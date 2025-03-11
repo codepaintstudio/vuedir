@@ -9,7 +9,7 @@
 import { ref } from 'vue'
 import { vBoxResize } from '@cp-vuedir/core'
 
-const layout = ref('大屏布局') // 当前布局状态
+const layout = ref('大屏布局')
 
 const onResize = (rect: DOMRectReadOnly, box: string) => {
   if (rect.width < 600) {
@@ -21,20 +21,17 @@ const onResize = (rect: DOMRectReadOnly, box: string) => {
 </script>
 
 <style scoped>
-/* 容器样式 */
 .resize-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;
-  /* background: linear-gradient(135deg, #f5f7fa, #c3cfe2); */
   background-color: var(--vp-c-bg-soft);
   font-family: 'Arial', sans-serif;
   padding: 20px;
 }
 
-/* 调整大小的盒子样式 */
 .resize-box {
   width: 100%;
   height: 600px;
@@ -52,13 +49,11 @@ const onResize = (rect: DOMRectReadOnly, box: string) => {
     transform 0.3s ease;
 }
 
-/* 悬停效果 */
 .resize-box:hover {
   background-color: #369c6d;
   transform: scale(1.05);
 }
 
-/* 提示文本样式 */
 .hint-text {
   margin-top: 20px;
   font-size: 18px;
