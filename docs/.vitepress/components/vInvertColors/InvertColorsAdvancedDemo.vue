@@ -9,8 +9,8 @@
     <div class="gif-container">
       <img src="../../../public/directives/invertcolors/ikun.gif" alt="background" class="background-gif">
       <div class="text-content" v-invertcolors="{ mode: 'blend' }">
-        <h1>动态文字效果</h1>
-        <p>文字会随着背景变化而改变颜色</p>
+        <h1>我是ikun，这是我gege</h1>
+        <p>我喜欢唱、跳、rap、篮球</p>
       </div>
     </div>
   </div>
@@ -48,8 +48,8 @@
 
 .text-content {
   position: absolute;
-  top: 40px;
-  left: 180px;
+  top: 65px;
+  left: 130px;
   width: 100%;
   height: 100%;
   display: flex;
