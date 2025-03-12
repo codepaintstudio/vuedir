@@ -48,6 +48,8 @@ import { vTyping } from './directives/vTyping'
 import { vProgress } from './directives/vProgress'
 import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
+import { createI18n } from './directives/vI18n'
+import { useLanguage } from './hooks/languageManager'
 export {
   vBacktop,
   vClickout,
@@ -97,7 +99,8 @@ export {
   vTyping,
   vProgress,
   vMagnet,
-  vAppleblur
+  vAppleblur,
+  useLanguage
 }
 
 export interface CPVueDirPlugin {
@@ -106,6 +109,16 @@ export interface CPVueDirPlugin {
 
 const VueDir: CPVueDirPlugin = {
   install(app: App) {
+    const { vI18n, currentLanguage } = createI18n()
+    app.provide('currentLanguage', currentLanguage)
+    app.config.globalProperties.$i18n = {
+      currentLanguage,
+      setLanguage: (lang: string) => {
+        currentLanguage.value = lang
+      }
+    }
+
+    app.directive('i18n', vI18n)
     app.directive('backtop', vBacktop)
     app.directive('focus', vFocus)
     app.directive('copy', vCopy)

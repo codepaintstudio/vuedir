@@ -246,6 +246,11 @@ const directives = ref([
     name: 'appleBlur',
     description: '苹果毛玻璃效果',
     category: '视觉类'
+  },
+  {
+    name: 'i18n',
+    description: 'i18n，更轻量级、指令化的国际化方案。',
+    category: '工具类'
   }
 ])
 

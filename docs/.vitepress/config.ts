@@ -161,6 +161,10 @@ export default defineConfig({
                 { text: 'preload', link: '/directives/preload' },
                 { text: 'spare', link: '/directives/spare' }
               ])
+            },
+            {
+              text: '工具类',
+              items: sortByFirstLetter([{ text: 'i18n', link: '/directives/i18n' }])
             }
           ]
         }
