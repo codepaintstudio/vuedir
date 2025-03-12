@@ -94,8 +94,7 @@ export {
   vGradient,
   vInvertColors,
   vTyping,
-  vProgress,
-  vMagnet
+  vProgress
 }
 
 export interface CPVueDirPlugin {
@@ -151,7 +150,6 @@ const VueDir: CPVueDirPlugin = {
     app.directive('gradient', vGradient)
     app.directive('typing', vTyping)
     app.directive('progress', vProgress)
-    app.directive('magnet', vMagnet)
   }
 }
 
