@@ -8,10 +8,17 @@
 
 ```vue
 <template>
-    <div>
-        <h2>圆形进度条</h2>
-        <div v-progress:circle="circleOptions"></div>
-    </div>
+   <div v-progress:circle="{
+    radius: 50,
+    color: '#42b883',
+    autoIncrement: {
+      interval: 1000, // 1 秒
+      step: 10       // 每次增加 10%
+    },
+    onReach: [
+      { percent: 100, callback: handleComplete, once: true }
+    ]
+  }"></div>
 </template>
 ```
 
@@ -33,6 +40,10 @@
 
 :::
 
+## 顶部滚动进度条
+
+<ProgressDemo />
+
 ## API
 
 <ApiTable :data="apiData"/>
@@ -40,6 +51,7 @@
 <script setup>
 import ProgressCircleDemo from '../.vitepress/components/vProgress/ProgressCircleDemo.vue';
 import ProgressBarDemo from '../.vitepress/components/vProgress/ProgressBarDemo.vue';
+import ProgressDemo from '../.vitepress/components/vProgress/ProgressDemo.vue';
 import ApiTable from '../.vitepress/components/ApiTable.vue'
 
 const apiData = [
@@ -77,6 +89,69 @@ const apiData = [
         default: 'true',
         required: false
     },
+    {
+        name: 'transition',
+        description: '进度条过渡动画',
+        type: 'String',
+        default: 'ease',
+        required: false
+    },
+    {
+        name: 'autoIncrement',
+        description: '自动增加进度百分比',
+        type: 'Object',
+        default: 'false',
+        required: false
+    },
+    {
+        name: 'interval',
+        description: '自动增加进度百分比的时间间隔(在 `autoIncrement` 对象中配置)',
+        type: 'Number',
+        default: '1000',
+        required: false
+    },
+    {
+        name: 'step',
+        description: '每次增加的百分比，在 (`autoIncrement` 对象中配置)',
+        type: 'Number',
+        default: '10',
+        required: false
+    },
+    {
+        name: 'loop',
+        description: '是否循环，在 (`autoIncrement` 对象中配置)',
+        type: 'Boolean',
+        default: 'false',
+        required: false
+    },
+    {
+        name: 'onReach',
+        description: '进度条到达指定百分比时触发回调函数',
+        type: 'Object[]',
+        default: '[]',
+        required: false
+    },
+    {
+        name: 'percent',
+        description: '到达的百分比,触发回调的时机,(在 `onReach` 对象中配置)',
+        type: 'Number',
+        default: '100',
+        required: true
+    },
+    {
+        name: 'callback',
+        description: '到达指定百分比时触发的回调函数,(在 `onReach` 对象中配置)',
+        type: 'Function',
+        default: '() => {}',
+        required: true
+    },
+    {
+        name:'once',
+        description: '是否只触发一次回调函数,(在 `onReach` 对象中配置)',
+        type: 'Boolean',
+        default: 'false',
+        required: false
+    }
 ]
 </script>
 
