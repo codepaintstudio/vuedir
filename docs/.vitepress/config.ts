@@ -135,6 +135,7 @@ export default defineConfig({
                 { text: 'loading', link: '/directives/loading' },
                 { text: 'gradient', link: '/directives/gradient' },
                 { text: 'invertcolors', link: '/directives/invertcolors' },
+                { text: 'progress', link: '/directives/progress' },
                 { text: 'typing', link: '/directives/typing' }
               ])
             },

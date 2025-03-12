@@ -1,0 +1,1 @@
+export { vProgress } from './core'
