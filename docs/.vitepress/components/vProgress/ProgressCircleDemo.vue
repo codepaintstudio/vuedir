@@ -1,30 +1,26 @@
 <template>
-  <div class="container">
-    <div v-progress:circle="circleOptions"></div>
-  </div>
+  <!-- 圆形进度条，每秒增加 10% -->
+  <div v-progress:circle="{
+    radius: 50,
+    color: '#42b883',
+    autoIncrement: {
+      interval: 1000, // 1 秒
+      step: 10,       // 每次增加 10%
+      loop: true      // 循环
+    },
+    onReach: [
+      { percent: 100, callback: handleComplete, once: true }
+    ]
+  }"></div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
 import { vProgress } from '@cp-vuedir/core'
+import { Message } from '@arco-design/web-vue'
 
-const circleOptions = ref({
-  percent: 0,
-  radius: 50,
-  strokeWidth: 10,
-  color: '#42b883',
-  showText: true
-})
-
-onMounted(() => {
-  setInterval(() => {
-    if (circleOptions.value.percent >= 100) {
-      circleOptions.value = { ...circleOptions.value, percent: 0 }
-    } else {
-      circleOptions.value = { ...circleOptions.value, percent: circleOptions.value.percent + 10 }
-    }
-  }, 1000)
-})
+function handleComplete() {
+  Message.success('Progress complete!')
+}
 </script>
 
 <style scoped>
