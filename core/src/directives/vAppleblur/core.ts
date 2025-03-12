@@ -50,7 +50,7 @@ const resetAppleblur = (el: HTMLElement) => {
 
   // 移除毛玻璃效果相关样式
   el.style.backdropFilter = ''
-  el.style.WebkitBackdropFilter = ''
+  el.style.backdropFilter = ''
   el.style.backgroundColor = ''
   el.style.overflow = ''
   el.style.isolation = ''

@@ -8,17 +8,17 @@
 
 ```vue
 <template>
-   <div v-progress:circle="{
-    radius: 50,
-    color: '#42b883',
-    autoIncrement: {
-      interval: 1000, // 1 秒
-      step: 10       // 每次增加 10%
-    },
-    onReach: [
-      { percent: 100, callback: handleComplete, once: true }
-    ]
-  }"></div>
+  <div
+    v-progress:circle="{
+      radius: 50,
+      color: '#42b883',
+      autoIncrement: {
+        interval: 1000, // 1 秒
+        step: 10 // 每次增加 10%
+      },
+      onReach: [{ percent: 100, callback: handleComplete, once: true }]
+    }"
+  ></div>
 </template>
 ```
 
@@ -43,6 +43,10 @@
 ## 顶部滚动进度条
 
 <ProgressDemo />
+
+::: details 查看代码
+<<< @/.vitepress/components/vProgress/ProgressDemo.vue
+:::
 
 ## API
 

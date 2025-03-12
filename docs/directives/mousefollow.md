@@ -14,8 +14,6 @@
 
 ## API
 
-### 指令值
-
 v-mousefollow 指令可以接收一个配置对象或布尔值作为参数：
 
 ```typescript
@@ -53,13 +51,22 @@ const apiData = [
     name: 'hideCursor',
     description: '是否隐藏原始鼠标',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
+    required: false
   },
   {
     name: 'zIndex',
     description: '跟随元素的z-index值',
     type: 'number',
-    default: '999999'
+    default: '999999',
+    required: false
+  },
+  {
+    name: "easing",
+    description: "鼠标跟随的缓动效果，数值越大则反应越快，越小则越缓慢。",
+    type: 'number',
+    default: '0.1',
+    required: false
   }
 ]
 </script>
