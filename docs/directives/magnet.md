@@ -14,7 +14,9 @@
 - 负极磁铁吸引负极磁铁，排斥正级磁铁
 - 铁磁铁吸引所有磁铁
 
-<Basic />
+<ClientOnly>
+    <Basic />
+</ClientOnly>
 
 ::: details 代码示例
 
@@ -30,7 +32,9 @@
 
 你可以通过配置`range`属性来设置磁铁的运动范围。`range`是一个`Ref`对象。比如在下面例子中，磁铁可在整个文档移动。
 
-<Range />
+<ClientOnly>
+    <Range />
+</ClientOnly>
 
 ::: details 代码示例
 <<< @/.vitepress/components/vMagnet/Range.vue
@@ -46,7 +50,9 @@
 
 下面是一个有趣的例子，你可以尝试，看看会发生什么效果。
 
-<FunDemo />
+<ClientOnly>
+    <FunDemo />
+</ClientOnly>
 
 ## API
 

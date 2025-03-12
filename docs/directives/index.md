@@ -241,6 +241,11 @@ const directives = ref([
     name: "magnet",
     description: "元素磁化，支持定义磁力、磁性",
     category: "视觉类"
+  },
+  {
+    name: 'appleBlur',
+    description: '苹果毛玻璃效果',
+    category: '视觉类'
   }
 ])
 
