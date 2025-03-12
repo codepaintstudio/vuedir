@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { vMagnet, vDrag } from '@cp-vuedir/core'
+const containerRef = ref(null)
+</script>
+
 <template>
   <div>
     <div class="container" v-progress:scroll="{

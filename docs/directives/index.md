@@ -238,9 +238,14 @@ const directives = ref([
     "category": "视觉类"
   },
   {
-    "name": "appleblur",
-    "description": "为元素添加苹果风格的毛玻璃效果",
-    "category": "视觉类"
+    name: "magnet",
+    description: "元素磁化，支持定义磁力、磁性",
+    category: "视觉类"
+  },
+  {
+    name: 'appleBlur',
+    description: '苹果毛玻璃效果',
+    category: '视觉类'
   }
 ])
 
