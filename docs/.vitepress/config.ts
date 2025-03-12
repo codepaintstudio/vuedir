@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
+import { text } from 'stream/consumers'
 
 // 按首字母排序函数
 const sortByFirstLetter = (items) => {
@@ -108,6 +109,7 @@ export default defineConfig({
                 { text: 'infinitescroll', link: '/directives/infinitescroll' },
                 { text: 'longpress', link: '/directives/longpress' },
                 { text: 'mousefollow', link: '/directives/mousefollow' },
+                { text: 'magnet', link: '/directives/magnet' },
                 { text: 'scrollto', link: '/directives/scrollto' },
                 { text: 'threeclick', link: '/directives/threeclick' },
                 { text: 'throttle', link: '/directives/throttle' },

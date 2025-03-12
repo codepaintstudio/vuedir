@@ -237,6 +237,11 @@ const directives = ref([
     "description": "实时进度条（绑定数值自动渲染环形/条形进度）",
     "category": "视觉类"
   },
+  {
+    name: "magnet",
+    description: "元素磁化，支持定义磁力、磁性",
+    category: "视觉类"
+  }
 ])
 
 const groupedDirectives = computed(() => {

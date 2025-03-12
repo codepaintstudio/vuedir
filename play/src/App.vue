@@ -1,55 +1,53 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { vMagnet, vDrag } from '@cp-vuedir/core'
+const containerRef = ref(null)
+</script>
+
 <template>
-  <div>
-    <h2>条形进度条</h2>
-    <div v-progress:bar="barOptions"></div>
+  <div class="container" ref="containerRef">
+    <div v-magnet="{ force: 200, pole: 'positive', range: containerRef }" class="zheng" v-drag>我是正磁铁1</div>
+    <div v-magnet="{ force: 200, pole: 'positive' }" class="zheng" v-drag>我是正磁铁2</div>
+    <div v-magnet="{ force: 200, pole: 'iron' }" class="tie" v-drag>我是铁</div>
+    <div v-magnet="{ force: 200, pole: 'negative' }" class="fu" v-drag>我是负磁铁1</div>
+    <div v-magnet="{ force: 200, pole: 'negative' }" class="fu" v-drag>我是负磁铁2</div>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
-import { vProgress } from '@cp-vuedir/core'
-
-// 条形进度条配置
-const barOptions = ref({
-  percent: 0,
-  color: '#42b883',
-  showText: true
-})
-
-setInterval(() => {
-  if (barOptions.value.percent >= 100) {
-    barOptions.value = { ...barOptions.value, percent: 0 }
-  } else {
-    barOptions.value = { ...barOptions.value, percent: barOptions.value.percent + 10 }
-  }
-}, 1000)
-</script>
-
 <style scoped>
-/* 容器样式 */
-h2 {
-  margin-top: 20px;
-  color: #2c3e50;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-
-/* 按钮样式 */
-button {
-  margin: 5px;
-  padding: 10px 15px;
-  background-color: #42b883;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+div {
+  user-select: none;
 }
-
-button:hover {
-  background-color: #359768;
+.zheng {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 8px;
+  color: #fff;
+  cursor: move;
 }
-
-/* 进度条容器样式 */
-div[v-progress] {
-  margin: 20px 0;
+.fu {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 8px;
+  color: #fff;
+  cursor: move;
+}
+.tie {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 8px;
+  color: #fff;
+  cursor: move;
 }
 </style>
