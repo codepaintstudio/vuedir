@@ -256,6 +256,11 @@ const directives = ref([
     name: 'virtualList',
     description: '虚拟列表，用于渲染大量数据时提升性能',
     category: '性能优化类'
+  },
+  {
+    "name":"audiopectrum",
+    "description":"音频频谱可视化效果",
+    "category":"视觉类"
   }
 ])
 

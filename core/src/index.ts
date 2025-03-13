@@ -51,6 +51,7 @@ import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
 import { useLanguage } from './hooks/languageManager'
 import { vVirtualList } from './directives/vVirtualList'
+import {vAudioPectrum} from './directives/vAudioPectrum'
 export {
   vBacktop,
   vClickout,
@@ -102,6 +103,7 @@ export {
   vMagnet,
   vAppleblur,
   vVirtualList,
+  vAudioPectrum,
   useLanguage
 }
 
@@ -171,6 +173,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('magnet', vMagnet)
     app.directive('appleblur', vAppleblur)
     app.directive('VirtualList', vVirtualList)
+    app.directive('audiopectrum', vAudioPectrum)
   }
 }
 
