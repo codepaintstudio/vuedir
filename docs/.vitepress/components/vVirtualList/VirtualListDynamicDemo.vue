@@ -5,8 +5,8 @@
       containerHeight: 300,
       renderItem: renderComplexItem
     }"
-    class="count-and-colors-list">
-  </div>
+    class="count-and-colors-list"
+  ></div>
 </template>
 
 <script setup lang="ts">
@@ -14,25 +14,24 @@ import { ref, h } from 'vue'
 import { vVirtualList } from '@cp-vuedir/core'
 
 interface DynamicItem {
-  id: number;
-  title: string;
-  content: string;
+  id: number
+  title: string
+  content: string
 }
 
-const dynamicItems = ref<DynamicItem[]>(Array.from({ length: 10000 }, (_, i) => {
-  const lines = Math.floor(Math.random() * 10) + 1; // 1-10 行
-  return {
-    id: i + 1,
-    title: `Document ${i + 1}`,
-    content: Array(lines).fill('This is dynamic content.').join(' ')
-  }
-}));
+const dynamicItems = ref<DynamicItem[]>(
+  Array.from({ length: 10000 }, (_, i) => {
+    const lines = Math.floor(Math.random() * 10) + 1 // 1-10 行
+    return {
+      id: i + 1,
+      title: `Document ${i + 1}`,
+      content: Array(lines).fill('This is dynamic content.').join(' ')
+    }
+  })
+)
 
 const renderComplexItem = (item: DynamicItem) => {
-  return h('div', { class: 'complex-item', key: item.id }, [
-    h('span', item.title),
-    h('span', item.content)
-  ])
+  return h('div', { class: 'complex-item', key: item.id }, [h('span', item.title), h('span', item.content)])
 }
 </script>
 

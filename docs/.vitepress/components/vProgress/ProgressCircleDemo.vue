@@ -1,17 +1,17 @@
 <template>
   <!-- 圆形进度条，每秒增加 10% -->
-  <div v-progress:circle="{
-    radius: 50,
-    color: '#42b883',
-    autoIncrement: {
-      interval: 1000, // 1 秒
-      step: 10,       // 每次增加 10%
-      loop: true      // 循环
-    },
-    onReach: [
-      { percent: 100, callback: handleComplete, once: true }
-    ]
-  }"></div>
+  <div
+    v-progress:circle="{
+      radius: 50,
+      color: '#42b883',
+      autoIncrement: {
+        interval: 1000, // 1 秒
+        step: 10, // 每次增加 10%
+        loop: true // 循环
+      },
+      onReach: [{ percent: 100, callback: handleComplete, once: true }]
+    }"
+  ></div>
 </template>
 
 <script lang="ts" setup>

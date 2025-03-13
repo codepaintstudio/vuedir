@@ -29,7 +29,7 @@ features:
     details: 简单的 API，一个指令搞定一切
   - title: 丰富自定义
     icon: 🔧
-    details: 无头模式，支持指令的自定义行为！
+    details: 无头模式，支持指令的自定义行为
   - title: 支持按需引入
     icon: 📦
     details: 按需引入，减少项目体积，提高性能

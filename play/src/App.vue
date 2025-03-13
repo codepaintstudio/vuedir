@@ -37,18 +37,21 @@ const items = ref<Item[]>(generateData(100000))
 <template>
   <div class="data-container">
     <h1>1 万条数据测试</h1>
-    <ul class="data-list" v-virtual-list="{
-      data: items,
-      containerHeight: 800,
-      renderItem: (item: Item) =>
-        h(
-          'div',
-          {
-            class: 'data-item'
-          },
-          [h('span', item.name), h('span', item.value)]
-        )
-    }"></ul>
+    <ul
+      class="data-list"
+      v-virtual-list="{
+        data: items,
+        containerHeight: 800,
+        renderItem: (item: Item) =>
+          h(
+            'div',
+            {
+              class: 'data-item'
+            },
+            [h('span', item.name), h('span', item.value)]
+          )
+      }"
+    ></ul>
   </div>
 </template>
 

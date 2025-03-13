@@ -7,9 +7,9 @@ export const vVirtualList: Directive = {
 
     // 初始化虚拟列表状态
     el.__vVirtualList = {
-      handleScroll: () => { },
-      computeVisibleIndexes: () => { },
-      updateTotalHeight: () => { },
+      handleScroll: () => {},
+      computeVisibleIndexes: () => {},
+      updateTotalHeight: () => {},
       containerHeight,
       startIndex: 0,
       endIndex: 0,

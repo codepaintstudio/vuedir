@@ -18,7 +18,7 @@ const invertColor = (color: string): string => {
   if (!rgb) return color
 
   // 反转 RGB 值
-  const invertedRgb = rgb.map(value => 255 - parseInt(value))
+  const invertedRgb = rgb.map((value) => 255 - parseInt(value))
   return `rgb(${invertedRgb.join(', ')})`
 }
 
@@ -28,7 +28,7 @@ const applyBlendMode = (el: HTMLElement) => {
   const wrapper = document.createElement('div')
   wrapper.style.position = 'relative'
   wrapper.style.display = 'inline-block'
-  
+
   // 设置文字样式
   Object.assign(el.style, {
     position: 'relative',
@@ -53,7 +53,7 @@ const removeBlendMode = (el: HTMLElement) => {
     wrapper.parentNode?.insertBefore(el, wrapper)
     wrapper.parentNode?.removeChild(wrapper)
   }
-  
+
   // 清除样式
   el.style.removeProperty('position')
   el.style.removeProperty('mix-blend-mode')
@@ -82,7 +82,7 @@ export const vInvertColors: InvertDirective = {
 
   updated(el: InvertHTMLElement, binding) {
     const newMode = binding.value?.mode || 'basic'
-    
+
     // 如果模式发生变化，需要重新应用效果
     if (newMode !== el._mode) {
       // 清除之前的效果
@@ -130,4 +130,4 @@ export const vInvertColors: InvertDirective = {
       el.style.backgroundColor = el._originalBgColor
     }
   }
-} 
+}

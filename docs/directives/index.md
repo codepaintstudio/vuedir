@@ -1,5 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue';
+import {
+  vTyping,
+  vBacktop,
+} from "@cp-vuedir/core"
 
 const directives = ref([
   {
@@ -253,7 +257,7 @@ const directives = ref([
     category: '工具类'
   },
   {
-    name: 'virtualList',
+    name: 'virtuallist',
     description: '虚拟列表，用于渲染大量数据时提升性能',
     category: '性能优化类'
   }
@@ -274,7 +278,7 @@ const groupedDirectives = computed(() => {
 });
 </script>
 
-<h1>指令集预览 - {{directives.length}}个</h1>
+<h1 v-typing>指令集预览 - {{directives.length}}个</h1>
 
 <template v-for="(directives, category) in groupedDirectives" :key="category">
   <div class="category-section">
@@ -289,11 +293,16 @@ const groupedDirectives = computed(() => {
         class="directive-card"
       >
         <div class="directive-name">{{ directive.name }}</div>
+        <hr
+          style="width: 100%"
+        />
         <div class="directive-description">{{ directive.description }}</div>
       </a>
     </div>
   </div>
 </template>
+
+<a-button type="primary" long size="large" shape="round" v-backtop> 返回顶部 </a-button>
 
 <style scoped>
 .category-section {
@@ -304,7 +313,6 @@ const groupedDirectives = computed(() => {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .directive-grid {
@@ -329,13 +337,13 @@ const groupedDirectives = computed(() => {
 .directive-card {
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   text-decoration: none;
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .directive-card:hover {
@@ -344,13 +352,16 @@ const groupedDirectives = computed(() => {
 }
 
 .directive-name {
+  margin: 1rem;
+  margin-bottom: 0rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--vp-c-brand);
-  margin-bottom: 0.75rem;
 }
 
 .directive-description {
+  margin: 1rem;
+  margin-top: 0rem;
   color: var(--vp-c-text-2);
   line-height: 1.5;
   overflow: hidden;

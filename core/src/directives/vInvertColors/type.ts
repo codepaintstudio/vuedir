@@ -12,4 +12,4 @@ export interface InvertHTMLElement extends HTMLElement {
   _mode?: InvertMode
 }
 
-export type InvertDirective = Directive<InvertHTMLElement, InvertOptions> 
+export type InvertDirective = Directive<InvertHTMLElement, InvertOptions>
