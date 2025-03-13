@@ -69,7 +69,8 @@ export default defineConfig({
     },
     nav: [
       { text: '开始', link: '/guide/' },
-      { text: '指令集', link: '/directives/' }
+      { text: '指令集', link: '/directives/' },
+      { text: 'Hooks', link: '/hooks/' }
     ],
     sidebar: {
       '/guide/': [
@@ -171,6 +172,19 @@ export default defineConfig({
         {
           text: '演示',
           items: [{ text: '预加载演示', link: '/demo/preload-demo' }]
+        }
+      ],
+      '/hooks/': [
+        {
+          text: 'Hooks 集合',
+          items: [{ text: '关于hooks', link: '/hooks/' }]
+        },
+        {
+          text: 'Hooks',
+          items: sortByFirstLetter([
+            { text: 'useLanguage', link: '/hooks/uselanguage' },
+            { text: 'useMouse', link: '/hooks/usemouse' }
+          ])
         }
       ]
     }
