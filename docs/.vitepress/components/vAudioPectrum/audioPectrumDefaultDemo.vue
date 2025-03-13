@@ -18,6 +18,6 @@
   </div>
 </template>
 <script setup>
-import audio from './M500001vsFvf0j0DJr.mp3'
+import audio from '../../../../docs/public/directives/audiopectrum/trun the lights back on.mp3'
 </script>
 <style scoped></style>
