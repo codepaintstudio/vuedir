@@ -93,7 +93,7 @@ const directives = ref([
     "category": "交互类"
   },
   {
-    "name": "scroolto",
+    "name": "scrollto",
     "description": "滚动到指定元素，支持自定义滚动行为",
     "category": "交互类"
   },
@@ -168,7 +168,7 @@ const directives = ref([
     "category": "交互类"
   },
   {
-    "name": "infinite-scroll",
+    "name": "infinitescroll",
     "description": "实现无限滚动功能，当滚动到底部时触发加载更多数据",
     "category": "交互类"
   },
