@@ -1,4 +1,6 @@
 import type { App } from 'vue'
+
+/* Directives here */
 import { vBacktop } from './directives/vBacktop'
 import { vFocus } from './directives/vFocus'
 import { vCopy } from './directives/vCopy'
@@ -49,9 +51,14 @@ import { vProgress } from './directives/vProgress'
 import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
-import { useLanguage } from './hooks/languageManager'
 import { vVirtualList } from './directives/vVirtualList'
+
+/* Hooks here */
+import { useLanguage } from './hooks/useLanguage'
+import { useMouse } from './hooks/useMouse/core'
+
 export {
+  /* Directives here */
   vBacktop,
   vClickout,
   vFocus,
@@ -102,7 +109,10 @@ export {
   vMagnet,
   vAppleblur,
   vVirtualList,
-  useLanguage
+
+  /* Hooks here */
+  useLanguage,
+  useMouse
 }
 
 export interface CPVueDirPlugin {

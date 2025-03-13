@@ -20,20 +20,20 @@ hero:
 features:
   - title: 足够丰富
     icon: 🎲
-    details: 短期目标100+，只要你想任何操作都可以指令化！
+    details: 提供超过 100 个简单、易用的 Vue 3 自定义指令，涵盖各种常见操作，让你的开发更高效。
   - title: 足够轻量级
     icon: 🚀
-    details: 小巧的体积，完整包体积仅十几kb，完全不影响你的项目性能
+    details: 完整包体积仅十几 kb，不会对项目性能造成任何影响，优化你的 Vue 3 应用。
   - title: 足够简单易用
     icon: 🛠️
-    details: 简单的 API，一个指令搞定一切
+    details: 简洁的 API 设计，让你轻松上手，一个指令搞定复杂操作。
   - title: 丰富自定义
     icon: 🔧
-    details: 无头模式，支持指令的自定义行为
+    details: 无头模式，支持高度自定义的指令行为，满足你的各种需求。
   - title: 支持按需引入
     icon: 📦
-    details: 按需引入，减少项目体积，提高性能
+    details: 支持按需引入，只引入需要的指令，有效减少项目体积，提升性能。
   - title: TypeScript 支持
     icon: 🦾
-    details: 使用 TypeScript 编写，提供完整的类型支持
+    details: 使用 TypeScript 编写，提供完整的类型支持，让你的代码更健壮。
 ---
