@@ -50,6 +50,7 @@ import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
 import { useLanguage } from './hooks/languageManager'
+import { vVirtualList } from './directives/vVirtualList'
 export {
   vBacktop,
   vClickout,
@@ -100,6 +101,7 @@ export {
   vProgress,
   vMagnet,
   vAppleblur,
+  vVirtualList,
   useLanguage
 }
 
@@ -168,6 +170,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('progress', vProgress)
     app.directive('magnet', vMagnet)
     app.directive('appleblur', vAppleblur)
+    app.directive('VirtualList', vVirtualList)
   }
 }
 

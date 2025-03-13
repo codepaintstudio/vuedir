@@ -159,7 +159,8 @@ export default defineConfig({
               items: sortByFirstLetter([
                 { text: 'lazyload', link: '/directives/lazyload' },
                 { text: 'preload', link: '/directives/preload' },
-                { text: 'spare', link: '/directives/spare' }
+                { text: 'spare', link: '/directives/spare' },
+                { text: 'virtualList', link: '/directives/virtualList' }
               ])
             },
             {

@@ -251,6 +251,11 @@ const directives = ref([
     name: 'i18n',
     description: 'i18n，更轻量级、指令化的国际化方案。',
     category: '工具类'
+  },
+  {
+    name: 'virtualList',
+    description: '虚拟列表，用于渲染大量数据时提升性能',
+    category: '性能优化类'
   }
 ])
 
