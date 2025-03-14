@@ -10,8 +10,6 @@
 
 适用于需要监控页面中元素状态变动的各种场景，比如内容编辑器、懒加载图片、动态布局调整等。
 
----
-
 ## 基础用法
 
 ```vue
@@ -32,8 +30,6 @@ const { mutation, intersection, resize, isIntersecting } = useObserver(container
   <div ref="container">观察这个元素的状态变化！</div>
 </template>
 ```
-
----
 
 ## 示例组件
 
@@ -85,8 +81,6 @@ const { mutation, intersection, resize, isIntersecting } = useObserver(container
 
 :::
 
----
-
 ## 适用场景
 
 - **动态内容更新监控**  
@@ -97,8 +91,6 @@ const { mutation, intersection, resize, isIntersecting } = useObserver(container
 
 - **响应式布局调整**  
   ResizeObserver 让你在元素尺寸变化时及时调整布局，保证页面响应式体验。
-
----
 
 ## API
 
@@ -155,8 +147,6 @@ const apis = [
   }
 ]
 </script>
-
----
 
 ## 注意事项
 
