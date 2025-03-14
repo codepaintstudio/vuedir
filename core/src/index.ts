@@ -56,6 +56,7 @@ import { vVirtualList } from './directives/vVirtualList'
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
 import { useMouse } from './hooks/useMouse/core'
+import { useObserver } from './hooks/useObserver'
 
 export {
   /* Directives here */
@@ -112,7 +113,8 @@ export {
 
   /* Hooks here */
   useLanguage,
-  useMouse
+  useMouse,
+  useObserver
 }
 
 export interface CPVueDirPlugin {
