@@ -66,9 +66,9 @@ const status = computed(() => {
       }"
       ref="dragElement"
       class="draggable-box"
-      style="background-color: red; transform: translateX(-200px)"
+      style="background-color: #c22922; transform: translateX(-200px)"
     >
-      {{ isDragging ? '拖拽中...' : '拖拽我' }}
+      N-{{ isDragging ? '拖拽中...' : '拖拽我' }}
     </div>
     <div
       v-drag
@@ -78,9 +78,9 @@ const status = computed(() => {
       }"
       ref="dragElement"
       class="draggable-box"
-      style="background-color: blue; transform: translateX(200px)"
+      style="background-color: #102c75; transform: translateX(200px)"
     >
-      {{ isDragging ? '拖拽中...' : '拖拽我' }}
+      S-{{ isDragging ? '拖拽中...' : '拖拽我' }}
     </div>
 
     <div class="scroll-hint" v-if="deltaX !== 0">滚动检测: {{ deltaX > 0 ? '→ 向右滚动' : '← 向左滚动' }}</div>
@@ -126,13 +126,14 @@ const status = computed(() => {
 .draggable-box {
   position: absolute;
   width: 100px;
-  height: 100px;
+  height: 60px;
   color: white;
   display: grid;
   place-items: center;
   border-radius: 8px;
   cursor: grab;
   transition: transform 0.1s ease-out;
+  border: 1px solid var(--vp-c-text-1);
 }
 
 .scroll-hint {
