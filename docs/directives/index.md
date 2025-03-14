@@ -260,6 +260,11 @@ const directives = ref([
     name: 'virtuallist',
     description: '虚拟列表，用于渲染大量数据时提升性能',
     category: '性能优化类'
+  },
+  {
+    name: "priceanimate",
+    description: "动态价格变动效果",
+    category: "视觉类"
   }
 ])
 

@@ -52,6 +52,7 @@ import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
 import { vVirtualList } from './directives/vVirtualList'
+import { vPriceAnimate } from './directives/vPriceAnimate'
 
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
@@ -110,6 +111,7 @@ export {
   vMagnet,
   vAppleblur,
   vVirtualList,
+  vPriceAnimate,
 
   /* Hooks here */
   useLanguage,
@@ -183,6 +185,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('magnet', vMagnet)
     app.directive('appleblur', vAppleblur)
     app.directive('VirtualList', vVirtualList)
+    app.directive('priceanimate', vPriceAnimate)
   }
 }
 
