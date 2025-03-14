@@ -177,14 +177,16 @@ export default defineConfig({
       '/hooks/': [
         {
           text: 'Hooks 集合',
-          items: [{ text: '关于hooks', link: '/hooks/' }]
-        },
-        {
-          text: 'Hooks',
-          items: sortByFirstLetter([
-            { text: 'useLanguage', link: '/hooks/uselanguage' },
-            { text: 'useMouse', link: '/hooks/usemouse' }
-          ])
+          items: [
+            { text: '关于hooks', link: '/hooks/' },
+            {
+              text: 'Hooks',
+              items: sortByFirstLetter([
+                { text: 'useLanguage', link: '/hooks/uselanguage' },
+                { text: 'useMouse', link: '/hooks/usemouse' }
+              ])
+            }
+          ]
         }
       ]
     }

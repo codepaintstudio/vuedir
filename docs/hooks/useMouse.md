@@ -67,6 +67,16 @@ watch(deltaY, (dy) => {
 </script>
 ```
 
+## API
+
+<ApiTable :data="apis" />
+
+### MouseButton 枚举
+
+鼠标按钮枚举，包含以下值：
+
+<ApiTable :data="MouseButton" />
+
 ## 注意事项
 
 ::: warning 注意
@@ -79,4 +89,94 @@ watch(deltaY, (dy) => {
 
 <script setup>
 import MouseDemo from '../.vitepress/componentsHooks/useMouse/MouseDemo.vue'
+import ApiTable from '../.vitepress/components/ApiTable.vue'
+const apis = [
+  {
+    name: 'x',
+    type: 'number',
+    default: '0',
+    description: '鼠标 X 坐标',
+    required: false
+  },
+  {
+    name: 'y',
+    type: 'number',
+    default: '0',
+    description: '鼠标 Y 坐标',
+    required: false
+  },
+  {
+    name: 'deltaX',
+    type: 'number',
+    default: '0',
+    description: '鼠标 X 轴滚轮滚动增量',
+    required: false
+  },
+  {
+    name: 'deltaY',
+    type: 'number',
+    default: '0',
+    description: '鼠标 Y 轴滚轮滚动增量',
+    required: false
+  },
+  {
+    name: 'button',
+    type: 'MouseButton',
+    default: 'MouseButton.NONE',
+    description: '当前按下的鼠标按钮',
+    required: false
+  },
+  {
+    name: 'isDown',
+    type: 'boolean',
+    default: 'false',
+    description: '鼠标是否按下',
+    required: false
+  }
+]
+
+const MouseButton = [
+  {
+    name: 'None',
+    description: '正常状态，未按下任何按钮',
+    required: false,
+    default: '0',
+    type: 'number'
+  },
+  {
+    name: 'Primary',
+    description: '按下状态，按下鼠标左键',
+    required: false,
+    default: '1',
+    type: 'number'
+  },
+  {
+    name: 'Secondary',
+    description: '按下状态，按下鼠标右键',
+    required: false,
+    default: '2',
+    type: 'number'
+  },
+  {
+    name: 'Auxiliary',
+    description: '按下状态，按下鼠标中键',
+    required: false,
+    default: '4',
+    type: 'number'
+  },
+  {
+    name: 'BackButton',
+    description: '按下状态，按下左侧下键',
+    required: false,
+    default: '8',
+    type: 'number'
+  },
+  {
+    name: 'ForwardButton',
+    description: '按下状态，按下左侧上键',
+    required: false,
+    default: '16',
+    type: 'number'
+  }
+]
 </script>
