@@ -137,7 +137,8 @@ export default defineConfig({
                 { text: 'invertcolors', link: '/directives/invertcolors' },
                 { text: 'progress', link: '/directives/progress' },
                 { text: 'typing', link: '/directives/typing' },
-                { text: 'appleblur', link: '/directives/appleblur' }
+                { text: 'appleblur', link: '/directives/appleblur' },
+                { text: 'priceanimate', link: '/directives/priceanimate' },
               ])
             },
             {

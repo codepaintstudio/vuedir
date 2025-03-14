@@ -15,8 +15,7 @@ const sub = () => {
   <div class="container">
     <div v-price-animate="{
       value: number,
-      upColor: '#24c5cd',
-      downColor: '#180d74'
+      arrowSize: 1.5
     }">
       {{ number }}
     </div>
@@ -29,7 +28,9 @@ const sub = () => {
 
 <style scoped>
 .container {
-  height: 100vh;
+  border: 1px solid #a6aefb;
+  border-radius: 12px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

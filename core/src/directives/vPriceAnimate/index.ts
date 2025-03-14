@@ -1,0 +1,1 @@
+export { vPriceAnimate } from './core'
