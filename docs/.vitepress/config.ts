@@ -183,7 +183,8 @@ export default defineConfig({
               text: 'Hooks',
               items: sortByFirstLetter([
                 { text: 'useLanguage', link: '/hooks/uselanguage' },
-                { text: 'useMouse', link: '/hooks/usemouse' }
+                { text: 'useMouse', link: '/hooks/usemouse' },
+                { text: 'useObserver', link: '/hooks/useobserver' }
               ])
             }
           ]
