@@ -265,6 +265,11 @@ const directives = ref([
     name: "priceanimate",
     description: "动态价格变动效果",
     category: "视觉类"
+  },
+  {
+    "name":"audiopectrum",
+    "description":"音频频谱可视化效果",
+    "category":"视觉类"
   }
 ])
 
