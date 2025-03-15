@@ -1,13 +1,11 @@
 <template>
   <div class="demo-container">
     <!-- 基础模式 -->
-    <div v-invertcolors class="basic-demo">
-      基础颜色反转
-    </div>
-  
+    <div v-invertcolors class="basic-demo">基础颜色反转</div>
+
     <!-- 混合模式 - 适用于动态背景 -->
     <div class="gif-container">
-      <img src="../../../public/directives/invertcolors/ikun.gif" alt="background" class="background-gif">
+      <img src="../../../public/directives/invertcolors/ikun.gif" alt="background" class="background-gif" />
       <div class="text-content" v-invertcolors="{ mode: 'blend' }">
         <h1>我是ikun，这是我gege</h1>
         <p>我喜欢唱、跳、rap、篮球</p>
@@ -23,7 +21,7 @@
 
 .basic-demo {
   padding: 1rem;
-  background-color: #4A2C7B;
+  background-color: #4a2c7b;
   color: white;
   border-radius: 8px;
   text-align: center;

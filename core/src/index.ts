@@ -1,4 +1,6 @@
 import type { App } from 'vue'
+
+/* Directives here */
 import { vBacktop } from './directives/vBacktop'
 import { vFocus } from './directives/vFocus'
 import { vCopy } from './directives/vCopy'
@@ -49,10 +51,17 @@ import { vProgress } from './directives/vProgress'
 import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
-import { useLanguage } from './hooks/languageManager'
 import { vVirtualList } from './directives/vVirtualList'
-import {vAudioPectrum} from './directives/vAudioPectrum'
+import { vAudioPectrum } from './directives/vAudioPectrum'
+import { vPriceAnimate } from './directives/vPriceAnimate'
+
+/* Hooks here */
+import { useLanguage } from './hooks/useLanguage'
+import { useMouse } from './hooks/useMouse/core'
+import { useObserver } from './hooks/useObserver'
+
 export {
+  /* Directives here */
   vBacktop,
   vClickout,
   vFocus,
@@ -104,7 +113,12 @@ export {
   vAppleblur,
   vVirtualList,
   vAudioPectrum,
-  useLanguage
+  vPriceAnimate,
+
+  /* Hooks here */
+  useLanguage,
+  useMouse,
+  useObserver
 }
 
 export interface CPVueDirPlugin {
@@ -174,6 +188,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('appleblur', vAppleblur)
     app.directive('VirtualList', vVirtualList)
     app.directive('audiopectrum', vAudioPectrum)
+    app.directive('priceanimate', vPriceAnimate)
   }
 }
 

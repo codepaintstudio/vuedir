@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
-import './custom.css'
+import './var.css'
+import './animation.css'
 import './fonts.css'
 import Layout from './Layout.vue'
 

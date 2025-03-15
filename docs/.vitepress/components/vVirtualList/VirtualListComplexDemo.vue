@@ -1,9 +1,12 @@
 <template>
-  <div v-virtual-list="{
-    data: complexItems,
-    containerHeight: 300,
-    renderItem: renderComplexItem
-  }" class="count-and-colors-list"></div>
+  <div
+    v-virtual-list="{
+      data: complexItems,
+      containerHeight: 300,
+      renderItem: renderComplexItem
+    }"
+    class="count-and-colors-list"
+  ></div>
 </template>
 
 <script setup lang="ts">
@@ -11,33 +14,34 @@ import { ref, h } from 'vue'
 import { vVirtualList } from '@cp-vuedir/core'
 
 interface ComplexItem {
-  id: number;
-  name: string;
-  sku: string;
-  price: string;
-  stock: number;
-  description: string;
+  id: number
+  name: string
+  sku: string
+  price: string
+  stock: number
+  description: string
 }
 
-const complexItems = ref<ComplexItem[]>(Array.from({length: 10000}, (_, i) => ({
-  id: i + 1,
-  name: `Product ${i + 1}`,
-  sku: `SKU-${Math.random().toString(36).slice(2, 10)}`,
-  price: (Math.random() * 1000).toFixed(2),
-  stock: Math.floor(Math.random() * 1000),
-  description: 'Detailed product description with multiple lines of text'
-})));
+const complexItems = ref<ComplexItem[]>(
+  Array.from({ length: 10000 }, (_, i) => ({
+    id: i + 1,
+    name: `Product ${i + 1}`,
+    sku: `SKU-${Math.random().toString(36).slice(2, 10)}`,
+    price: (Math.random() * 1000).toFixed(2),
+    stock: Math.floor(Math.random() * 1000),
+    description: 'Detailed product description with multiple lines of text'
+  }))
+)
 
-const renderComplexItem = (item: ComplexItem) => h('div', {
-  class: 'complex-item',
-  key: item.id
-}, [
-  h('p', item.name),
-  h('p', item.sku),
-  h('p', item.price),
-  h('p', item.stock),
-  h('p', item.description)
-]);
+const renderComplexItem = (item: ComplexItem) =>
+  h(
+    'div',
+    {
+      class: 'complex-item',
+      key: item.id
+    },
+    [h('p', item.name), h('p', item.sku), h('p', item.price), h('p', item.stock), h('p', item.description)]
+  )
 </script>
 
 <style scoped>

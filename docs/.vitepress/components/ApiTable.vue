@@ -212,7 +212,7 @@ const formatDefaultValue = (value: string | undefined): string => {
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: scroll;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 

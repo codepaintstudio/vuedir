@@ -69,16 +69,14 @@ export default defineConfig({
     },
     nav: [
       { text: '开始', link: '/guide/' },
-      { text: '指令集', link: '/directives/' }
+      { text: '指令集', link: '/directives/' },
+      { text: 'Hooks', link: '/hooks/' }
     ],
     sidebar: {
       '/guide/': [
         {
           text: '快速开始',
-          items: [
-            { text: '安装', link: '/guide/' },
-            { text: '特性', link: '/guide/peculiarity' }
-          ]
+          items: [{ text: '安装', link: '/guide/' }]
         },
         {
           text: '开发者指南',
@@ -140,6 +138,7 @@ export default defineConfig({
                 { text: 'progress', link: '/directives/progress' },
                 { text: 'typing', link: '/directives/typing' },
                 { text: 'appleblur', link: '/directives/appleblur' },
+                { text: 'priceanimate', link: '/directives/priceanimate' },,
                 { text: "audiopectrum",link:"/directives/audiopectrum"}
               ])
             },
@@ -175,6 +174,22 @@ export default defineConfig({
         {
           text: '演示',
           items: [{ text: '预加载演示', link: '/demo/preload-demo' }]
+        }
+      ],
+      '/hooks/': [
+        {
+          text: 'Hooks 集合',
+          items: [
+            { text: '关于hooks', link: '/hooks/' },
+            {
+              text: 'Hooks',
+              items: sortByFirstLetter([
+                { text: 'useLanguage', link: '/hooks/uselanguage' },
+                { text: 'useMouse', link: '/hooks/usemouse' },
+                { text: 'useObserver', link: '/hooks/useobserver' }
+              ])
+            }
+          ]
         }
       ]
     }

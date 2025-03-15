@@ -10,11 +10,14 @@
 
 ```vue
 <template>
-  <div v-gradient="{
-    direction: '45deg',
-    speed: 10,
-    colors: ['#ff0000', '#00ff00', '#0000ff']
-  }" class="gradient-box">
+  <div
+    v-gradient="{
+      direction: '45deg',
+      speed: 10,
+      colors: ['#ff0000', '#00ff00', '#0000ff']
+    }"
+    class="gradient-box"
+  >
     流动渐变背景
   </div>
 </template>

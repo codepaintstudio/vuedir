@@ -1,9 +1,12 @@
 <template>
-  <div v-virtual-list="{
-    data: countAndColorsItems,
-    containerHeight: 300,
-    renderItem: renderCountAndColorsItem
-  }" class="count-and-colors-list"></div>
+  <div
+    v-virtual-list="{
+      data: countAndColorsItems,
+      containerHeight: 300,
+      renderItem: renderCountAndColorsItem
+    }"
+    class="count-and-colors-list"
+  ></div>
 </template>
 
 <script setup lang="ts">
@@ -11,24 +14,28 @@ import { ref, h } from 'vue'
 import { vVirtualList } from '@cp-vuedir/core'
 
 interface CountAndColorsItem {
-  id: number;
-  title: string;
-  content: string;
+  id: number
+  title: string
+  content: string
 }
 
-const countAndColorsItems = ref<CountAndColorsItem[]>(Array.from({ length: 100000 }, (_, i) => ({
-  id: i + 1,
-  title: `Item ${i + 1}`,
-  content: 'Content with color'
-})));
+const countAndColorsItems = ref<CountAndColorsItem[]>(
+  Array.from({ length: 100000 }, (_, i) => ({
+    id: i + 1,
+    title: `Item ${i + 1}`,
+    content: 'Content with color'
+  }))
+)
 
-const renderCountAndColorsItem = (item: CountAndColorsItem) => h('div', {
-  class: 'count-and-colors-item',
-  key: item.id
-}, [
-  h('p', item.title),
-  h('p', item.content)
-]);
+const renderCountAndColorsItem = (item: CountAndColorsItem) =>
+  h(
+    'div',
+    {
+      class: 'count-and-colors-item',
+      key: item.id
+    },
+    [h('p', item.title), h('p', item.content)]
+  )
 </script>
 
 <style scoped>
