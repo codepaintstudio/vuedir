@@ -1,23 +1,22 @@
+<!-- AudioBasicDemo.vue -->
 <template>
-    <div>
-    <!-- 基础用法 -->
-    <audio v-audiopectrum controls :src=audio></audio>
-    
-    <!-- 带参数配置 -->
-    <audio 
-      v-audiopectrum="{
-        fftSize: 64,
-        colors: {
-          start: '#00ffff',
-          end: '#ff00ff'
-        }
-      }" 
-      controls 
-      :src="audio"
-    ></audio>
-  </div>
-</template>
-<script setup>
-import audio from '../../../../docs/public/directives/audiopectrum/trun the lights back on.mp3'
-</script>
-<style scoped></style>
+    <div class="demo-container">
+      <audio 
+        v-audiopectrum
+        controls
+        src="../.../../../../public/directives/audiopectrum/trun the lights back on.mp3"
+      ></audio>
+    </div>
+  </template>
+  
+  <script setup lang="ts">
+  </script>
+  
+  <style scoped>
+  .demo-container {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  </style>

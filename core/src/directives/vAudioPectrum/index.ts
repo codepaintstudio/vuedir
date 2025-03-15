@@ -1,1 +1,1 @@
-export {vAudioPectrum} from'./core'
+export { vAudioPectrum } from './core'
