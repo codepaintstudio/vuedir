@@ -1,64 +1,3 @@
-:root {
-  --vp-c-brand: #4b2b7c;
-  --vp-c-brand-light: #5d3798;
-  --vp-c-brand-lighter: #6f44b4;
-  --vp-c-brand-dark: #82709c;
-  --vp-c-brand-darker: #271544;
-
-  --vp-c-sponsor: #dd5336;
-  --vp-c-sponsor-light: #e4654a;
-  --vp-c-sponsor-lighter: #eb775e;
-  --vp-c-sponsor-dark: #c44a30;
-  --vp-c-sponsor-darker: #ab412a;
-
-  --vp-nav-bg-color: rgba(255, 255, 255, 0.95);
-  --vp-sidebar-bg-color: var(--vp-c-bg);
-
-  --vp-c-text-1: #213547;
-  --vp-c-text-2: #394e63;
-  --vp-c-text-3: #8091a5;
-
-  --vp-code-line-highlight-color: rgba(75, 43, 124, 0.1);
-
-  --vp-button-bg: #6466e9;
-
-  /* 拖拽相关变量 */
-  --drag-placeholder-border: 2px dashed var(--vp-c-brand);
-  --drag-placeholder-bg: rgba(75, 43, 124, 0.1);
-  --drag-active-bg: var(--vp-c-brand-dimm);
-  --drag-active-border: var(--vp-c-brand);
-  --drag-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --drag-handle-bg: var(--vp-c-bg-soft);
-  --drag-handle-color: var(--vp-c-text-3);
-
-  /* 拖拽元素样式变量 */
-  --drag-element-bg: var(--vp-c-brand);
-  --drag-element-bg-hover: var(--vp-c-brand-dark);
-  --drag-element-bg-active: var(--vp-c-brand-darker);
-  --drag-element-text: white;
-  --drag-element-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --drag-element-shadow-active: 0 2px 4px rgba(0, 0, 0, 0.2);
-
-  /* 拖拽容器样式 */
-  --drag-playground-bg: var(--vp-c-bg);
-  --drag-playground-border: var(--vp-c-divider);
-}
-
-.dark {
-  --vp-nav-bg-color: rgba(36, 36, 36, 0.95);
-  --vp-c-text-1: #ffffff;
-  --vp-c-text-2: #ebebef;
-  --vp-c-text-3: #8091a5;
-  --vp-c-brand: #a6aefb;
-
-  --drag-placeholder-bg: rgba(166, 174, 251, 0.2);
-  --drag-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-  /* 暗色模式下的拖拽元素样式 */
-  --drag-element-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --drag-element-shadow-active: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 .VPNav {
   background-color: var(--vp-nav-bg-color);
   backdrop-filter: blur(8px);
@@ -376,7 +315,6 @@
   cursor: grabbing !important;
 }
 
-/* 添加脉冲动画 */
 @keyframes dragPulse {
   0%,
   100% {

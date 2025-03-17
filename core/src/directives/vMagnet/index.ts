@@ -1,0 +1,1 @@
+export { vMagnet } from './core'

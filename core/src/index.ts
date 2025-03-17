@@ -1,4 +1,6 @@
 import type { App } from 'vue'
+
+/* Directives here */
 import { vBacktop } from './directives/vBacktop'
 import { vFocus } from './directives/vFocus'
 import { vCopy } from './directives/vCopy'
@@ -46,8 +48,8 @@ import { vTimeTrack } from './directives/vTimeTrack'
 import { vGradient } from './directives/vGradient'
 import { vTyping } from './directives/vTyping'
 import { vProgress } from './directives/vProgress'
-import { vFomatter } from './directives/vFormatter'
 export {
+  /* Directives here */
   vBacktop,
   vClickout,
   vFocus,
@@ -94,8 +96,7 @@ export {
   vGradient,
   vInvertColors,
   vTyping,
-  vProgress,
-  vFomatter
+  vProgress
 }
 
 export interface CPVueDirPlugin {
@@ -104,6 +105,16 @@ export interface CPVueDirPlugin {
 
 const VueDir: CPVueDirPlugin = {
   install(app: App) {
+    const { vI18n, currentLanguage } = createI18n()
+    app.provide('currentLanguage', currentLanguage)
+    app.config.globalProperties.$i18n = {
+      currentLanguage,
+      setLanguage: (lang: string) => {
+        currentLanguage.value = lang
+      }
+    }
+
+    app.directive('i18n', vI18n)
     app.directive('backtop', vBacktop)
     app.directive('focus', vFocus)
     app.directive('copy', vCopy)
@@ -151,7 +162,6 @@ const VueDir: CPVueDirPlugin = {
     app.directive('gradient', vGradient)
     app.directive('typing', vTyping)
     app.directive('progress', vProgress)
-    app.directive('fomatter', vFomatter)
   }
 }
 

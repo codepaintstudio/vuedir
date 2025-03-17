@@ -1,5 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue';
+import {
+  vTyping,
+  vBacktop,
+} from "@cp-vuedir/core"
 
 const directives = ref([
   {
@@ -93,7 +97,7 @@ const directives = ref([
     "category": "交互类"
   },
   {
-    "name": "scroolto",
+    "name": "scrollto",
     "description": "滚动到指定元素，支持自定义滚动行为",
     "category": "交互类"
   },
@@ -168,7 +172,7 @@ const directives = ref([
     "category": "交互类"
   },
   {
-    "name": "infinite-scroll",
+    "name": "infinitescroll",
     "description": "实现无限滚动功能，当滚动到底部时触发加载更多数据",
     "category": "交互类"
   },
@@ -238,10 +242,40 @@ const directives = ref([
     "category": "视觉类"
   },
   {
+    name: "magnet",
+    description: "元素磁化，支持定义磁力、磁性",
+    category: "视觉类"
+  },
+  {
+    name: 'appleBlur',
+    description: '苹果毛玻璃效果',
+    category: '视觉类'
+  },
+  {
+    name: 'i18n',
+    description: 'i18n，更轻量级、指令化的国际化方案。',
+    category: '工具类'
+  },
+  {
+    name: 'virtuallist',
+    description: '虚拟列表，用于渲染大量数据时提升性能',
+    category: '性能优化类'
+  },
+  {
+    name: "priceanimate",
+    description: "动态价格变动效果",
+    category: "视觉类"
+  },
+  {
+    "name":"audiopectrum",
+    "description":"音频频谱可视化效果",
+    "category":"视觉类"
+  },
+  {
     "name": "fomatter",
     "description": "格式化文本，支持多种格式化方式，如日期、字节、货币",
     "category": "表单类"
-  },
+  }
 ])
 
 const groupedDirectives = computed(() => {
@@ -259,7 +293,7 @@ const groupedDirectives = computed(() => {
 });
 </script>
 
-<h1>指令集预览 - {{directives.length}}个</h1>
+<h1 v-typing>指令集预览 - {{directives.length}}个</h1>
 
 <template v-for="(directives, category) in groupedDirectives" :key="category">
   <div class="category-section">
@@ -274,11 +308,16 @@ const groupedDirectives = computed(() => {
         class="directive-card"
       >
         <div class="directive-name">{{ directive.name }}</div>
+        <hr
+          style="width: 100%"
+        />
         <div class="directive-description">{{ directive.description }}</div>
       </a>
     </div>
   </div>
 </template>
+
+<a-button type="primary" long size="large" shape="round" v-backtop> 返回顶部 </a-button>
 
 <style scoped>
 .category-section {
@@ -289,7 +328,6 @@ const groupedDirectives = computed(() => {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .directive-grid {
@@ -314,13 +352,13 @@ const groupedDirectives = computed(() => {
 .directive-card {
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   text-decoration: none;
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .directive-card:hover {
@@ -329,13 +367,16 @@ const groupedDirectives = computed(() => {
 }
 
 .directive-name {
+  margin: 1rem;
+  margin-bottom: 0rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--vp-c-brand);
-  margin-bottom: 0.75rem;
 }
 
 .directive-description {
+  margin: 1rem;
+  margin-top: 0rem;
   color: var(--vp-c-text-2);
   line-height: 1.5;
   overflow: hidden;

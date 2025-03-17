@@ -1,25 +1,13 @@
 <template>
   <div class="invert-demo">
-    <div class="demo-item" style="color: #333; background-color: #f5f5f5">
-      普通文本（未应用反转）
-    </div>
-    <div class="demo-item" v-invertcolors style="color: #333; background-color: #f5f5f5">
-      反转效果文本
-    </div>
-    <div class="demo-item" style="color: #fff; background-color: #4A2C7B">
-      普通文本（未应用反转）
-    </div>
-    <div class="demo-item" v-invertcolors style="color: #fff; background-color: #4A2C7B">
-      反转效果文本
-    </div>
+    <div class="demo-item" style="color: #333; background-color: #f5f5f5">普通文本（未应用反转）</div>
+    <div class="demo-item" v-invertcolors style="color: #333; background-color: #f5f5f5">反转效果文本</div>
+    <div class="demo-item" style="color: #fff; background-color: #4a2c7b">普通文本（未应用反转）</div>
+    <div class="demo-item" v-invertcolors style="color: #fff; background-color: #4a2c7b">反转效果文本</div>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
-
+<script setup lang="ts"></script>
 
 <style scoped>
 .invert-demo {
@@ -34,4 +22,4 @@
   border-radius: 4px;
   text-align: center;
 }
-</style> 
+</style>

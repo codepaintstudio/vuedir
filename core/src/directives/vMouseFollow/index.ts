@@ -1,1 +1,1 @@
-export { vMouseFollow } from './vMouseFollow'
+export { vMouseFollow } from './core'
