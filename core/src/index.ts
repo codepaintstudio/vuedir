@@ -48,7 +48,19 @@ import { vTimeTrack } from './directives/vTimeTrack'
 import { vGradient } from './directives/vGradient'
 import { vTyping } from './directives/vTyping'
 import { vProgress } from './directives/vProgress'
+import { vMagnet } from './directives/vMagnet'
+import { vAppleblur } from './directives/vAppleblur'
+import { createI18n } from './directives/vI18n'
+import { vVirtualList } from './directives/vVirtualList'
+import { vAudioPectrum } from './directives/vAudioPectrum'
+import { vPriceAnimate } from './directives/vPriceAnimate'
 import { vFomatter } from './directives/vFormatter'
+
+/* Hooks here */
+import { useLanguage } from './hooks/useLanguage'
+import { useMouse } from './hooks/useMouse/core'
+import { useObserver } from './hooks/useObserver'
+
 export {
   /* Directives here */
   vBacktop,
@@ -98,7 +110,17 @@ export {
   vInvertColors,
   vTyping,
   vProgress,
-  vFomatter
+  vMagnet,
+  vAppleblur,
+  vVirtualList,
+  vAudioPectrum,
+  vPriceAnimate,
+  vFomatter,
+
+  /* Hooks here */
+  useLanguage,
+  useMouse,
+  useObserver
 }
 
 export interface CPVueDirPlugin {
@@ -164,7 +186,12 @@ const VueDir: CPVueDirPlugin = {
     app.directive('gradient', vGradient)
     app.directive('typing', vTyping)
     app.directive('progress', vProgress)
-    app.directive('Fomatter', vFomatter)
+    app.directive('magnet', vMagnet)
+    app.directive('appleblur', vAppleblur)
+    app.directive('VirtualList', vVirtualList)
+    app.directive('audiopectrum', vAudioPectrum)
+    app.directive('priceanimate', vPriceAnimate)
+    app.directive('fomatter', vFomatter)
   }
 }
 
