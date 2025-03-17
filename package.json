@@ -7,6 +7,7 @@
   "scripts": {
     "docs:dev": "pnpm --filter docs dev",
     "play:dev": "pnpm --filter play dev",
+    "icons:dev": "pnpm --filter icons dev",
     "build:core": "pnpm --filter core build",
     "dev": "pnpm run build:core && pnpm -r --parallel run dev",
     "preinstall": "npx only-allow pnpm",
