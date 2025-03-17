@@ -140,7 +140,7 @@ export default defineConfig({
                 { text: 'appleblur', link: '/directives/appleblur' },
                 { text: 'skeleton', link: '/directives/skeleton' },
                 { text: 'priceanimate', link: '/directives/priceanimate' },
-                { text: "audiopectrum",link:"/directives/audiopectrum"}
+                { text: "audiopectrum", link: "/directives/audiopectrum" }
               ])
             },
             {
@@ -162,12 +162,15 @@ export default defineConfig({
                 { text: 'lazyload', link: '/directives/lazyload' },
                 { text: 'preload', link: '/directives/preload' },
                 { text: 'spare', link: '/directives/spare' },
-                { text: 'virtualList', link: '/directives/virtualList' }
+                { text: 'virtualList', link: '/directives/virtualList' },
               ])
             },
             {
               text: '工具类',
-              items: sortByFirstLetter([{ text: 'i18n', link: '/directives/i18n' }])
+              items: sortByFirstLetter([
+                { text: 'i18n', link: '/directives/i18n' },
+                { text: 'conversionImage', link: '/directives/conversionImage' }
+              ])
             }
           ]
         }

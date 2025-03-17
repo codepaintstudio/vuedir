@@ -56,6 +56,7 @@ import { vAudioPectrum } from './directives/vAudioPectrum'
 import { vPriceAnimate } from './directives/vPriceAnimate'
 import { vSkeleton } from './directives/vSkeleton/core'
 import { vFomatter } from './directives/vFormatter'
+import { vConversionImage } from './directives/vConversionImage'
 
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
@@ -118,6 +119,7 @@ export {
   vPriceAnimate,
   vSkeleton,
   vFomatter,
+  vConversionImage,
 
 
   /* Hooks here */
@@ -196,6 +198,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('priceanimate', vPriceAnimate)
     app.directive('skeleton', vSkeleton)
     app.directive('fomatter', vFomatter)
+    app.directive('conversionimage', vConversionImage)
   }
 }
 

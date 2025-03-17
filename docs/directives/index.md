@@ -276,10 +276,16 @@ const directives = ref([
     "description":"骨架屏，用于在数据加载过程中显示占位符，提升用户体验",
     "category":"视觉类"
   },
+  {
     "name": "fomatter",
     "description": "格式化文本，支持多种格式化方式，如日期、字节、货币",
     "category": "表单类"
-  }
+  },
+  {
+    "name":"conversionimage",
+    "description":"将图片转换为Base64编码",
+    "category":"工具类"
+  },
 ])
 
 const groupedDirectives = computed(() => {
