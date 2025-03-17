@@ -260,7 +260,12 @@ const directives = ref([
     name: 'virtuallist',
     description: '虚拟列表，用于渲染大量数据时提升性能',
     category: '性能优化类'
-  }
+  },
+  {
+    "name":'skeleton',
+    "description":"骨架屏，用于在数据加载过程中显示占位符，提升用户体验",
+    "category":"视觉类"
+  },
 ])
 
 const groupedDirectives = computed(() => {
