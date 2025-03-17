@@ -60,7 +60,7 @@ import { vFomatter } from './directives/vFormatter'
 import { useLanguage } from './hooks/useLanguage'
 import { useMouse } from './hooks/useMouse/core'
 import { useObserver } from './hooks/useObserver'
-
+import { useStorage } from './hooks/useStorage/core'
 export {
   /* Directives here */
   vBacktop,
@@ -120,7 +120,8 @@ export {
   /* Hooks here */
   useLanguage,
   useMouse,
-  useObserver
+  useObserver,
+  useStorage
 }
 
 export interface CPVueDirPlugin {
