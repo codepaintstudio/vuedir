@@ -1,34 +1,18 @@
 <template>
-  <div>
-    <h2>中国货币</h2>
-    <div class="auo" v-fomatter="{value: money , locale:'zh-CN', options:{ style: 'currency', currency: 'CNY'}}"></div>
-    <h2>百分比</h2>
-    <div  v-fomatter="{value: percent , options:{ fractionDigits : 2}}"></div>
-    <h2>时间</h2>
-    <div  v-fomatter="{value: time , options: { weekday: 'short', year : 'numeric', month: 'narrow', day:'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'}}"></div>
-    <h2>字节</h2>
-    <div v-fomatter="{value: bytes , options:{ decimals: 2 }}"></div>
-  </div>
+  <!-- 不压缩转换 -->
+  <img v-conversion-image="{ to: 'webp', compression: 'oto' }" src="https://picsum.photos/800/400?random=1" />
+
+  <!-- 大压缩到小空间 -->
+  <img v-conversion-image="{ to: 'jpeg', compression: 'lts', ratio: 0.9 }"
+    src="https://picsum.photos/800/400?random=2" />
+
+  <!-- 小压缩到大空间 -->
+  <img v-conversion-image="{ to: 'png', compression: 'stl', ratio: 0.9 }"
+    src="https://picsum.photos/800/400?random=3" />
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { vFomatter } from '@cp-vuedir/core'
-
-const money = ref(100000)
-const percent = ref(0.5)
-const time = ref(new Date())
-const bytes = ref(5000)
+import { vConversionImage } from '@cp-vuedir/core'
 </script>
 
-<style scoped>
-/* 容器样式 */
-.auo{
-  width: 200px;
-}
-.btn:active {
-  background-color: #2c7240;
-  transform: scale(1);
-}
-</style>
-
+<style scoped></style>
