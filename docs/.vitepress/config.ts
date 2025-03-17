@@ -138,9 +138,9 @@ export default defineConfig({
                 { text: 'progress', link: '/directives/progress' },
                 { text: 'typing', link: '/directives/typing' },
                 { text: 'appleblur', link: '/directives/appleblur' },
+                { text: 'skeleton', link: '/directives/skeleton' },
                 { text: 'priceanimate', link: '/directives/priceanimate' },
-                ,
-                { text: 'audiopectrum', link: '/directives/audiopectrum' }
+                { text: "audiopectrum",link:"/directives/audiopectrum"}
               ])
             },
             {
