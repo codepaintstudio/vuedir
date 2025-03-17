@@ -237,6 +237,11 @@ const directives = ref([
     "description": "实时进度条（绑定数值自动渲染环形/条形进度）",
     "category": "视觉类"
   },
+  {
+    "name": "fomatter",
+    "description": "格式化文本，支持多种格式化方式，如日期、字节、货币",
+    "category": "表单类"
+  },
 ])
 
 const groupedDirectives = computed(() => {
