@@ -138,8 +138,9 @@ export default defineConfig({
                 { text: 'progress', link: '/directives/progress' },
                 { text: 'typing', link: '/directives/typing' },
                 { text: 'appleblur', link: '/directives/appleblur' },
-                { text: 'priceanimate', link: '/directives/priceanimate' },,
-                { text: "audiopectrum",link:"/directives/audiopectrum"}
+                { text: 'priceanimate', link: '/directives/priceanimate' },
+                ,
+                { text: 'audiopectrum', link: '/directives/audiopectrum' }
               ])
             },
             {
@@ -186,7 +187,8 @@ export default defineConfig({
               items: sortByFirstLetter([
                 { text: 'useLanguage', link: '/hooks/uselanguage' },
                 { text: 'useMouse', link: '/hooks/usemouse' },
-                { text: 'useObserver', link: '/hooks/useobserver' }
+                { text: 'useObserver', link: '/hooks/useobserver' },
+                { text: 'useStorage', link: '/hooks/usestorage' }
               ])
             }
           ]
