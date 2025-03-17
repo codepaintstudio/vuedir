@@ -54,6 +54,7 @@ import { createI18n } from './directives/vI18n'
 import { vVirtualList } from './directives/vVirtualList'
 import { vAudioPectrum } from './directives/vAudioPectrum'
 import { vPriceAnimate } from './directives/vPriceAnimate'
+import { vFomatter } from './directives/vFormatter'
 
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
@@ -114,6 +115,7 @@ export {
   vVirtualList,
   vAudioPectrum,
   vPriceAnimate,
+  vFomatter,
 
   /* Hooks here */
   useLanguage,
@@ -189,6 +191,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('VirtualList', vVirtualList)
     app.directive('audiopectrum', vAudioPectrum)
     app.directive('priceanimate', vPriceAnimate)
+    app.directive('fomatter', vFomatter)
   }
 }
 

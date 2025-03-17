@@ -151,7 +151,8 @@ export default defineConfig({
                 { text: 'focus', link: '/directives/focus' },
                 { text: 'pwdvisible', link: '/directives/pwdvisible' },
                 { text: 'trim', link: '/directives/trim' },
-                { text: 'verify', link: '/directives/verify' }
+                { text: 'verify', link: '/directives/verify' },
+                { text: 'fomatter', link: '/directives/fomatter' }
               ])
             },
             {
