@@ -26,5 +26,9 @@ const bytes = ref(5000)
 .auo{
   width: 200px;
 }
-
+.btn:active {
+  background-color: #2c7240;
+  transform: scale(1);
+}
 </style>
+
