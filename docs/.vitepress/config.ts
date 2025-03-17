@@ -188,7 +188,8 @@ export default defineConfig({
               items: sortByFirstLetter([
                 { text: 'useLanguage', link: '/hooks/uselanguage' },
                 { text: 'useMouse', link: '/hooks/usemouse' },
-                { text: 'useObserver', link: '/hooks/useobserver' }
+                { text: 'useObserver', link: '/hooks/useobserver' },
+                { text: 'useStorage', link: '/hooks/usestorage' }
               ])
             }
           ]
