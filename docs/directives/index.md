@@ -270,6 +270,11 @@ const directives = ref([
     "name":"audiopectrum",
     "description":"音频频谱可视化效果",
     "category":"视觉类"
+  },
+  {
+    "name": "fomatter",
+    "description": "格式化文本，支持多种格式化方式，如日期、字节、货币",
+    "category": "表单类"
   }
 ])
 
