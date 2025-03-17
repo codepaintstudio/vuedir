@@ -1,14 +1,5 @@
 <template>
-    <div v-skeleton="{
-        isLoading: isLoading,
-        blocks: [
-            { width: '100%', height: 20, top: 10 },
-            { width: '80%', height: 16, top: 40 }
-        ],
-        animation: 'wave',
-        bgColor: '#f8f9fa',
-        highlightColor: '#e9ecef'
-    }" style="height: 100px; width: 300px; border-radius: 8px;">
+    <div v-skeleton="skeletonProps" style="height: 100px; width: 300px; border-radius: 8px;">
         <div v-if="!isLoading" style="padding: 20px; font-size: 16px; color: var(--vp-c-text); border: 1px solid #ccc;">
             异步获取数据成功
         </div>
@@ -16,14 +7,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { vSkeleton } from '@cp-vuedir/core';
 
 const isLoading = ref(true);
 
-setTimeout(() => {
-    isLoading.value = false;
-}, 2000);
+const skeletonProps = ref({
+    isLoading: isLoading.value,
+    blocks: [
+        { width: '100%', height: 20, top: 10 },
+        { width: '80%', height: 16, top: 40 }
+    ],
+    animation: 'wave',
+    bgColor: '#f8f9fa',
+    highlightColor: '#e9ecef'
+})
+
+onMounted(() => {
+    setTimeout(() => {
+        isLoading.value = false;
+        skeletonProps.value = { ...skeletonProps.value, isLoading: isLoading.value }
+    }, 2000);
+})
 </script>
 
 <style>

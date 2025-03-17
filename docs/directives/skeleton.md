@@ -7,8 +7,9 @@ v-skeleton 指令用于在异步数据加载时，显示骨架屏以提升用户
 ## 基础用法
 
 在需要显示骨架屏的元素上使用 v-skeleton 指令：
-
-<SkeletonDemo />
+<ClientOnly>
+  <SkeletonDemo />
+</ClientOnly>
 
 ::: details 查看代码
 <<< @/.vitepress/components/vSkeleton/SkeletonDemo.vue
