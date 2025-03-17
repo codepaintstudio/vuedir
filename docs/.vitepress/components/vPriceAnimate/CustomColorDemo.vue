@@ -29,7 +29,9 @@ const sub = () => {
 
 <style scoped>
 .container {
-  height: 100vh;
+  border: 1px solid #a6aefb;
+  border-radius: 12px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

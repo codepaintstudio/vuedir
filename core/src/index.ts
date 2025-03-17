@@ -52,11 +52,14 @@ import { vMagnet } from './directives/vMagnet'
 import { vAppleblur } from './directives/vAppleblur'
 import { createI18n } from './directives/vI18n'
 import { vVirtualList } from './directives/vVirtualList'
+import { vAudioPectrum } from './directives/vAudioPectrum'
+import { vPriceAnimate } from './directives/vPriceAnimate'
 import { vSkeleton } from './directives/vSkeleton/core'
 
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
 import { useMouse } from './hooks/useMouse/core'
+import { useObserver } from './hooks/useObserver'
 
 export {
   /* Directives here */
@@ -110,11 +113,14 @@ export {
   vMagnet,
   vAppleblur,
   vVirtualList,
+  vAudioPectrum,
+  vPriceAnimate,
   vSkeleton,
 
   /* Hooks here */
   useLanguage,
-  useMouse
+  useMouse,
+  useObserver
 }
 
 export interface CPVueDirPlugin {
@@ -183,6 +189,8 @@ const VueDir: CPVueDirPlugin = {
     app.directive('magnet', vMagnet)
     app.directive('appleblur', vAppleblur)
     app.directive('VirtualList', vVirtualList)
+    app.directive('audiopectrum', vAudioPectrum)
+    app.directive('priceanimate', vPriceAnimate)
     app.directive('skeleton', vSkeleton)
   }
 }
