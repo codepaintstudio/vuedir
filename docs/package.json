@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.56.3",
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.13.13",
     "gh-pages": "^6.3.0",
     "vitepress": "^1.0.0"
   }
