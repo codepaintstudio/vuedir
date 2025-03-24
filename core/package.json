@@ -1,7 +1,7 @@
 {
   "name": "@cp-vuedir/core",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "A lightweight collection of Vue 3 directives for building efficient applications",
   "keywords": [
     "vue",
@@ -40,7 +40,7 @@
     "vue": "^3.3.0"
   },
   "dependencies": {
-    "@cp-vuedir/icons": "workspace:*"
+    "@cp-vuedir/icons": "^0.1.7"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
