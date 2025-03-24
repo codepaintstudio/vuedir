@@ -43,7 +43,7 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "rimraf": "^5.0.0",
-    "rollup": "^4.35.0",
+    "rollup": "^4.37.0",
     "typescript": "^5.0.0"
   },
   "sideEffects": false
