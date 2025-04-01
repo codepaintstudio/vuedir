@@ -140,7 +140,8 @@ export default defineConfig({
                 { text: 'appleblur', link: '/directives/appleblur' },
                 { text: 'skeleton', link: '/directives/skeleton' },
                 { text: 'priceanimate', link: '/directives/priceanimate' },
-                { text: "audiopectrum", link: "/directives/audiopectrum" }
+                { text: "audiopectrum", link: "/directives/audiopectrum" },
+                { text: "outview", link: "/directives/outview" },
               ])
             },
             {

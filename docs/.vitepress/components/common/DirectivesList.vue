@@ -317,6 +317,11 @@ const directives = ref([
     name: 'conversionimage',
     description: '将图片转换为Base64编码',
     category: '工具类'
+  },
+  {
+    name: 'outview',
+    description: '元素是否在可视区域',
+    category: '视觉类'
   }
 ])
 </script>
