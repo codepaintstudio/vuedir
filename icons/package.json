@@ -1,7 +1,6 @@
-
 {
   "name": "@cp-vuedir/icons",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "@cp-vuedir/icons, a collection of SVG icons for @cp-vuedir/core",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -44,7 +43,7 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "rimraf": "^5.0.0",
-    "rollup": "^4.35.0",
+    "rollup": "^4.37.0",
     "typescript": "^5.0.0"
   },
   "sideEffects": false

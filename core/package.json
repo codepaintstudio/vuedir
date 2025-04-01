@@ -1,7 +1,7 @@
 {
   "name": "@cp-vuedir/core",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "description": "A lightweight collection of Vue 3 directives for building efficient applications",
   "keywords": [
     "vue",
@@ -40,7 +40,7 @@
     "vue": "^3.3.0"
   },
   "dependencies": {
-    "@cp-vuedir/icons": "workspace:*"
+    "@cp-vuedir/icons": "^0.1.7"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
@@ -48,8 +48,8 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/node": "^22.13.10",
-    "rollup": "^4.35.0",
-    "rollup-plugin-dts": "^6.1.1",
+    "rollup": "^4.37.0",
+    "rollup-plugin-dts": "^6.2.1",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
     "vue": "^3.3.0"

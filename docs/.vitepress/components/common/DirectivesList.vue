@@ -279,7 +279,7 @@ const directives = ref([
     category: '视觉类'
   },
   {
-    name: 'appleBlur',
+    name: 'appleblur',
     description: '苹果毛玻璃效果',
     category: '视觉类'
   },
