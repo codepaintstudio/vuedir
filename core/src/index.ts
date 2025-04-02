@@ -57,6 +57,7 @@ import { vPriceAnimate } from './directives/vPriceAnimate'
 import { vSkeleton } from './directives/vSkeleton/core'
 import { vFomatter } from './directives/vFormatter'
 import { vConversionImage } from './directives/vConversionImage'
+import { vOutView } from './directives/vOutview'
 
 /* Hooks here */
 import { useLanguage } from './hooks/useLanguage'
@@ -120,6 +121,7 @@ export {
   vSkeleton,
   vFomatter,
   vConversionImage,
+  vOutView,
 
 
   /* Hooks here */
@@ -200,6 +202,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('skeleton', vSkeleton)
     app.directive('fomatter', vFomatter)
     app.directive('conversionimage', vConversionImage)
+    app.directive('outview', vOutView)
   }
 }
 
