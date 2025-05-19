@@ -11,13 +11,13 @@
   "dependencies": {
     "@cp-vuedir/core": "workspace:*",
     "@cp-vuedir/icons": "workspace:*",
-    "vue": "^3.3.0"
+    "vue": "^3.5.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "^5.8.2",
     "vite": "^6.2.5",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.10"
   }
 }
