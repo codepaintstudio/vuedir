@@ -40,11 +40,11 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
     "rimraf": "^5.0.0",
-    "rollup": "^4.37.0",
-    "typescript": "^5.0.0"
+    "rollup": "^4.52.5",
+    "typescript": "^5.9.3"
   },
   "sideEffects": false
 }
