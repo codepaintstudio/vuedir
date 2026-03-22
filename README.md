@@ -95,6 +95,10 @@ pnpm format:check
 
 The Prettier configuration is defined in `.prettierrc` at the project root.
 
+## Contributors
+
+![](https://hub-io-mcells-projects.vercel.app/r/codepaintstudio/vuedir)
+
 ## 📄 License
 
 VueDir is open-source software licensed under the MIT License. See the [MIT License](https://github.com/CodePaintStudio/codepaint/blob/main/LICENSE) file for more details.
